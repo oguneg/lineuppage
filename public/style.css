@@ -1,0 +1,112 @@
+:root {
+  --bg: #111;
+  --panel: #1b1b1b;
+  --line: #2c2c2c;
+  --text: #f3ede2;
+  --muted: #9a948a;
+  --red: #d24a43;
+  --gold: #f2c14e;
+  --missing: #3a1f1d;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font: 15px/1.45 Poppins, system-ui, sans-serif;
+}
+header {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 14px 20px;
+  background: var(--red);
+}
+h1 { margin: 0; font-size: 18px; font-weight: 800; letter-spacing: .04em; text-transform: uppercase; }
+h2 { margin: 0 0 10px; font-size: 14px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--gold); }
+
+main {
+  display: grid;
+  grid-template-columns: minmax(260px, 320px) auto minmax(280px, 380px);
+  gap: 24px;
+  padding: 24px 20px;
+  align-items: start;
+  justify-content: center;
+}
+@media (max-width: 1000px) {
+  main { grid-template-columns: 1fr; padding: 16px; }
+}
+
+section.controls, section.ig {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 16px;
+}
+
+button {
+  font: inherit; font-weight: 600;
+  border: 0; border-radius: 10px;
+  padding: 9px 16px;
+  background: var(--red); color: #fff;
+  cursor: pointer;
+}
+button:hover { filter: brightness(1.1); }
+button:disabled { opacity: .4; cursor: default; filter: none; }
+button.ghost { background: transparent; border: 1px solid currentColor; color: var(--text); }
+header button.ghost { color: #fff; }
+
+.seg { display: flex; background: #000; border-radius: 12px; padding: 4px; margin-bottom: 14px; }
+.seg button { flex: 1; background: transparent; color: var(--muted); border-radius: 9px; }
+.seg button[aria-selected="true"] { background: var(--red); color: #fff; }
+
+.field { display: block; margin-bottom: 12px; }
+.field span { display: block; font-size: 12px; color: var(--muted); margin-bottom: 4px; text-transform: uppercase; letter-spacing: .06em; }
+select, input[type="text"] {
+  width: 100%;
+  font: inherit;
+  background: #0c0c0c; color: var(--text);
+  border: 1px solid var(--line); border-radius: 8px;
+  padding: 8px 10px;
+}
+.toggles { display: flex; flex-direction: column; gap: 6px; }
+.toggles label { display: flex; gap: 8px; align-items: center; cursor: pointer; }
+.status { color: var(--muted); font-size: 13px; margin: 12px 0 0; min-height: 1em; }
+.status.error { color: #ff8a80; }
+
+.preview { display: flex; flex-direction: column; align-items: center; gap: 12px; }
+canvas {
+  height: min(78vh, 900px);
+  aspect-ratio: 9 / 16;
+  width: auto;
+  max-width: 100%;
+  border-radius: 14px;
+  box-shadow: 0 10px 40px #000a;
+  background: #0d0d0d;
+}
+@media (max-width: 1000px) { canvas { height: auto; width: 100%; } }
+.actions { display: flex; gap: 10px; }
+
+.copyrow { display: flex; gap: 8px; align-items: stretch; }
+.copyrow output {
+  flex: 1;
+  background: #0c0c0c; border: 1px solid var(--line); border-radius: 8px;
+  padding: 8px 10px; font-size: 14px; word-break: break-word;
+  user-select: all; min-height: 40px;
+}
+.hint { font-size: 12px; color: var(--muted); }
+.hint code { color: var(--text); }
+
+#igList { list-style: none; padding: 0; margin: 0 0 12px; display: flex; flex-direction: column; gap: 8px; }
+#igList li { display: grid; grid-template-columns: 1fr 150px; gap: 8px; align-items: center; padding: 6px 8px; border-radius: 8px; }
+#igList li.missing { background: var(--missing); }
+#igList .who { font-weight: 600; font-size: 14px; }
+#igList .who small { display: block; font-weight: 400; color: var(--muted); font-size: 11px; }
+#igList .at { position: relative; }
+#igList .at::before { content: "@"; position: absolute; left: 9px; top: 50%; transform: translateY(-50%); color: var(--muted); }
+#igList .at input { padding-left: 24px; }
+#igList li.nolink { opacity: .5; }
+
+.sync { margin-top: 14px; border-top: 1px solid var(--line); padding-top: 12px; }
+.sync summary { cursor: pointer; font-size: 13px; color: var(--muted); }
+.sync a { color: var(--gold); }
+.sync input[type="password"] { width: 100%; font: inherit; background: #0c0c0c; color: var(--text); border: 1px solid var(--line); border-radius: 8px; padding: 8px 10px; }

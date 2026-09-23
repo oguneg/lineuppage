@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lineup Story Maker</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Lineup Story Maker</h1>
+    <button id="refresh" class="ghost" title="Fetch the lineup again from standupsverige.se">↻ Refresh</button>
+  </header>
+
+  <main>
+    <section class="controls">
+      <div class="seg" role="tablist" id="clubs">
+        <button role="tab" data-club="bigben" aria-selected="true">Big Ben</button>
+        <button role="tab" data-club="comedynation" aria-selected="false">Comedy Nation</button>
+      </div>
+
+      <label class="field">
+        <span>Show</span>
+        <select id="event"></select>
+      </label>
+
+      <div class="toggles">
+        <label><input type="checkbox" id="optDate" checked> Date &amp; time</label>
+        <label><input type="checkbox" id="optBio"> Bio snippets</label>
+      </div>
+
+      <p id="status" class="status"></p>
+
+      <details id="sync" class="sync" hidden>
+        <summary>GitHub sync · <span id="syncState"></span></summary>
+        <p class="hint">Saving handles commits <code>public/handles.json</code> to your repo. Create a
+          <a href="https://github.com/settings/personal-access-tokens/new" target="_blank" rel="noopener">fine-grained token</a>
+          for this repo only, with <b>Contents</b> and <b>Actions</b> set to read &amp; write. It's stored only in this browser.</p>
+        <label class="field"><span>Repository</span><input type="text" id="ghRepo" placeholder="owner/repo" spellcheck="false"></label>
+        <label class="field"><span>Token</span><input type="password" id="ghToken" placeholder="github_pat_…" autocomplete="off"></label>
+        <button id="syncSave" class="ghost">Save</button>
+      </details>
+    </section>
+
+    <section class="preview">
+      <canvas id="canvas" width="1080" height="1920"></canvas>
+      <div class="actions">
+        <button id="download">Download PNG</button>
+        <button id="share" class="ghost" hidden>Share…</button>
+      </div>
+    </section>
+
+    <section class="ig">
+      <h2>Instagram handles</h2>
+      <div class="copyrow">
+        <output id="igString"></output>
+        <button id="copy">Copy</button>
+      </div>
+      <p class="hint">Missing handles are highlighted. Type a handle or paste a profile link, then Save. Unsaved edits stay on this device until saved.</p>
+      <ul id="igList"></ul>
+      <button id="save" class="ghost" disabled>Save handles</button>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
