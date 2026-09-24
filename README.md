@@ -5,7 +5,7 @@ Big Ben / Comedy Nation story templates, plus builds the `@handle` string for ta
 
 ## How it works on GitHub Pages
 
-- `.github/workflows/lineup.yml` scrapes the lineup every 30 min (07–23 Swedish time), on every
+- `.github/workflows/lineup.yml` scrapes the lineup daily at 11:00 Swedish time, on every
   push, and on demand, writes `data/lineup.json`, and deploys `public/` to Pages.
 - Photos load through [wsrv.nl](https://wsrv.nl) (CORS-enabled image proxy, face-aware crop).
 - Instagram handles live in `public/handles.json`. The page commits changes to it through the

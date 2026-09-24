@@ -5,8 +5,10 @@ on:
     branches: [main]
   workflow_dispatch:
   schedule:
-    # every 30 min, ~07:00–23:30 Swedish time
-    - cron: '*/30 5-21 * * *'
+    # 11:00 Swedish time: 09:00 UTC in summer (CEST), 10:00 UTC in winter (CET).
+    # Both fire; the gate job below lets through only the one matching today's offset.
+    - cron: '0 9 * * *'
+    - cron: '0 10 * * *'
 
 permissions:
   contents: read
@@ -18,7 +20,22 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
+  gate:
+    runs-on: ubuntu-latest
+    outputs:
+      run: ${{ steps.check.outputs.run }}
+    steps:
+      - id: check
+        run: |
+          if [ "${{ github.event_name }}" != "schedule" ]; then echo "run=true" >> "$GITHUB_OUTPUT"; exit 0; fi
+          # +0200 in summer → the 09:00 UTC cron is 11:00 in Sweden; +0100 in winter → the 10:00 UTC cron
+          offset=$(TZ=Europe/Stockholm date +%z)
+          want='0 10 * * *'; [ "$offset" = "+0200" ] && want='0 9 * * *'
+          [ "${{ github.event.schedule }}" = "$want" ] && echo "run=true" >> "$GITHUB_OUTPUT" || echo "run=false" >> "$GITHUB_OUTPUT"
+
   deploy:
+    needs: gate
+    if: needs.gate.outputs.run == 'true'
     runs-on: ubuntu-latest
     environment:
       name: github-pages
