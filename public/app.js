@@ -526,15 +526,23 @@ $('#event').addEventListener('change', e => {
 
 $('#syncSave').addEventListener('click', async () => {
   lsSet('ghRepo', $('#ghRepo').value.trim() || null);
-  lsSet('ghToken', $('#ghToken').value.trim() || null);
+  // pasting on phones can pick up spaces or line breaks inside the token
+  lsSet('ghToken', $('#ghToken').value.replace(/\s+/g, '') || null);
   renderSync();
-  if (canSync()) {
-    try {
-      state.handles = await loadHandles();
-      setStatus('Connected to GitHub.');
-      renderInstagram();
-    } catch (e) { setStatus(e.message, true); }
+  if (!canSync()) return;
+  try {
+    await github.readHandles(); // verifies both the token and its access to the repo
+  } catch (e) {
+    const why = /401/.test(e.message) ? 'GitHub rejected the token — it was probably copied incompletely. Generate a new one and paste the whole thing.'
+      : /403|404/.test(e.message) ? 'The token works but can\'t see this repo — give it access to lineuppage with Contents: Read and write.'
+      : e.message;
+    $('#syncState').textContent = '✗ not working';
+    setStatus(why, true);
+    return;
   }
+  state.handles = await loadHandles();
+  setStatus('Connected to GitHub.');
+  renderInstagram();
 });
 
 $('#refresh').addEventListener('click', async () => {
