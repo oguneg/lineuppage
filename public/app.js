@@ -282,6 +282,22 @@ function fitFont(text, maxW, size, weight, min = 20) {
   return s;
 }
 
+// One line if the name fits after shrinking a little; otherwise two lines split at a space.
+function layoutName(name, maxW, size) {
+  const oneLine = fitFont(name, maxW, size, 800, Math.round(size * 0.75));
+  if (ctx.measureText(name).width <= maxW || !name.includes(' ')) return { size: oneLine, lines: [name] };
+  const words = name.split(' ');
+  let best = null;
+  for (let i = 1; i < words.length; i++) {
+    const lines = [words.slice(0, i).join(' '), words.slice(i).join(' ')];
+    ctx.font = `800 ${size}px ${FONT}`;
+    const widest = Math.max(...lines.map(l => ctx.measureText(l).width));
+    if (!best || widest < best.widest) best = { lines, widest };
+  }
+  const longest = best.lines.reduce((a, b) => (ctx.measureText(a).width >= ctx.measureText(b).width ? a : b));
+  return { size: fitFont(longest, maxW, size, 800, Math.round(size * 0.6)), lines: best.lines };
+}
+
 function ellipsize(text, maxW) {
   if (ctx.measureText(text).width <= maxW) return text;
   while (text.length && ctx.measureText(text + '…').width > maxW) text = text.slice(0, -1);
@@ -416,7 +432,10 @@ async function draw() {
     const tw = colW - offsetX - (tx - x);
     const bioLines = showBio && p.bio ? (ctx.font = `italic 400 ${bioSize}px ${FONT}`, wrapLines(p.bio, tw, 2)) : [];
 
-    const blockH = roleSize * 1.3 + nameSize * 1.15 + bioLines.length * bioSize * 1.35 + (bioLines.length ? 6 : 0);
+    const nameLayout = layoutName(p.name, tw, nameSize);
+    const nameLineH = nameLayout.size * 1.08;
+    const blockH = roleSize * 1.3 + nameLineH * (nameLayout.lines.length - 1) + nameLayout.size * 1.15
+      + bioLines.length * bioSize * 1.35 + (bioLines.length ? 6 : 0);
     let y = cy - blockH / 2;
 
     ctx.textAlign = 'left';
@@ -429,10 +448,13 @@ async function draw() {
     ctx.letterSpacing = '0px';
     y += roleSize * 1.3;
 
-    fitFont(p.name, tw, nameSize, 800, Math.round(nameSize * 0.6));
+    ctx.font = `800 ${nameLayout.size}px ${FONT}`;
     ctx.fillStyle = COLORS.text;
-    ctx.fillText(ellipsize(p.name, tw), tx, y);
-    y += nameSize * 1.15 + (bioLines.length ? 6 : 0);
+    nameLayout.lines.forEach((line, li) => {
+      ctx.fillText(ellipsize(line, tw), tx, y);
+      y += li < nameLayout.lines.length - 1 ? nameLineH : nameLayout.size * 1.15;
+    });
+    if (bioLines.length) y += 6;
 
     if (bioLines.length) {
       ctx.font = `italic 400 ${bioSize}px ${FONT}`;
