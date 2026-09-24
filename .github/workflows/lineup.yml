@@ -3,6 +3,8 @@ name: Update lineup & deploy
 on:
   push:
     branches: [main]
+    # handle saves don't need a redeploy — the page reads handles.json straight from the repo
+    paths-ignore: ['public/handles.json']
   workflow_dispatch:
   schedule:
     # 11:00 Swedish time: 09:00 UTC in summer (CEST), 10:00 UTC in winter (CET).

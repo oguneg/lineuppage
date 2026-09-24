@@ -109,4 +109,7 @@ canvas {
 .sync { margin-top: 14px; border-top: 1px solid var(--line); padding-top: 12px; }
 .sync summary { cursor: pointer; font-size: 13px; color: var(--muted); }
 .sync a { color: var(--gold); }
+#syncState.ok { color: #7fd48a; }
+#syncState.bad { color: #ff8a80; }
+#igList input:disabled { opacity: .45; cursor: not-allowed; }
 .sync input[type="password"] { width: 100%; font: inherit; background: #0c0c0c; color: var(--text); border: 1px solid var(--line); border-radius: 8px; padding: 8px 10px; }

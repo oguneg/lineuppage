@@ -34,6 +34,7 @@ const state = {
   fetchedAt: null,
   eventIndex: 0,
   handles: {},
+  sync: 'none',     // GitHub token: none | checking | ok | bad
   dirty: JSON.parse(lsGet('pendingHandles') || '{}'), // slug -> { name, instagram }, survives reloads until saved
 };
 
@@ -121,11 +122,40 @@ function applyEdits(handles, edits) {
   return sortHandles(out);
 }
 
-async function loadHandles() {
-  if (canSync()) {
-    try { return (await github.readHandles()).handles; } catch (e) { setStatus(e.message, true); }
+// Editing handles is locked until the token is confirmed to work (always open locally).
+const canEdit = () => IS_LOCAL || state.sync === 'ok';
+
+function explainGitHubError(e) {
+  if (/401/.test(e.message)) return 'GitHub rejected the token — it was probably copied incompletely. Generate a new one and paste the whole thing.';
+  if (/403/.test(e.message)) return 'The token can\'t write to this repo — edit it on GitHub and set Contents (and Actions) to Read and write.';
+  if (/404/.test(e.message)) return 'The token can\'t see this repo — edit it on GitHub and give it access to lineuppage.';
+  return e.message;
+}
+
+// Checks the stored token by reading handles.json through the API; unlocks editing on success.
+async function connectGitHub() {
+  if (!canSync()) { state.sync = 'none'; renderSync(); return false; }
+  state.sync = 'checking';
+  renderSync();
+  try {
+    state.handles = (await github.readHandles()).handles;
+    state.sync = 'ok';
+  } catch (e) {
+    state.sync = 'bad';
+    setStatus(explainGitHubError(e), true);
   }
-  const r = await fetch(`handles.json?ts=${Date.now()}`, { cache: 'no-store' });
+  renderSync();
+  renderInstagram();
+  return state.sync === 'ok';
+}
+
+async function loadHandles() {
+  if (state.sync === 'ok') {
+    try { return (await github.readHandles()).handles; } catch (e) { setStatus(explainGitHubError(e), true); }
+  }
+  // Read-only: straight from the repo, so saves show up without waiting for a Pages deploy
+  const url = IS_LOCAL || !github.repo ? 'handles.json' : `https://raw.githubusercontent.com/${github.repo}/main/public/handles.json`;
+  const r = await fetch(`${url}?ts=${Date.now()}`, { cache: 'no-store' });
   return r.ok ? r.json() : {};
 }
 
@@ -138,7 +168,7 @@ async function saveHandles() {
     if (!r.ok) throw new Error(await r.text());
     return merged;
   }
-  if (!canSync()) throw new Error('Add your GitHub token under "GitHub sync" to save handles.');
+  if (!canEdit()) throw new Error('Connect a working GitHub token under "GitHub sync" to save handles.');
   // Re-read right before writing so edits from another device aren't overwritten; retry once on a race.
   for (let attempt = 0; ; attempt++) {
     const { sha, handles } = await github.readHandles();
@@ -229,7 +259,7 @@ function renderInstagram() {
     const h = handleFor(p);
     return `<li class="${h ? '' : 'missing'}">
       <div class="who">${escapeHtml(p.name)}<small>${escapeHtml(p.role)}</small></div>
-      <div class="at"><input type="text" data-slug="${p.slug}" data-name="${escapeHtml(p.name)}" value="${escapeHtml(h)}" placeholder="handle" autocomplete="off" spellcheck="false"></div>
+      <div class="at"><input type="text" data-slug="${p.slug}" data-name="${escapeHtml(p.name)}" value="${escapeHtml(h)}" placeholder="${canEdit() ? 'handle' : 'locked'}" autocomplete="off" spellcheck="false"${canEdit() ? '' : ' disabled'}></div>
     </li>`;
   }).join('');
   updateIgString();
@@ -243,15 +273,25 @@ function updateIgString() {
 
 function renderSaveButton() {
   const n = Object.keys(state.dirty).length;
+  if (!canEdit()) {
+    // Locked: the button takes you to the token settings instead
+    $('#save').disabled = state.sync === 'checking';
+    $('#save').textContent = state.sync === 'checking' ? 'Checking GitHub token…' : '🔒 Connect GitHub to edit';
+    return;
+  }
   $('#save').disabled = !n;
   $('#save').textContent = n ? `Save ${n} handle${n > 1 ? 's' : ''}` : 'All handles saved';
 }
+
+const SYNC_LABELS = { none: 'not connected', checking: 'checking…', ok: '✓ connected', bad: '✗ not working' };
 
 function renderSync() {
   $('#sync').hidden = IS_LOCAL;
   $('#ghRepo').value = github.repo;
   $('#ghToken').value = github.token;
-  $('#syncState').textContent = canSync() ? '✓ connected' : 'not connected';
+  $('#syncState').textContent = SYNC_LABELS[state.sync] || SYNC_LABELS.none;
+  $('#syncState').className = state.sync === 'ok' ? 'ok' : state.sync === 'bad' ? 'bad' : '';
+  renderSaveButton();
 }
 
 // ---------- Canvas ----------
@@ -514,6 +554,12 @@ $('#igList').addEventListener('input', e => {
 });
 
 $('#save').addEventListener('click', async () => {
+  if (!canEdit()) {
+    $('#sync').open = true;
+    $('#sync').scrollIntoView({ behavior: 'smooth', block: 'center' });
+    $('#ghToken').focus();
+    return;
+  }
   $('#save').disabled = true;
   $('#save').textContent = 'Saving…';
   try {
@@ -522,7 +568,7 @@ $('#save').addEventListener('click', async () => {
     lsSet('pendingHandles', null);
     setStatus(IS_LOCAL ? 'Handles saved to handles.json.' : 'Handles committed to GitHub.');
   } catch (e) {
-    setStatus('Not saved (kept on this device): ' + e.message, true);
+    setStatus('Not saved (kept on this device): ' + explainGitHubError(e), true);
   }
   renderInstagram();
 });
@@ -550,21 +596,7 @@ $('#syncSave').addEventListener('click', async () => {
   lsSet('ghRepo', $('#ghRepo').value.trim() || null);
   // pasting on phones can pick up spaces or line breaks inside the token
   lsSet('ghToken', $('#ghToken').value.replace(/\s+/g, '') || null);
-  renderSync();
-  if (!canSync()) return;
-  try {
-    await github.readHandles(); // verifies both the token and its access to the repo
-  } catch (e) {
-    const why = /401/.test(e.message) ? 'GitHub rejected the token — it was probably copied incompletely. Generate a new one and paste the whole thing.'
-      : /403|404/.test(e.message) ? 'The token works but can\'t see this repo — give it access to lineuppage with Contents: Read and write.'
-      : e.message;
-    $('#syncState').textContent = '✗ not working';
-    setStatus(why, true);
-    return;
-  }
-  state.handles = await loadHandles();
-  setStatus('Connected to GitHub.');
-  renderInstagram();
+  if (await connectGitHub()) setStatus('Connected to GitHub — handle editing unlocked.');
 });
 
 $('#refresh').addEventListener('click', async () => {
@@ -600,9 +632,9 @@ $('#refresh').addEventListener('click', async () => {
 async function init() {
   renderSync();
   try {
-    const [, handles] = await Promise.all([loadLineup(), loadHandles()]);
-    state.handles = handles;
-    setStatus(fetchedLabel());
+    const [, connected] = await Promise.all([loadLineup(), connectGitHub()]);
+    if (!connected) state.handles = await loadHandles();
+    if (state.sync !== 'bad') setStatus(fetchedLabel());
   } catch (e) {
     setStatus('Could not load lineup: ' + e.message, true);
   }
