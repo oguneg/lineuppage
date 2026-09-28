@@ -4,7 +4,8 @@
 
 const CLUBS = {
   bigben: { template: 'templates/bigben.png', label: 'bigben' },
-  comedynation: { template: 'templates/comedynation.png', label: 'comedynation' },
+  // extraHandles are always tagged, after the comedians
+  comedynation: { template: 'templates/comedynation.png', label: 'comedynation', extraHandles: ['comedynationse', 'drzero.se'] },
 };
 
 const MONTHS = ['januari', 'februari', 'mars', 'april', 'maj', 'juni', 'juli', 'augusti', 'september', 'oktober', 'november', 'december'];
@@ -21,6 +22,14 @@ const COLORS = {
 };
 const FONT = 'Poppins, system-ui, sans-serif';
 const isHost = p => /konferencier|\bhost\b|\bmc\b/i.test(p.role);
+const isSecretGuest = p => /hemlig g[äa]st|secret guest/i.test(p.name);
+
+// Performers drawn on the story: secret guests are dropped when the lineup is already full
+function storyPerformers(ev) {
+  const all = ev?.performers || [];
+  const named = all.filter(p => !isSecretGuest(p));
+  return named.length > 6 ? named : all;
+}
 
 const $ = s => document.querySelector(s);
 const canvas = $('#canvas');
@@ -267,7 +276,8 @@ function renderInstagram() {
 }
 
 function updateIgString() {
-  const handles = [...new Set(uniquePeople(currentEvent()).map(handleFor).filter(Boolean))];
+  const extra = CLUBS[state.club].extraHandles || [];
+  const handles = [...new Set([...uniquePeople(currentEvent()).map(handleFor).filter(Boolean), ...extra])];
   $('#igString').textContent = handles.map(h => '@' + h).join(' ');
 }
 
@@ -390,7 +400,7 @@ async function draw() {
   await Promise.all(['800 40px Poppins', '700 40px Poppins', '600 40px Poppins', 'italic 400 20px Poppins'].map(f => document.fonts.load(f)));
   const [bg, ...photos] = await Promise.all([
     loadImage(cfg.template),
-    ...(ev?.performers || []).map(p => p.img ? loadImage(photoUrl(p.img), true) : null),
+    ...storyPerformers(ev).map(p => p.img ? loadImage(photoUrl(p.img), true) : null),
   ]);
   if (token !== drawToken) return; // a newer draw started meanwhile
 
@@ -422,7 +432,8 @@ async function draw() {
     top += 20;
   }
 
-  const n = ev.performers.length;
+  const performers = storyPerformers(ev);
+  const n = performers.length;
   if (!n) {
     ctx.font = `600 44px ${FONT}`;
     ctx.fillStyle = COLORS.muted;
@@ -437,11 +448,12 @@ async function draw() {
   const rowH = Math.min(cols === 1 ? 210 : 230, areaH / rows);
   const startY = top + (areaH - rowH * rows) / 2;
 
-  const sideMargin = cols === 1 ? 110 : 55;
+  const sideMargin = cols === 1 ? 110 : 45;
   const gap = 40;
   const colW = (W - 2 * sideMargin - (cols - 1) * gap) / cols;
-  const r = Math.min(rowH * 0.38, cols === 1 ? 74 : 60);
-  const nameSize = Math.round(Math.min(cols === 1 ? 54 : 40, rowH * (showBio ? 0.28 : 0.34)));
+  // Two columns: smaller photos leave room for bigger names (long ones wrap to two lines)
+  const r = cols === 1 ? Math.min(rowH * 0.38, 74) : Math.min(rowH * 0.26, 46);
+  const nameSize = Math.round(Math.min(cols === 1 ? 54 : 46, rowH * (showBio ? 0.28 : 0.34)));
   const roleSize = Math.round(Math.max(17, nameSize * 0.46));
   const bioSize = Math.round(Math.max(16, nameSize * 0.42));
 
@@ -450,7 +462,7 @@ async function draw() {
   if (cols === 1) {
     const textMax = colW - (2 * r + 44);
     let widest = 0;
-    ev.performers.forEach(p => {
+    performers.forEach(p => {
       fitFont(p.name, textMax, nameSize, 800, Math.round(nameSize * 0.6));
       widest = Math.max(widest, ctx.measureText(p.name).width);
       if (showBio && p.bio) widest = textMax;
@@ -458,7 +470,7 @@ async function draw() {
     offsetX = (colW - (2 * r + 44 + Math.min(widest, textMax))) / 2;
   }
 
-  ev.performers.forEach((p, i) => {
+  performers.forEach((p, i) => {
     // column-major, matching the reading order on the website
     const col = Math.floor(i / rows);
     const row = i % rows;
