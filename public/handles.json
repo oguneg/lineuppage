@@ -1,4 +1,8 @@
 {
+  "alma-friberg": {
+    "name": "Alma Friberg",
+    "instagram": "alma_friberg"
+  },
   "anton-forsberg": {
     "name": "Anton Forsberg",
     "instagram": "denantonforsberg"
@@ -23,6 +27,10 @@
     "name": "Damani Damani",
     "instagram": "damanioff"
   },
+  "fernando-fernando-2": {
+    "name": "Fernando Fernando",
+    "instagram": "fernandotv.se"
+  },
   "gugge-yucel": {
     "name": "Gugge Yücel",
     "instagram": "gugge.yucel"
@@ -34,6 +42,14 @@
   "hjalmar-wide": {
     "name": "Hjalmar Wide",
     "instagram": "hjalmarwide"
+  },
+  "isaias-tuolde": {
+    "name": "Isaias Tuolde",
+    "instagram": "isaiaspajas"
+  },
+  "jimmy-wamala-2": {
+    "name": "Jimmy Wamala",
+    "instagram": "jimmy_wamala"
   },
   "jonas-oldinger": {
     "name": "Jonas Oldinger",
@@ -47,6 +63,10 @@
     "name": "Leon Jämtin",
     "instagram": "leonjamtin"
   },
+  "mahnoush-nayab": {
+    "name": "Mahnoush Nayab",
+    "instagram": "manoush1982"
+  },
   "marcus-palm": {
     "name": "Marcus Palm",
     "instagram": "mackanpalm"
@@ -55,9 +75,17 @@
     "name": "Markus Björk",
     "instagram": "bjork_markus"
   },
+  "mattias-backlund-2": {
+    "name": "Mattias Bäcklund",
+    "instagram": "mattias_magicdude"
+  },
   "peter-lisinski": {
     "name": "Peter Lisinski",
     "instagram": "peterlisinski"
+  },
+  "peter-nitschke": {
+    "name": "Peter Nitschke",
+    "instagram": "nitschke.peter"
   },
   "pontus-sagvold": {
     "name": "Pontus Sagvold",
