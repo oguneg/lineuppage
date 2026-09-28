@@ -392,6 +392,15 @@ function drawAvatar(img, cx, cy, r, ring) {
 let drawToken = 0;
 async function draw() {
   const token = ++drawToken;
+  state.storyFile = null;
+  await paint(token);
+  if (token !== drawToken) return;
+  // Pre-render the PNG: iOS only opens the share sheet if share() is called right after the tap
+  const blob = await canvasBlob();
+  if (token === drawToken) state.storyFile = new File([blob], fileName(), { type: 'image/png' });
+}
+
+async function paint(token) {
   const ev = currentEvent();
   const cfg = CLUBS[state.club];
   const showDate = $('#optDate').checked;
@@ -534,11 +543,22 @@ $('#download').addEventListener('click', async () => {
   setTimeout(() => URL.revokeObjectURL(a.href), 5000);
 });
 
-if (navigator.canShare && navigator.canShare({ files: [new File([''], 'x.png', { type: 'image/png' })] })) {
-  $('#share').hidden = false;
-  $('#share').addEventListener('click', async () => {
-    const file = new File([await canvasBlob()], fileName(), { type: 'image/png' });
-    try { await navigator.share({ files: [file] }); } catch {}
+// Phones: one tap copies the handles and opens the share sheet with the image → pick Instagram Stories.
+// (Instagram's direct "open Stories with this image" link only works from registered native apps.)
+const canShareFiles = navigator.canShare && navigator.canShare({ files: [new File([''], 'x.png', { type: 'image/png' })] });
+if (canShareFiles && matchMedia('(pointer: coarse)').matches) {
+  $('#story').hidden = false;
+  $('#download').classList.add('ghost');
+  $('#story').addEventListener('click', async () => {
+    // Both calls must start before any await so they count as part of the tap
+    const copied = navigator.clipboard?.writeText($('#igString').textContent);
+    const shared = navigator.share({ files: [state.storyFile || new File([await canvasBlob()], fileName(), { type: 'image/png' })] });
+    const copyOk = await Promise.resolve(copied).then(() => true, () => false);
+    setStatus(copyOk ? 'Handles copied — in the story editor tap Aa, paste, then shrink/hide the text.'
+      : 'Couldn\'t copy the handles — use the Copy button, then paste in the story editor.', !copyOk);
+    try { await shared; } catch (e) {
+      if (e.name !== 'AbortError') setStatus('Sharing failed: ' + e.message, true);
+    }
   });
 }
 
