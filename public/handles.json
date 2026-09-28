@@ -1,4 +1,8 @@
 {
+  "abhishek-diwakar": {
+    "name": "Abhishek Diwakar",
+    "instagram": "abhishek_diwakar"
+  },
   "alma-friberg": {
     "name": "Alma Friberg",
     "instagram": "alma_friberg"
@@ -31,6 +35,10 @@
     "name": "Fernando Fernando",
     "instagram": "fernandotv.se"
   },
+  "goran-sjoberg": {
+    "name": "Göran Sjöberg",
+    "instagram": "komikerkungen"
+  },
   "gugge-yucel": {
     "name": "Gugge Yücel",
     "instagram": "gugge.yucel"
@@ -62,6 +70,10 @@
   "leon-jamtin": {
     "name": "Leon Jämtin",
     "instagram": "leonjamtin"
+  },
+  "lisa-wermelin": {
+    "name": "Lisa Wermelin",
+    "instagram": "lisawermelin"
   },
   "mahnoush-nayab": {
     "name": "Mahnoush Nayab",
@@ -102,5 +114,9 @@
   "tammy-holm": {
     "name": "Tammy Holm",
     "instagram": "tammyraeholm"
+  },
+  "torbjorn-nomell": {
+    "name": "Torbjörn Nomell",
+    "instagram": "torbjornstandup"
   }
 }
