@@ -41,6 +41,7 @@ const state = {
   fetchedAt: null,
   eventIndex: 0,
   handles: {},
+  profiles: {},     // Instagram check results, for photo fallbacks
   sync: 'none',     // GitHub token: none | checking | ok | bad
   dirty: JSON.parse(lsGet('pendingHandles') || '{}'), // slug -> { name, instagram }, survives reloads until saved
 };
@@ -78,6 +79,10 @@ async function loadHandles() {
     try { return (await github.readHandles()).handles; } catch (e) { setStatus(explainGitHubError(e), true); }
   }
   return readPublicJson(HANDLES_PATH, {});
+}
+
+async function loadProfiles() {
+  state.profiles = (await readPublicJson(PROFILES_PATH, null))?.profiles || {};
 }
 
 async function saveHandles() {
@@ -307,7 +312,10 @@ async function paint(token) {
   await Promise.all(['800 40px Poppins', '700 40px Poppins', '600 40px Poppins', 'italic 400 20px Poppins'].map(f => document.fonts.load(f)));
   const [bg, ...photos] = await Promise.all([
     loadImage(cfg.template),
-    ...storyPerformers(ev).map(p => p.img ? loadImage(photoUrl(p.img), true) : null),
+    ...storyPerformers(ev).map(p => {
+      const ig = p.photoMissing && instagramPic(state.handles, state.profiles, p.slug);
+      return ig ? loadImage(ig) : p.img ? loadImage(photoUrl(p.img), true) : null;
+    }),
   ]);
   if (token !== drawToken) return; // a newer draw started meanwhile
 
@@ -563,7 +571,7 @@ $('#refresh').addEventListener('click', async () => {
 async function init() {
   renderSync();
   try {
-    const [, connected] = await Promise.all([loadLineup(), connectGitHub()]);
+    const [, connected] = await Promise.all([loadLineup(), connectGitHub(), loadProfiles()]);
     if (!connected) state.handles = await loadHandles();
     if (state.sync !== 'bad') setStatus(fetchedLabel());
   } catch (e) {

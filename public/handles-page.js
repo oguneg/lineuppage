@@ -77,13 +77,13 @@ async function loadPeople() {
       for (const p of ev.performers) {
         if (!p.slug) continue;
         const cur = bySlug.get(p.slug);
-        if (!cur) bySlug.set(p.slug, { slug: p.slug, name: p.name, img: p.img, next: { date: ev.date, club } });
+        if (!cur) bySlug.set(p.slug, { slug: p.slug, name: p.name, img: p.img, photoMissing: p.photoMissing, next: { date: ev.date, club } });
         else if (ev.date && (!cur.next || ev.date < cur.next.date)) cur.next = { date: ev.date, club };
       }
     }
   }
   for (const [slug, v] of Object.entries(state.handles)) {
-    if (!bySlug.has(slug)) bySlug.set(slug, { slug, name: v.name, img: null, next: null });
+    if (!bySlug.has(slug)) bySlug.set(slug, { slug, name: v.name, img: null, photoMissing: true, next: null });
   }
   state.people = [...bySlug.values()].sort((a, b) => a.name.localeCompare(b.name, 'sv'));
 }
@@ -150,7 +150,8 @@ function rowHtml(p) {
   const status = rowStatus(p);
   const h = currentHandle(p);
   const cls = status === 'missing' || status === 'error' || status === 'nohandle' ? 'warn' : status === 'unsaved' ? 'unsaved' : '';
-  const photo = p.img ? `https://wsrv.nl/?url=${encodeURIComponent(p.img)}&w=88&h=88&fit=cover&a=attention` : '';
+  const ig = p.photoMissing && instagramPic(state.handles, state.profiles, p.slug);
+  const photo = ig || (p.img ? `https://wsrv.nl/?url=${encodeURIComponent(p.img)}&w=88&h=88&fit=cover&a=attention` : '');
   return `<li class="row ${cls}" data-slug="${p.slug}">
     ${photo ? `<img class="avatar" src="${photo}" alt="" loading="lazy">` : '<div class="avatar"></div>'}
     <div class="who"><div class="name">${escapeHtml(p.name)}</div><small>${nextShow(p)}</small></div>

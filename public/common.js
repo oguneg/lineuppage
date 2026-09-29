@@ -101,6 +101,14 @@ function applyEdits(handles, edits) {
   return sortHandles(out);
 }
 
+// Last-resort photo for comedians without one on the site: their Instagram profile picture
+// (a small inline image saved by the profile check), if the handle checked out.
+function instagramPic(handles, profiles, slug) {
+  const h = handles[slug]?.instagram;
+  const prof = h && profiles[h.toLowerCase()];
+  return prof?.status === 'ok' && prof.pic ? prof.pic : null;
+}
+
 // Read-only copy of a repo file: raw GitHub (fresh within minutes, no deploy needed), or disk when local
 async function readPublicJson(path, fallback) {
   const url = IS_LOCAL || !github.repo ? path.replace(/^public\//, '') : `https://raw.githubusercontent.com/${github.repo}/main/${path}`;
