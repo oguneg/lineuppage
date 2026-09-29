@@ -89,11 +89,13 @@ function sortHandles(h) {
   return Object.fromEntries(Object.entries(h).sort(([a], [b]) => a.localeCompare(b)));
 }
 
-// edits: slug -> { name, instagram }; an empty instagram removes the entry
+// edits: slug -> { name, instagram, none }. `none` marks "has no Instagram" so nobody goes
+// looking again; an edit with neither removes the entry.
 function applyEdits(handles, edits) {
   const out = { ...handles };
   for (const [slug, v] of Object.entries(edits)) {
     if (v.instagram) out[slug] = { name: v.name, instagram: v.instagram };
+    else if (v.none) out[slug] = { name: v.name, none: true };
     else delete out[slug];
   }
   return sortHandles(out);

@@ -54,7 +54,8 @@ async function check(handle) {
 }
 
 const args = process.argv.slice(2);
-const handles = [...new Set(Object.values(readJson(HANDLES_FILE, {})).map(v => v.instagram.toLowerCase()))];
+// entries flagged "none" (no Instagram) have no handle to check
+const handles = [...new Set(Object.values(readJson(HANDLES_FILE, {})).filter(v => v.instagram).map(v => v.instagram.toLowerCase()))];
 const store = readJson(PROFILES_FILE, { checkedAt: null, profiles: {} });
 
 const targets = args.includes('--all') ? handles

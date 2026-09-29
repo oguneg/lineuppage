@@ -64,3 +64,6 @@ main.handles { display: block; max-width: 980px; margin: 0 auto; padding: 20px 1
   .row > .ig { grid-area: ig; } .row > .open { grid-area: open; }
 }
 @media (max-width: 720px) { .toolbar { position: static; } }
+.flag { background: transparent; border: 1px dashed #6a4a46; color: var(--muted); font-size: 12px; font-weight: 500; padding: 4px 10px; border-radius: 999px; }
+.flag:hover { color: var(--text); border-color: var(--muted); filter: none; }
+.linkbtn { background: none; border: 0; padding: 0 4px; color: var(--muted); font-size: 12px; font-weight: 500; text-decoration: underline; }

@@ -146,6 +146,9 @@ function handleFor(p) {
   return state.handles[p.slug]?.instagram || '';
 }
 
+// Flagged on the handles page as "has no Instagram" — not highlighted as missing
+const flaggedNone = slug => !!state.handles[slug]?.none;
+
 function uniquePeople(ev) {
   const seen = new Set();
   return (ev?.performers || []).filter(p => {
@@ -160,9 +163,10 @@ function renderInstagram() {
   $('#igList').innerHTML = people.map(p => {
     if (!p.slug) return `<li class="nolink"><div class="who">${escapeHtml(p.name)}<small>${escapeHtml(p.role)} · no profile</small></div></li>`;
     const h = handleFor(p);
-    return `<li class="${h ? '' : 'missing'}">
-      <div class="who">${escapeHtml(p.name)}<small>${escapeHtml(p.role)}</small></div>
-      <div class="at"><input type="text" data-slug="${p.slug}" data-name="${escapeHtml(p.name)}" value="${escapeHtml(h)}" placeholder="${canEdit() ? 'handle' : 'locked'}" autocomplete="off" spellcheck="false"${canEdit() ? '' : ' disabled'}></div>
+    const none = !h && flaggedNone(p.slug);
+    return `<li class="${h ? '' : none ? 'noig' : 'missing'}">
+      <div class="who">${escapeHtml(p.name)}<small>${escapeHtml(p.role)}${none ? ' · no Instagram' : ''}</small></div>
+      <div class="at"><input type="text" data-slug="${p.slug}" data-name="${escapeHtml(p.name)}" value="${escapeHtml(h)}" placeholder="${!canEdit() ? 'locked' : none ? 'no Instagram' : 'handle'}" autocomplete="off" spellcheck="false"${canEdit() ? '' : ' disabled'}></div>
     </li>`;
   }).join('');
   updateIgString();
@@ -472,9 +476,10 @@ $('#igList').addEventListener('input', e => {
   const ig = normalizeHandle(input.value);
   const saved = state.handles[input.dataset.slug]?.instagram || '';
   if (ig === saved) delete state.dirty[input.dataset.slug];
-  else state.dirty[input.dataset.slug] = { name: input.dataset.name, instagram: ig };
+  // clearing the box keeps a "no Instagram" flag; typing a handle replaces it
+  else state.dirty[input.dataset.slug] = { name: input.dataset.name, instagram: ig, none: !ig && flaggedNone(input.dataset.slug) };
   lsSet('pendingHandles', JSON.stringify(state.dirty));
-  input.closest('li').classList.toggle('missing', !ig);
+  input.closest('li').classList.toggle('missing', !ig && !flaggedNone(input.dataset.slug));
   renderSaveButton();
   updateIgString();
 });

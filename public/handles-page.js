@@ -92,11 +92,21 @@ async function loadPeople() {
 
 const savedHandle = p => state.handles[p.slug]?.instagram || '';
 const currentHandle = p => (state.dirty[p.slug] ? state.dirty[p.slug].instagram : savedHandle(p));
+// "none" = flagged as having no Instagram, so nobody keeps looking for them
+const savedNone = p => !!state.handles[p.slug]?.none;
+const currentNone = p => (state.dirty[p.slug] ? !!state.dirty[p.slug].none : savedNone(p));
+
+function setEdit(p, instagram, none) {
+  none = !instagram && none;
+  if (instagram === savedHandle(p) && none === savedNone(p)) delete state.dirty[p.slug];
+  else state.dirty[p.slug] = { name: p.name, instagram, none };
+  lsSet('pendingHandles', Object.keys(state.dirty).length ? JSON.stringify(state.dirty) : null);
+}
 
 function rowStatus(p) {
   const h = currentHandle(p);
   if (state.dirty[p.slug]) return 'unsaved';
-  if (!h) return 'nohandle';
+  if (!h) return currentNone(p) ? 'noig' : 'nohandle';
   const prof = state.profiles[h.toLowerCase()];
   if (!prof) return 'unchecked';
   if (prof.status === 'ok') return prof.stale ? 'stale' : 'ok';
@@ -106,6 +116,7 @@ function rowStatus(p) {
 const FILTERS = [
   ['all', 'All', () => true],
   ['nohandle', 'No handle', s => s === 'nohandle'],
+  ['noig', 'No Instagram', s => s === 'noig'],
   ['problems', 'Not found', s => s === 'missing' || s === 'error'],
   ['unchecked', 'Unchecked', s => s === 'unchecked'],
   ['unsaved', 'Unsaved', s => s === 'unsaved'],
@@ -115,8 +126,11 @@ function igCell(p, status) {
   const h = currentHandle(p);
   const prof = h ? state.profiles[h.toLowerCase()] : null;
   switch (status) {
-    case 'nohandle': return '<span class="badge none">no handle</span>';
-    case 'unsaved': return '<span class="badge warn">unsaved — checked after saving</span>';
+    case 'nohandle': return '<button class="flag" data-act="none" title="Mark as not on Instagram, so you can skip them">🚫 No Instagram</button>';
+    case 'noig': return '<span class="badge none">🚫 no Instagram</span><button class="linkbtn" data-act="undo">undo</button>';
+    case 'unsaved': return currentNone(p) || (!h && savedNone(p))
+      ? `<span class="badge warn">${currentNone(p) ? '🚫 no Instagram' : 'flag removed'} — unsaved</span><button class="linkbtn" data-act="${currentNone(p) ? 'undo' : 'none'}">undo</button>`
+      : '<span class="badge warn">unsaved — checked after saving</span>';
     case 'unchecked': return '<span class="badge none">not checked yet</span>';
     case 'missing': return `<span class="badge bad">✗ not on Instagram</span><small>checked ${ago(prof.checkedAt)}</small>`;
     case 'error': return `<span class="badge warn">? couldn't check</span><small>${escapeHtml(prof.error || '')}</small>`;
@@ -140,7 +154,7 @@ function rowHtml(p) {
   return `<li class="row ${cls}" data-slug="${p.slug}">
     ${photo ? `<img class="avatar" src="${photo}" alt="" loading="lazy">` : '<div class="avatar"></div>'}
     <div class="who"><div class="name">${escapeHtml(p.name)}</div><small>${nextShow(p)}</small></div>
-    <div class="at"><input type="text" value="${escapeHtml(h)}" placeholder="handle" autocomplete="off" spellcheck="false"></div>
+    <div class="at"><input type="text" value="${escapeHtml(h)}" placeholder="${currentNone(p) ? 'no Instagram' : 'handle'}" autocomplete="off" spellcheck="false"></div>
     <div class="ig">${igCell(p, status)}</div>
     <a class="open" href="https://www.instagram.com/${encodeURIComponent(h)}/" target="_blank" rel="noopener" title="Open on Instagram" aria-disabled="${!h}">↗</a>
   </li>`;
@@ -185,6 +199,9 @@ function refreshRow(li, p) {
   li.className = `row ${status === 'missing' || status === 'error' || status === 'nohandle' ? 'warn' : status === 'unsaved' ? 'unsaved' : ''}`;
   li.querySelector('.ig').innerHTML = igCell(p, status);
   const h = currentHandle(p);
+  const input = li.querySelector('input');
+  input.placeholder = currentNone(p) ? 'no Instagram' : 'handle';
+  if (document.activeElement !== input) input.value = h;
   const a = li.querySelector('.open');
   a.href = `https://www.instagram.com/${encodeURIComponent(h)}/`;
   a.setAttribute('aria-disabled', String(!h));
@@ -196,10 +213,20 @@ $('#rows').addEventListener('input', e => {
   const li = e.target.closest('li.row');
   if (!li) return;
   const p = state.people.find(x => x.slug === li.dataset.slug);
-  const ig = normalizeHandle(e.target.value);
-  if (ig === savedHandle(p)) delete state.dirty[p.slug];
-  else state.dirty[p.slug] = { name: p.name, instagram: ig };
-  lsSet('pendingHandles', Object.keys(state.dirty).length ? JSON.stringify(state.dirty) : null);
+  // typing a handle replaces a "no Instagram" flag; clearing the box brings the saved flag back
+  setEdit(p, normalizeHandle(e.target.value), savedNone(p));
+  refreshRow(li, p);
+  renderFilters();
+  renderActions();
+});
+
+// 🚫 No Instagram / undo buttons
+$('#rows').addEventListener('click', e => {
+  const b = e.target.closest('button[data-act]');
+  if (!b) return;
+  const li = b.closest('li.row');
+  const p = state.people.find(x => x.slug === li.dataset.slug);
+  setEdit(p, '', b.dataset.act === 'none');
   refreshRow(li, p);
   renderFilters();
   renderActions();
@@ -265,7 +292,7 @@ async function waitForCheck(label) {
 
 $('#checkNew').addEventListener('click', () => runCheck('new', 'Looking up unchecked handles on Instagram…'));
 $('#checkAll').addEventListener('click', () => {
-  const n = new Set(Object.values(state.handles).map(v => v.instagram.toLowerCase())).size;
+  const n = new Set(Object.values(state.handles).filter(v => v.instagram).map(v => v.instagram.toLowerCase())).size;
   runCheck('all', `Re-checking all ${n} handles on Instagram (≈${Math.ceil(n * 2 / 60)} min)…`);
 });
 
