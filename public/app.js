@@ -205,6 +205,20 @@ function renderSync() {
   $('#syncState').textContent = SYNC_LABELS[state.sync] || SYNC_LABELS.none;
   $('#syncState').className = state.sync === 'ok' ? 'ok' : state.sync === 'bad' ? 'bad' : '';
   renderSaveButton();
+  renderHeaderButtons();
+}
+
+let refreshing = false;
+// "All handles" and "Refresh" stay locked until the GitHub token is confirmed
+function renderHeaderButtons() {
+  const locked = !canEdit();
+  const why = state.sync === 'checking' ? 'Checking your GitHub token…' : 'Connect your GitHub token under "GitHub sync" first';
+  const link = $('#handlesLink');
+  link.classList.toggle('locked', locked);
+  link.setAttribute('aria-disabled', String(locked));
+  link.title = locked ? why : '';
+  $('#refresh').disabled = locked || refreshing;
+  $('#refresh').title = locked ? why : 'Fetch the lineup again from standupsverige.se';
 }
 
 // ---------- Canvas ----------
@@ -538,8 +552,18 @@ $('#syncSave').addEventListener('click', async () => {
   if (await connectGitHub()) setStatus('Connected to GitHub — handle editing unlocked.');
 });
 
+// A link can't be disabled, so block the click while locked
+$('#handlesLink').addEventListener('click', e => {
+  if (!canEdit()) {
+    e.preventDefault();
+    $('#sync').open = true;
+    $('#ghToken').focus();
+  }
+});
+
 $('#refresh').addEventListener('click', async () => {
   const btn = $('#refresh');
+  refreshing = true;
   btn.disabled = true;
   try {
     if (canSync()) {
@@ -565,7 +589,8 @@ $('#refresh').addEventListener('click', async () => {
   } catch (e) {
     setStatus('Refresh failed: ' + e.message, true);
   }
-  btn.disabled = false;
+  refreshing = false;
+  renderHeaderButtons();
 });
 
 async function init() {
