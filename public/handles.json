@@ -15,9 +15,17 @@
     "name": "Alma Friberg",
     "instagram": "alma_friberg"
   },
+  "andreas-nerstrom": {
+    "name": "Andreas Nerström",
+    "none": true
+  },
   "andy-callahan": {
     "name": "Andy Callahan",
     "instagram": "andyxcallahan"
+  },
+  "andy-vash": {
+    "name": "Andy Vash",
+    "none": true
   },
   "anton-forsberg": {
     "name": "Anton Forsberg",
@@ -34,6 +42,14 @@
   "august-rydell": {
     "name": "August Rydell",
     "instagram": "traumaflavoured"
+  },
+  "avraz-hirori": {
+    "name": "Avraz Hirori",
+    "none": true
+  },
+  "ayman-hassan": {
+    "name": "Ayman Hassan",
+    "none": true
   },
   "beata-fejer-2": {
     "name": "Beata Fejer",
@@ -63,6 +79,10 @@
     "name": "Damani Damani",
     "instagram": "damanioff"
   },
+  "darius-carcea": {
+    "name": "Darius Carcea",
+    "none": true
+  },
   "ebba-rosencrantz-2": {
     "name": "Ebba Rosencrantz",
     "instagram": "ebbarosencrantz"
@@ -70,6 +90,10 @@
   "emil-arvas": {
     "name": "Emil Arvas",
     "instagram": "arvas4"
+  },
+  "erik-adriansson": {
+    "name": "Erik Adriansson",
+    "none": true
   },
   "fernando-fernando-2": {
     "name": "Fernando Fernando",
@@ -94,6 +118,10 @@
   "gunilla-pook": {
     "name": "Gunilla Pook",
     "instagram": "ingamogens"
+  },
+  "hakan-svensson": {
+    "name": "Håkan Svensson",
+    "none": true
   },
   "hampus-malmgren": {
     "name": "Hampus Malmgren",
@@ -179,6 +207,14 @@
     "name": "Mattias Bäcklund",
     "instagram": "mattias_magicdude"
   },
+  "mattias-eriksson": {
+    "name": "Mattias Eriksson",
+    "none": true
+  },
+  "milad-parchami": {
+    "name": "Milad Parchami",
+    "none": true
+  },
   "peter-lisinski": {
     "name": "Peter Lisinski",
     "instagram": "peterlisinski"
@@ -199,6 +235,10 @@
     "name": "Saga Nord",
     "instagram": "saganoord"
   },
+  "scary-jerry": {
+    "name": "Scary Jerry",
+    "none": true
+  },
   "sven-jolly": {
     "name": "Sven Jolly",
     "instagram": "sven.jolly"
@@ -214,6 +254,10 @@
   "viktor-zetterberg-2": {
     "name": "Viktor Zetterberg",
     "instagram": "viktorzetterberg"
+  },
+  "viktoria-alexeeva-viktorsdottir": {
+    "name": "Viktoria Alexeeva Viktorsdottir",
+    "none": true
   },
   "yunchen-sun": {
     "name": "Yunchen Sun",
