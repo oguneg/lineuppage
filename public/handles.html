@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Comedian Handles</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="handles.css">
+</head>
+<body>
+  <header>
+    <h1>Comedian Handles</h1>
+    <a class="headlink" href="./">← Story maker</a>
+  </header>
+
+  <!-- Shown until a working GitHub token is confirmed -->
+  <section id="gate" class="gate">
+    <h2>Connect GitHub</h2>
+    <p id="gateMsg" class="hint">This page needs the same GitHub token as the story maker's "GitHub sync".</p>
+    <label class="field"><span>Repository</span><input type="text" id="ghRepo" placeholder="owner/repo" spellcheck="false"></label>
+    <label class="field"><span>Token</span><input type="password" id="ghToken" placeholder="github_pat_…" autocomplete="off"></label>
+    <button id="connect">Connect</button>
+  </section>
+
+  <main id="app" class="handles" hidden>
+    <div class="toolbar">
+      <input type="search" id="search" placeholder="Search name or handle…" spellcheck="false">
+      <div class="chips" id="filters"></div>
+      <div class="tool-actions">
+        <button id="save" disabled>No changes</button>
+        <button id="checkNew" class="ghost" title="Look up handles that haven't been checked yet">Check new</button>
+        <button id="checkAll" class="ghost" title="Look up every handle again (takes a few minutes)">Re-check all</button>
+      </div>
+      <p id="status" class="status"></p>
+    </div>
+    <ul id="rows" class="rows"></ul>
+  </main>
+
+  <script src="common.js"></script>
+  <script src="handles-page.js"></script>
+</body>
+</html>

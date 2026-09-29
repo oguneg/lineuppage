@@ -35,8 +35,6 @@ const $ = s => document.querySelector(s);
 const canvas = $('#canvas');
 const ctx = canvas.getContext('2d');
 
-const IS_LOCAL = ['localhost', '127.0.0.1'].includes(location.hostname) || /^192\.168\.|^10\./.test(location.hostname);
-
 const state = {
   club: lsGet('club') || 'bigben',
   events: {},       // club -> [event]
@@ -47,99 +45,16 @@ const state = {
   dirty: JSON.parse(lsGet('pendingHandles') || '{}'), // slug -> { name, instagram }, survives reloads until saved
 };
 
-function lsGet(k) { try { return localStorage.getItem(k); } catch { return null; } }
-function lsSet(k, v) { try { v == null ? localStorage.removeItem(k) : localStorage.setItem(k, v); } catch {} }
-
 function setStatus(msg, isError = false) {
   const el = $('#status');
   el.textContent = msg;
   el.classList.toggle('error', isError);
 }
 
-function todayStockholm() {
-  return new Date().toLocaleDateString('sv-SE', { timeZone: 'Europe/Stockholm' });
-}
-
-function escapeHtml(s) { return String(s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c])); }
-
-function normalizeHandle(v) {
-  return String(v || '').trim().replace(/^@/, '').replace(/^https?:\/\/(www\.)?instagram\.com\//, '').replace(/[/?#].*$/, '');
-}
-
-// ---------- GitHub storage ----------
-
-const github = {
-  get repo() {
-    const saved = lsGet('ghRepo');
-    if (saved) return saved;
-    if (location.hostname.endsWith('.github.io')) {
-      const owner = location.hostname.split('.')[0];
-      const seg = location.pathname.split('/')[1];
-      return `${owner}/${seg || location.hostname}`;
-    }
-    return '';
-  },
-  get token() { return lsGet('ghToken') || ''; },
-  path: 'public/handles.json',
-
-  async api(path, opts = {}) {
-    const r = await fetch(`https://api.github.com/repos/${this.repo}${path}`, {
-      ...opts,
-      headers: {
-        Accept: 'application/vnd.github+json',
-        Authorization: `Bearer ${this.token}`,
-        'X-GitHub-Api-Version': '2022-11-28',
-        ...(opts.body ? { 'Content-Type': 'application/json' } : {}),
-      },
-    });
-    if (!r.ok) throw new Error(`GitHub ${r.status}: ${(await r.json().catch(() => ({}))).message || r.statusText}`);
-    return r.status === 204 ? null : r.json();
-  },
-
-  async readHandles() {
-    const f = await this.api(`/contents/${this.path}?ref=main`);
-    const bytes = Uint8Array.from(atob(f.content.replace(/\n/g, '')), c => c.charCodeAt(0));
-    return { sha: f.sha, handles: JSON.parse(new TextDecoder().decode(bytes)) };
-  },
-
-  async writeHandles(handles, sha, message) {
-    const bytes = new TextEncoder().encode(JSON.stringify(handles, null, 2) + '\n');
-    const content = btoa(Array.from(bytes, b => String.fromCharCode(b)).join(''));
-    return this.api(`/contents/${this.path}`, {
-      method: 'PUT',
-      body: JSON.stringify({ message, content, sha, branch: 'main' }),
-    });
-  },
-
-  dispatchRefresh() {
-    return this.api('/actions/workflows/lineup.yml/dispatches', { method: 'POST', body: JSON.stringify({ ref: 'main' }) });
-  },
-};
-
-const canSync = () => !IS_LOCAL && github.repo && github.token;
-
-function sortHandles(h) {
-  return Object.fromEntries(Object.entries(h).sort(([a], [b]) => a.localeCompare(b)));
-}
-
-function applyEdits(handles, edits) {
-  const out = { ...handles };
-  for (const [slug, v] of Object.entries(edits)) {
-    if (v.instagram) out[slug] = { name: v.name, instagram: v.instagram };
-    else delete out[slug];
-  }
-  return sortHandles(out);
-}
+// ---------- Handles ----------
 
 // Editing handles is locked until the token is confirmed to work (always open locally).
 const canEdit = () => IS_LOCAL || state.sync === 'ok';
-
-function explainGitHubError(e) {
-  if (/401/.test(e.message)) return 'GitHub rejected the token — it was probably copied incompletely. Generate a new one and paste the whole thing.';
-  if (/403/.test(e.message)) return 'The token can\'t write to this repo — edit it on GitHub and set Contents (and Actions) to Read and write.';
-  if (/404/.test(e.message)) return 'The token can\'t see this repo — edit it on GitHub and give it access to lineuppage.';
-  return e.message;
-}
 
 // Checks the stored token by reading handles.json through the API; unlocks editing on success.
 async function connectGitHub() {
@@ -162,33 +77,12 @@ async function loadHandles() {
   if (state.sync === 'ok') {
     try { return (await github.readHandles()).handles; } catch (e) { setStatus(explainGitHubError(e), true); }
   }
-  // Read-only: straight from the repo, so saves show up without waiting for a Pages deploy
-  const url = IS_LOCAL || !github.repo ? 'handles.json' : `https://raw.githubusercontent.com/${github.repo}/main/public/handles.json`;
-  const r = await fetch(`${url}?ts=${Date.now()}`, { cache: 'no-store' });
-  return r.ok ? r.json() : {};
+  return readPublicJson(HANDLES_PATH, {});
 }
 
 async function saveHandles() {
-  const edits = state.dirty;
-  const names = Object.values(edits).map(v => v.name).join(', ');
-  if (IS_LOCAL) {
-    const merged = applyEdits(await loadHandles(), edits);
-    const r = await fetch('/api/handles', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(merged) });
-    if (!r.ok) throw new Error(await r.text());
-    return merged;
-  }
   if (!canEdit()) throw new Error('Connect a working GitHub token under "GitHub sync" to save handles.');
-  // Re-read right before writing so edits from another device aren't overwritten; retry once on a race.
-  for (let attempt = 0; ; attempt++) {
-    const { sha, handles } = await github.readHandles();
-    const merged = applyEdits(handles, edits);
-    try {
-      await github.writeHandles(merged, sha, `Instagram handles: ${names}`);
-      return merged;
-    } catch (e) {
-      if (attempt || !/409|422/.test(e.message)) throw e;
-    }
-  }
+  return commitHandleEdits(state.dirty);
 }
 
 // ---------- Lineup data ----------
@@ -638,7 +532,7 @@ $('#refresh').addEventListener('click', async () => {
     if (canSync()) {
       // Ask the Action to re-scrape and redeploy, then wait for the new lineup.json to go live
       const before = state.fetchedAt;
-      await github.dispatchRefresh();
+      await github.dispatch('lineup.yml');
       const started = Date.now();
       while (Date.now() - started < 5 * 60000) {
         setStatus(`Re-fetching from standupsverige.se… (${Math.round((Date.now() - started) / 1000)}s, usually ~1 min)`);

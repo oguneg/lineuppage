@@ -4,7 +4,8 @@
   "description": "Turns the standupsverige.se lineup into Instagram story images",
   "scripts": {
     "start": "node server.js",
-    "fetch": "node scripts/fetch-lineup.mjs"
+    "fetch": "node scripts/fetch-lineup.mjs",
+    "check-profiles": "node scripts/check-profiles.mjs"
   },
   "dependencies": {
     "linkedom": "^0.18.13"
