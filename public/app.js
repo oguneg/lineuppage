@@ -86,7 +86,7 @@ async function loadProfiles() {
 }
 
 async function saveHandles() {
-  if (!canEdit()) throw new Error('Connect a working GitHub token under "GitHub sync" to save handles.');
+  if (!canEdit()) throw new Error('Enter a working token to save handles.');
   return commitHandleEdits(state.dirty);
 }
 
@@ -189,7 +189,7 @@ function renderSaveButton() {
   if (!canEdit()) {
     // Locked: the button takes you to the token settings instead
     $('#save').disabled = state.sync === 'checking';
-    $('#save').textContent = state.sync === 'checking' ? 'Checking GitHub token…' : '🔒 Connect GitHub to edit';
+    $('#save').textContent = state.sync === 'checking' ? 'Checking token…' : '🔒 Enter token to edit';
     return;
   }
   $('#save').disabled = !n;
@@ -200,7 +200,6 @@ const SYNC_LABELS = { none: 'not connected', checking: 'checking…', ok: '✓ c
 
 function renderSync() {
   $('#sync').hidden = IS_LOCAL;
-  $('#ghRepo').value = github.repo;
   $('#ghToken').value = github.token;
   $('#syncState').textContent = SYNC_LABELS[state.sync] || SYNC_LABELS.none;
   $('#syncState').className = state.sync === 'ok' ? 'ok' : state.sync === 'bad' ? 'bad' : '';
@@ -212,7 +211,7 @@ let refreshing = false;
 // "All handles" and "Refresh" stay locked until the GitHub token is confirmed
 function renderHeaderButtons() {
   const locked = !canEdit();
-  const why = state.sync === 'checking' ? 'Checking your GitHub token…' : 'Connect your GitHub token under "GitHub sync" first';
+  const why = state.sync === 'checking' ? 'Checking your GitHub token…' : 'Enter your token first';
   const link = $('#handlesLink');
   link.classList.toggle('locked', locked);
   link.setAttribute('aria-disabled', String(locked));
@@ -546,7 +545,6 @@ $('#event').addEventListener('change', e => {
 ['#optDate', '#optBio'].forEach(id => $(id).addEventListener('change', draw));
 
 $('#syncSave').addEventListener('click', async () => {
-  lsSet('ghRepo', $('#ghRepo').value.trim() || null);
   // pasting on phones can pick up spaces or line breaks inside the token
   lsSet('ghToken', $('#ghToken').value.replace(/\s+/g, '') || null);
   if (await connectGitHub()) setStatus('Connected to GitHub — handle editing unlocked.');
@@ -609,3 +607,5 @@ async function init() {
 }
 
 init();
+
+$('#ghToken').addEventListener('keydown', e => { if (e.key === 'Enter') $('#syncSave').click(); });

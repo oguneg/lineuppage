@@ -38,12 +38,8 @@
       <p id="status" class="status"></p>
 
       <details id="sync" class="sync" hidden>
-        <summary>GitHub sync · <span id="syncState"></span></summary>
-        <p class="hint">Saving handles commits <code>public/handles.json</code> to your repo. Create a
-          <a href="https://github.com/settings/personal-access-tokens/new" target="_blank" rel="noopener">fine-grained token</a>
-          for this repo only, with <b>Contents</b> and <b>Actions</b> set to read &amp; write. It's stored only in this browser.</p>
-        <label class="field"><span>Repository</span><input type="text" id="ghRepo" placeholder="owner/repo" spellcheck="false"></label>
-        <label class="field"><span>Token</span><input type="password" id="ghToken" placeholder="github_pat_…" autocomplete="off"></label>
+        <summary>Token · <span id="syncState"></span></summary>
+        <label class="field"><span>Token</span><input type="password" id="ghToken" autocomplete="off"></label>
         <button id="syncSave" class="ghost">Save</button>
       </details>
     </section>

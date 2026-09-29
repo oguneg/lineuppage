@@ -33,11 +33,10 @@ function ago(iso) {
 // ---------- Gate ----------
 
 async function connect() {
-  $('#ghRepo').value = github.repo;
   $('#ghToken').value = github.token;
   if (IS_LOCAL) return true;
   if (!canSync()) return false;
-  $('#gateMsg').textContent = 'Checking your GitHub token…';
+  $('#gateMsg').textContent = 'Checking…';
   try {
     state.handles = (await github.readHandles()).handles;
     return true;
@@ -49,7 +48,6 @@ async function connect() {
 }
 
 $('#connect').addEventListener('click', async () => {
-  lsSet('ghRepo', $('#ghRepo').value.trim() || null);
   lsSet('ghToken', $('#ghToken').value.replace(/\s+/g, '') || null);
   $('#gateMsg').classList.remove('error');
   if (await connect()) start();
@@ -316,3 +314,5 @@ async function start() {
 (async () => {
   if (await connect()) start();
 })();
+
+$('#ghToken').addEventListener('keydown', e => { if (e.key === 'Enter') $('#connect').click(); });

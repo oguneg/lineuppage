@@ -18,11 +18,9 @@
 
   <!-- Shown until a working GitHub token is confirmed -->
   <section id="gate" class="gate">
-    <h2>Connect GitHub</h2>
-    <p id="gateMsg" class="hint">This page needs the same GitHub token as the story maker's "GitHub sync".</p>
-    <label class="field"><span>Repository</span><input type="text" id="ghRepo" placeholder="owner/repo" spellcheck="false"></label>
-    <label class="field"><span>Token</span><input type="password" id="ghToken" placeholder="github_pat_…" autocomplete="off"></label>
-    <button id="connect">Connect</button>
+    <label class="field"><span>Token</span><input type="password" id="ghToken" autocomplete="off"></label>
+    <p id="gateMsg" class="hint"></p>
+    <button id="connect">Continue</button>
   </section>
 
   <main id="app" class="handles" hidden>
