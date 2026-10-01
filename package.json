@@ -5,7 +5,8 @@
   "scripts": {
     "start": "node server.js",
     "fetch": "node scripts/fetch-lineup.mjs",
-    "check-profiles": "node scripts/check-profiles.mjs"
+    "check-profiles": "node scripts/check-profiles.mjs",
+    "sync-profiles": "node scripts/sync-profiles.mjs"
   },
   "dependencies": {
     "linkedom": "^0.18.13"

@@ -183,7 +183,6 @@ function renderActions() {
   const n = Object.keys(state.dirty).length;
   $('#save').disabled = !n;
   $('#save').textContent = n ? `Save ${n} change${n > 1 ? 's' : ''}` : 'No changes';
-  $('#checkNew').hidden = $('#checkAll').hidden = IS_LOCAL;
 }
 
 function renderAll() {
@@ -252,47 +251,12 @@ $('#save').addEventListener('click', async () => {
     state.dirty = {};
     lsSet('pendingHandles', null);
     renderAll();
-    if (IS_LOCAL) setStatus('Saved to handles.json. Run "npm run check-profiles" to look them up on Instagram.');
-    // Saving handles.json starts the profile check for new handles on GitHub
-    else await waitForCheck('Saved. Looking up the new handles on Instagram…');
+    // Instagram only answers lookups from a home connection, so checks run on the PC (npm run sync-profiles)
+    setStatus(`Saved. New handles get looked up on Instagram the next time the check runs on your PC (last: ${ago(state.checkedAt)}).`);
   } catch (e) {
     setStatus('Not saved (kept on this device): ' + explainGitHubError(e), true);
     renderActions();
   }
-});
-
-async function runCheck(mode, label) {
-  $('#checkNew').disabled = $('#checkAll').disabled = true;
-  try {
-    await github.dispatch('profiles.yml', { mode });
-    await waitForCheck(label);
-  } catch (e) {
-    setStatus('Couldn\'t start the check: ' + explainGitHubError(e), true);
-  }
-  $('#checkNew').disabled = $('#checkAll').disabled = false;
-}
-
-// Polls profiles.json until the Action has written a newer result
-async function waitForCheck(label) {
-  const before = state.checkedAt;
-  const started = Date.now();
-  while (Date.now() - started < 10 * 60000) {
-    setStatus(`${label} (${Math.round((Date.now() - started) / 1000)}s)`);
-    await new Promise(r => setTimeout(r, 10000));
-    await loadProfiles();
-    if (state.checkedAt !== before) {
-      renderAll();
-      setStatus(`Instagram checked ${ago(state.checkedAt)}.`);
-      return;
-    }
-  }
-  setStatus('The check is taking long — see the Actions tab on GitHub. Reload this page later.', true);
-}
-
-$('#checkNew').addEventListener('click', () => runCheck('new', 'Looking up unchecked handles on Instagram…'));
-$('#checkAll').addEventListener('click', () => {
-  const n = new Set(Object.values(state.handles).filter(v => v.instagram).map(v => v.instagram.toLowerCase())).size;
-  runCheck('all', `Re-checking all ${n} handles on Instagram (≈${Math.ceil(n * 2 / 60)} min)…`);
 });
 
 // ---------- Start ----------

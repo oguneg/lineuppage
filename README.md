@@ -10,8 +10,11 @@ Big Ben / Comedy Nation story templates, plus builds the `@handle` string for ta
 - Photos load through [wsrv.nl](https://wsrv.nl) (CORS-enabled image proxy, face-aware crop).
 - Instagram handles live in `public/handles.json`. The page commits changes to it through the
   GitHub API using a fine-grained token (repo-only, Contents + Actions read/write) that you paste
-  under **GitHub sync**; it's kept in that browser's localStorage only.
+  under **Token**; it's kept in that browser's localStorage only.
 - **Refresh** (with a token) triggers the workflow and waits for the new lineup (~1 min).
+- Instagram profile checks (name + picture per handle, shown on `handles.html`) run **from this PC**:
+  `npm run sync-profiles` (add `-- --all` to re-check everyone). Instagram sends lookups from
+  GitHub's servers to its login page, so this can't be an Action.
 
 ### Setup
 
