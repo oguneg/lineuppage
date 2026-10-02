@@ -7,10 +7,12 @@ on:
     paths-ignore: ['public/handles.json', 'public/profiles.json']
   workflow_dispatch:
   schedule:
-    # 11:00 Swedish time: 09:00 UTC in summer (CEST), 10:00 UTC in winter (CET).
-    # Both fire; the gate job below lets through only the one matching today's offset.
-    - cron: '0 9 * * *'
-    - cron: '0 10 * * *'
+    # Daily fetch for 10:00 Swedish time. Cron is UTC and GitHub often starts scheduled runs
+    # late (worst on the hour), so run at :07, at 08:07 and 09:07 UTC — one of them is
+    # after 10:00 in Sweden in both summer and winter. The page also re-fetches by itself
+    # when it's opened after 10:00 and the lineup is older than that.
+    - cron: '7 8 * * *'
+    - cron: '7 9 * * *'
 
 permissions:
   contents: read
@@ -22,22 +24,7 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  gate:
-    runs-on: ubuntu-latest
-    outputs:
-      run: ${{ steps.check.outputs.run }}
-    steps:
-      - id: check
-        run: |
-          if [ "${{ github.event_name }}" != "schedule" ]; then echo "run=true" >> "$GITHUB_OUTPUT"; exit 0; fi
-          # +0200 in summer → the 09:00 UTC cron is 11:00 in Sweden; +0100 in winter → the 10:00 UTC cron
-          offset=$(TZ=Europe/Stockholm date +%z)
-          want='0 10 * * *'; [ "$offset" = "+0200" ] && want='0 9 * * *'
-          [ "${{ github.event.schedule }}" = "$want" ] && echo "run=true" >> "$GITHUB_OUTPUT" || echo "run=false" >> "$GITHUB_OUTPUT"
-
   deploy:
-    needs: gate
-    if: needs.gate.outputs.run == 'true'
     runs-on: ubuntu-latest
     environment:
       name: github-pages

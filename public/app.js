@@ -559,7 +559,9 @@ $('#handlesLink').addEventListener('click', e => {
   }
 });
 
-$('#refresh').addEventListener('click', async () => {
+$('#refresh').addEventListener('click', () => refreshLineup());
+
+async function refreshLineup(intro = 'Re-fetching from standupsverige.se…') {
   const btn = $('#refresh');
   refreshing = true;
   btn.disabled = true;
@@ -570,7 +572,7 @@ $('#refresh').addEventListener('click', async () => {
       await github.dispatch('lineup.yml');
       const started = Date.now();
       while (Date.now() - started < 5 * 60000) {
-        setStatus(`Re-fetching from standupsverige.se… (${Math.round((Date.now() - started) / 1000)}s, usually ~1 min)`);
+        setStatus(`${intro} (${Math.round((Date.now() - started) / 1000)}s, usually ~1 min)`);
         await new Promise(r => setTimeout(r, 8000));
         await loadLineup();
         if (state.fetchedAt !== before) break;
@@ -589,7 +591,19 @@ $('#refresh').addEventListener('click', async () => {
   }
   refreshing = false;
   renderHeaderButtons();
-});
+}
+
+// The daily fetch is due at 10:00 Swedish time, but GitHub can start it hours late.
+// "YYYY-MM-DD HH:MM:SS" in Stockholm time compares correctly as a string.
+const DAILY_FETCH = '10:00';
+const stockholmTime = t => new Date(t).toLocaleString('sv-SE', { timeZone: 'Europe/Stockholm', hour12: false });
+
+function lineupIsStale() {
+  if (!state.fetchedAt) return false;
+  const now = stockholmTime(Date.now());
+  const cutoff = `${now.slice(0, 10)} ${DAILY_FETCH}`;
+  return now >= cutoff && stockholmTime(state.fetchedAt) < cutoff;
+}
 
 async function init() {
   renderSync();
@@ -604,6 +618,13 @@ async function init() {
   renderEventSelect();
   renderInstagram();
   draw();
+
+  // Opened after 10:00 with yesterday's lineup: fetch today's (at most once per 15 min per device)
+  const last = Number(lsGet('autoRefreshAt') || 0);
+  if (state.sync === 'ok' && lineupIsStale() && Date.now() - last > 15 * 60000) {
+    lsSet('autoRefreshAt', String(Date.now()));
+    refreshLineup('Lineup is from before 10:00 — fetching today’s…');
+  }
 }
 
 init();
