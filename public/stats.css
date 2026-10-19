@@ -1,0 +1,33 @@
+main.stats { display: block; max-width: 900px; margin: 0 auto; padding: 20px 16px 60px; }
+
+.stats-controls { display: flex; flex-direction: column; gap: 10px; margin-bottom: 14px; }
+.stats-controls .seg { margin: 0; max-width: 420px; }
+.stats-controls input[type="search"] {
+  font: inherit; background: #0c0c0c; color: var(--text);
+  border: 1px solid var(--line); border-radius: 8px; padding: 9px 12px;
+}
+.stats-controls .status { margin: 0; }
+
+.statlist { width: 100%; border-collapse: collapse; font-size: 14px; }
+.statlist th {
+  text-align: left; font-size: 11px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase;
+  color: var(--muted); padding: 6px 8px; border-bottom: 1px solid var(--line);
+}
+.statlist td { padding: 7px 8px; border-bottom: 1px solid #1e1e1e; vertical-align: middle; }
+.statlist .num { text-align: right; font-variant-numeric: tabular-nums; }
+.statlist .pic { width: 40px; }
+.statlist .pic img, .statlist .pic div { width: 34px; height: 34px; border-radius: 50%; object-fit: cover; background: #222; display: block; }
+.statlist .name { font-weight: 600; }
+.statlist small { display: block; color: var(--muted); font-size: 11px; font-weight: 400; }
+.statlist tr.zero td, .statlist tr.zero .name { color: var(--muted); }
+
+/* bar behind the show count */
+.count { display: flex; align-items: center; justify-content: flex-end; gap: 8px; }
+.count .bar { height: 6px; border-radius: 3px; background: var(--red); min-width: 2px; }
+.count b { min-width: 2ch; text-align: right; }
+.statlist td.countcell { width: 34%; }
+
+@media (max-width: 600px) {
+  .hide-sm { display: none; }
+  .statlist td.countcell { width: 30%; }
+}

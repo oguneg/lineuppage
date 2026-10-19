@@ -212,10 +212,11 @@ let refreshing = false;
 function renderHeaderButtons() {
   const locked = !canEdit();
   const why = state.sync === 'checking' ? 'Checking your GitHub token…' : 'Enter your token first';
-  const link = $('#handlesLink');
-  link.classList.toggle('locked', locked);
-  link.setAttribute('aria-disabled', String(locked));
-  link.title = locked ? why : '';
+  document.querySelectorAll('.locked-link').forEach(link => {
+    link.classList.toggle('locked', locked);
+    link.setAttribute('aria-disabled', String(locked));
+    link.title = locked ? why : '';
+  });
   $('#refresh').disabled = locked || refreshing;
   $('#refresh').title = locked ? why : 'Fetch the lineup again from standupsverige.se';
 }
@@ -551,13 +552,13 @@ $('#syncSave').addEventListener('click', async () => {
 });
 
 // A link can't be disabled, so block the click while locked
-$('#handlesLink').addEventListener('click', e => {
+document.querySelectorAll('.locked-link').forEach(link => link.addEventListener('click', e => {
   if (!canEdit()) {
     e.preventDefault();
     $('#sync').open = true;
     $('#ghToken').focus();
   }
-});
+}));
 
 $('#refresh').addEventListener('click', () => refreshLineup());
 

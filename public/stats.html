@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Comedian Stats</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="handles.css">
+  <link rel="stylesheet" href="stats.css">
+</head>
+<body>
+  <header>
+    <h1>Comedian Stats</h1>
+    <div class="headbtns">
+      <a class="headlink" href="handles.html">All handles</a>
+      <a class="headlink" href="./">← Story maker</a>
+    </div>
+  </header>
+
+  <!-- Shown until a working GitHub token is confirmed -->
+  <section id="gate" class="gate">
+    <label class="field"><span>Token</span><input type="password" id="ghToken" autocomplete="off"></label>
+    <p id="gateMsg" class="hint"></p>
+    <button id="connect">Continue</button>
+  </section>
+
+  <main id="app" class="stats" hidden>
+    <div class="stats-controls">
+      <div class="seg" role="tablist" id="clubs">
+        <button role="tab" data-club="bigben" aria-selected="true">Big Ben</button>
+        <button role="tab" data-club="comedynation" aria-selected="false">Comedy Nation</button>
+      </div>
+      <div class="chips" id="periods">
+        <button data-days="30">Last 30 days</button>
+        <button data-days="90">Last 90 days</button>
+        <button data-days="0">All time</button>
+      </div>
+      <input type="search" id="search" placeholder="Search comedian…" spellcheck="false">
+      <p id="summary" class="status"></p>
+    </div>
+
+    <table class="statlist">
+      <thead>
+        <tr>
+          <th></th>
+          <th>Comedian</th>
+          <th class="num" title="Shows played in this period (tonight included)">Shows</th>
+          <th class="num hide-sm" title="Of those, as konferencier">Host</th>
+          <th class="hide-sm">Last</th>
+          <th title="Next booked show and how many are booked">Next</th>
+        </tr>
+      </thead>
+      <tbody id="rows"></tbody>
+    </table>
+  </main>
+
+  <script src="common.js"></script>
+  <script src="stats-page.js"></script>
+</body>
+</html>

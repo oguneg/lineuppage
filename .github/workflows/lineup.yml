@@ -4,7 +4,7 @@ on:
   push:
     branches: [main]
     # handle saves don't need a redeploy — the page reads handles.json straight from the repo
-    paths-ignore: ['public/handles.json', 'public/profiles.json']
+    paths-ignore: ['public/handles.json', 'public/profiles.json', 'public/history.json']
   workflow_dispatch:
   schedule:
     # Daily fetch for 10:00 Swedish time. Cron is UTC and GitHub often starts scheduled runs
@@ -15,13 +15,13 @@ on:
     - cron: '7 9 * * *'
 
 permissions:
-  contents: read
+  contents: write   # commits history.json
   pages: write
   id-token: write
 
 concurrency:
   group: pages
-  cancel-in-progress: true
+  cancel-in-progress: false   # never cut a run off between the history commit and the deploy
 
 jobs:
   deploy:
@@ -37,6 +37,18 @@ jobs:
           cache: npm
       - run: npm ci
       - run: node scripts/fetch-lineup.mjs
+      # Remember every show so the stats page can count appearances after shows leave the site
+      - name: Update show history
+        run: |
+          node scripts/update-history.mjs
+          git add public/history.json
+          git diff --cached --quiet && exit 0
+          git config user.name "github-actions[bot]"
+          git config user.email "41898299+github-actions[bot]@users.noreply.github.com"
+          git commit -q -m "Show history"
+          # a handle save may have landed meanwhile
+          git pull -q --rebase origin main
+          git push -q
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
