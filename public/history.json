@@ -1,6 +1,6 @@
 {
  "since": "2026-10-19",
- "updatedAt": "2026-10-19T09:04:52.747Z",
+ "updatedAt": "2026-10-19T15:41:23.085Z",
  "shows": {
   "bigben|2026-10-19|20:00|BIG BEN STAND UP MÅNDAGS-SKRATTET!": {
    "club": "bigben",
@@ -315,6 +315,16 @@
      "slug": "harald-grundtman",
      "name": "Harald Grundtman",
      "role": "Komiker"
+    },
+    {
+     "slug": "alma-friberg",
+     "name": "Alma Friberg",
+     "role": "Komiker"
+    },
+    {
+     "slug": "jonas-oldinger",
+     "name": "Jonas Oldinger",
+     "role": "Dörren + komiker"
     }
    ]
   },
@@ -443,6 +453,26 @@
      "role": "Komiker"
     },
     {
+     "slug": "fernando-fernando-2",
+     "name": "Fernando Fernando",
+     "role": "Komiker"
+    },
+    {
+     "slug": "august-rydell",
+     "name": "August Rydell",
+     "role": "Komiker"
+    },
+    {
+     "slug": "tore-kullgren",
+     "name": "Tore Kullgren",
+     "role": "Support"
+    },
+    {
+     "slug": "jonas-oldinger",
+     "name": "Jonas Oldinger",
+     "role": "Dörren + komiker"
+    },
+    {
      "slug": "paloma-halen-roman",
      "name": "Paloma Halén Román",
      "role": "Rising Star"
@@ -528,6 +558,16 @@
     {
      "slug": "hanna-danmo",
      "name": "Hanna Danmo",
+     "role": "Komiker"
+    },
+    {
+     "slug": "august-rydell",
+     "name": "August Rydell",
+     "role": "Komiker"
+    },
+    {
+     "slug": "katarina-eriksson-2",
+     "name": "Katarina Eriksson",
      "role": "Komiker"
     },
     {
@@ -722,6 +762,16 @@
    "title": "BIG BEN STAND UP MÅNDAGS-SKRATTET!",
    "performers": [
     {
+     "slug": "jimmy-wamala-2",
+     "name": "Jimmy Wamala",
+     "role": "Konferencier"
+    },
+    {
+     "slug": "foey-foey",
+     "name": "foey foey",
+     "role": "Komiker"
+    },
+    {
      "slug": "hjalmar-wide",
      "name": "Hjalmar Wide",
      "role": "Komiker"
@@ -732,19 +782,29 @@
      "role": "Komiker"
     },
     {
+     "slug": "abbe-noir",
+     "name": "Abbé Noir",
+     "role": "Komiker"
+    },
+    {
      "slug": "johannes-hakala",
      "name": "Johannes Hakala",
+     "role": "Komiker"
+    },
+    {
+     "slug": "andreas-atia",
+     "name": "Andreas Atia",
+     "role": "Komiker"
+    },
+    {
+     "slug": "malkolm-kallin",
+     "name": "Malkolm Kallin",
      "role": "Komiker"
     },
     {
      "slug": "jonas-oldinger",
      "name": "Jonas Oldinger",
      "role": "Dörren + komiker"
-    },
-    {
-     "slug": "paloma-halen-roman",
-     "name": "Paloma Halén Román",
-     "role": "Rising Star"
     }
    ]
   },
@@ -803,6 +863,16 @@
      "slug": "christian-bustos",
      "name": "Christian Bustos",
      "role": "Komiker"
+    },
+    {
+     "slug": "joakim-thorn",
+     "name": "Joakim Thörn",
+     "role": "Komiker"
+    },
+    {
+     "slug": "viktoria-alexeeva-viktorsdottir",
+     "name": "Viktoria Alexeeva Viktorsdottir",
+     "role": "English Comedian"
     },
     {
      "slug": "lisa-rut-sandbladh",
@@ -1545,6 +1615,13 @@
    "date": "2027-01-17",
    "time": "20:00",
    "title": "BIG BEN STAND UP VARJE DAG 20.00!",
+   "performers": []
+  },
+  "bigben|2027-01-18|20:00|BIG BEN STAND UP MÅNDAGS-SKRATTET!": {
+   "club": "bigben",
+   "date": "2027-01-18",
+   "time": "20:00",
+   "title": "BIG BEN STAND UP MÅNDAGS-SKRATTET!",
    "performers": []
   }
  }
