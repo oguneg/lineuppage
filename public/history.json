@@ -1,6 +1,6 @@
 {
  "since": "2026-10-19",
- "updatedAt": "2026-10-20T14:15:50.331Z",
+ "updatedAt": "2026-10-21T08:13:30.347Z",
  "shows": {
   "bigben|2026-10-19|20:00|BIG BEN STAND UP MÅNDAGS-SKRATTET!": {
    "club": "bigben",
@@ -163,11 +163,6 @@
      "role": "Komiker"
     },
     {
-     "slug": "tobias-ojerfalk",
-     "name": "Tobias Öjerfalk",
-     "role": "Komiker"
-    },
-    {
      "slug": "tomas-bonderud-4",
      "name": "Tomas Bonderud",
      "role": "Komiker"
@@ -185,6 +180,11 @@
     {
      "slug": "goran-sjoberg",
      "name": "Göran Sjöberg",
+     "role": "Komiker"
+    },
+    {
+     "slug": "flakrim-fejzullahu",
+     "name": "Flakrim Fejzullahu",
      "role": "Komiker"
     }
    ]
@@ -244,8 +244,18 @@
    "title": "BIG BEN STAND UP INTERNATIONAL NIGHT!!",
    "performers": [
     {
+     "slug": "brennan-dilts-2",
+     "name": "Brennan Dilts",
+     "role": "Konferencier"
+    },
+    {
      "slug": "hjalmar-lind",
      "name": "Hjalmar Lind",
+     "role": "Komiker"
+    },
+    {
+     "slug": "ruben-lenninger",
+     "name": "Ruben Lenninger",
      "role": "Komiker"
     },
     {
@@ -254,8 +264,23 @@
      "role": "Komiker"
     },
     {
+     "slug": "atharva-hingne",
+     "name": "Atharva Hingne",
+     "role": "Komiker"
+    },
+    {
      "slug": "abbe-noir",
      "name": "Abbé Noir",
+     "role": "Komiker"
+    },
+    {
+     "slug": "ceedeebee",
+     "name": "Chris de Boer",
+     "role": "Komiker"
+    },
+    {
+     "slug": "flakrim-fejzullahu",
+     "name": "Flakrim Fejzullahu",
      "role": "Komiker"
     },
     {
@@ -271,6 +296,11 @@
     {
      "slug": "alexander-mahajan",
      "name": "Alexander Mahajan",
+     "role": "English Comedian"
+    },
+    {
+     "slug": "abhishek-diwakar",
+     "name": "Abhishek Diwakar",
      "role": "English Comedian"
     }
    ]
@@ -322,6 +352,11 @@
      "role": "Komiker"
     },
     {
+     "slug": "tobias-ojerfalk",
+     "name": "Tobias Öjerfalk",
+     "role": "Komiker"
+    },
+    {
      "slug": "jonas-oldinger",
      "name": "Jonas Oldinger",
      "role": "Dörren + komiker"
@@ -362,6 +397,11 @@
      "role": "Komiker"
     },
     {
+     "slug": "hjalmar-wide",
+     "name": "Hjalmar Wide",
+     "role": "Komiker"
+    },
+    {
      "slug": "alma-friberg",
      "name": "Alma Friberg",
      "role": "Komiker"
@@ -370,6 +410,11 @@
      "slug": "kristoffer-triumf",
      "name": "Kristoffer Triumf",
      "role": "Komiker"
+    },
+    {
+     "slug": "damani-damani",
+     "name": "Damani Damani",
+     "role": "Dörren + komiker"
     },
     {
      "slug": "jonas-oldinger",
@@ -395,6 +440,16 @@
      "role": "Komiker"
     },
     {
+     "slug": "yunchen-sun",
+     "name": "Yunchen Sun",
+     "role": "Komiker"
+    },
+    {
+     "slug": "ruben-lenninger",
+     "name": "Ruben Lenninger",
+     "role": "Komiker"
+    },
+    {
      "slug": "markus-bjork",
      "name": "Markus Björk",
      "role": "Komiker"
@@ -407,6 +462,11 @@
     {
      "slug": "filip-sjostedt",
      "name": "Filip Sjöstedt",
+     "role": "Komiker"
+    },
+    {
+     "slug": "amr-elhossiny",
+     "name": "Amr Elhossiny",
      "role": "Komiker"
     }
    ]
@@ -511,6 +571,21 @@
      "role": "Komiker"
     },
     {
+     "slug": "tobias-ojerfalk",
+     "name": "Tobias Öjerfalk",
+     "role": "Komiker"
+    },
+    {
+     "slug": "john-olsson",
+     "name": "John Olsson",
+     "role": "Komiker"
+    },
+    {
+     "slug": "andy-callahan",
+     "name": "Andy Callahan",
+     "role": "Komiker"
+    },
+    {
      "slug": "jonas-oldinger",
      "name": "Jonas Oldinger",
      "role": "Dörren + komiker"
@@ -611,8 +686,18 @@
      "role": "Komiker"
     },
     {
+     "slug": "harald-grundtman",
+     "name": "Harald Grundtman",
+     "role": "Komiker"
+    },
+    {
      "slug": "ilu-jain",
      "name": "Ilu Jain",
+     "role": "Komiker"
+    },
+    {
+     "slug": "fernando-fernando-2",
+     "name": "Fernando Fernando",
      "role": "Komiker"
     },
     {
@@ -674,6 +759,21 @@
      "slug": "harald-grundtman",
      "name": "Harald Grundtman",
      "role": "Komiker"
+    },
+    {
+     "slug": "filip-aulin",
+     "name": "Filip Aulin",
+     "role": "Komiker"
+    },
+    {
+     "slug": "tobias-ojerfalk",
+     "name": "Tobias Öjerfalk",
+     "role": "Komiker"
+    },
+    {
+     "slug": "nicholas-cajiao",
+     "name": "Nicholas Cajiao",
+     "role": "Rising Star"
     }
    ]
   },
@@ -799,6 +899,11 @@
     {
      "slug": "malkolm-kallin",
      "name": "Malkolm Kallin",
+     "role": "Komiker"
+    },
+    {
+     "slug": "joakim-thorn",
+     "name": "Joakim Thörn",
      "role": "Komiker"
     },
     {
@@ -972,6 +1077,11 @@
    "title": "BIG BEN STAND UP MÅNDAGS-SKRATTET!",
    "performers": [
     {
+     "slug": "jimmmy-wamala",
+     "name": "Jimmmy Wamala",
+     "role": "Konferencier"
+    },
+    {
      "slug": "ruben-lenninger",
      "name": "Ruben Lenninger",
      "role": "Komiker"
@@ -984,6 +1094,26 @@
     {
      "slug": "mahnoush-nayab",
      "name": "Mahnoush Nayab",
+     "role": "Komiker"
+    },
+    {
+     "slug": "florian-tirnovan",
+     "name": "Florian Tirnovan",
+     "role": "Komiker"
+    },
+    {
+     "slug": "yunchen-sun",
+     "name": "Yunchen Sun",
+     "role": "Komiker"
+    },
+    {
+     "slug": "hjalmar-lind",
+     "name": "Hjalmar Lind",
+     "role": "Komiker"
+    },
+    {
+     "slug": "alma-friberg",
+     "name": "Alma Friberg",
      "role": "Komiker"
     },
     {
@@ -1230,7 +1360,13 @@
    "date": "2026-11-27",
    "time": "20:00",
    "title": "BIG BEN STAND UP FREDAGS-FEELING!",
-   "performers": []
+   "performers": [
+    {
+     "slug": "erik-rosenstrale",
+     "name": "Erik Rosenstrale",
+     "role": "Komiker"
+    }
+   ]
   },
   "bigben|2026-11-28|20:00|BIG BEN STAND UP LÖRDAGS-KLUBBEN!": {
    "club": "bigben",
@@ -1242,6 +1378,16 @@
      "slug": "lasse-n",
      "name": "Lasse Nilsen",
      "role": "Konferencier"
+    },
+    {
+     "slug": "hjalmar-lind",
+     "name": "Hjalmar Lind",
+     "role": "Komiker"
+    },
+    {
+     "slug": "erik-rosenstrale",
+     "name": "Erik Rosenstrale",
+     "role": "Komiker"
     }
    ]
   },
@@ -1250,7 +1396,13 @@
    "date": "2026-11-29",
    "time": "20:00",
    "title": "BIG BEN STAND UP VARJE DAG 20.00!",
-   "performers": []
+   "performers": [
+    {
+     "slug": "erik-rosenstrale",
+     "name": "Erik Rosenstrale",
+     "role": "Komiker"
+    }
+   ]
   },
   "bigben|2026-11-30|20:00|BIG BEN STAND UP MÅNDAGS-SKRATTET!": {
    "club": "bigben",
@@ -1622,6 +1774,13 @@
    "date": "2027-01-18",
    "time": "20:00",
    "title": "BIG BEN STAND UP MÅNDAGS-SKRATTET!",
+   "performers": []
+  },
+  "bigben|2027-01-19|20:00|BIG BEN STAND UP RISING STARS!": {
+   "club": "bigben",
+   "date": "2027-01-19",
+   "time": "20:00",
+   "title": "BIG BEN STAND UP RISING STARS!",
    "performers": []
   }
  }
