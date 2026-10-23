@@ -1,6 +1,6 @@
 {
  "since": "2026-10-19",
- "updatedAt": "2026-10-22T14:33:49.769Z",
+ "updatedAt": "2026-10-23T11:57:50.498Z",
  "shows": {
   "bigben|2026-10-19|20:00|BIG BEN STAND UP MÅNDAGS-SKRATTET!": {
    "club": "bigben",
@@ -349,11 +349,6 @@
     {
      "slug": "alma-friberg",
      "name": "Alma Friberg",
-     "role": "Komiker"
-    },
-    {
-     "slug": "tobias-ojerfalk",
-     "name": "Tobias Öjerfalk",
      "role": "Komiker"
     },
     {
@@ -1161,6 +1156,11 @@
     {
      "slug": "emma-kallgren",
      "name": "Emma Källgren",
+     "role": "Rising Star"
+    },
+    {
+     "slug": "razvan-ionescu",
+     "name": "Razvan Ionescu",
      "role": "Rising Star"
     }
    ]
