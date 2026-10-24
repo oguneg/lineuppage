@@ -1,6 +1,6 @@
 {
  "since": "2026-10-19",
- "updatedAt": "2026-10-23T14:11:52.449Z",
+ "updatedAt": "2026-10-24T10:24:49.787Z",
  "shows": {
   "bigben|2026-10-19|20:00|BIG BEN STAND UP MÅNDAGS-SKRATTET!": {
    "club": "bigben",
@@ -821,11 +821,6 @@
      "slug": "nicholas-cajiao",
      "name": "Nicholas Cajiao",
      "role": "Komiker"
-    },
-    {
-     "slug": "emil-arvas",
-     "name": "Emil Arvas",
-     "role": "Komiker"
     }
    ]
   },
@@ -1218,6 +1213,13 @@
    "date": "2026-11-11",
    "time": "20:00",
    "title": "BONDERUD Vs AI",
+   "performers": []
+  },
+  "comedynation|2026-11-12|19:00|Full English Standup Comedy Thursdays": {
+   "club": "comedynation",
+   "date": "2026-11-12",
+   "time": "19:00",
+   "title": "Full English Standup Comedy Thursdays",
    "performers": []
   },
   "bigben|2026-11-12|20:00|BIG BEN STAND UP INTERNATIONAL NIGHT!!": {
@@ -1897,6 +1899,13 @@
    "date": "2027-01-21",
    "time": "20:00",
    "title": "BIG BEN STAND UP INTERNATIONAL NIGHT!!",
+   "performers": []
+  },
+  "bigben|2027-01-22|20:00|BIG BEN STAND UP FREDAGS-FEELING!": {
+   "club": "bigben",
+   "date": "2027-01-22",
+   "time": "20:00",
+   "title": "BIG BEN STAND UP FREDAGS-FEELING!",
    "performers": []
   },
   "bigben|2027-02-07|20:00|BIG BEN STAND UP VARJE DAG 20.00!": {
