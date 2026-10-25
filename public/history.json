@@ -1,6 +1,6 @@
 {
  "since": "2026-10-19",
- "updatedAt": "2026-10-24T13:15:53.520Z",
+ "updatedAt": "2026-10-25T10:00:15.080Z",
  "shows": {
   "bigben|2026-10-19|20:00|BIG BEN STAND UP MÅNDAGS-SKRATTET!": {
    "club": "bigben",
@@ -599,7 +599,28 @@
    "date": "2026-10-28",
    "time": "19:00",
    "title": "Södermalms Svenska Standup Komedi- Onsdag",
-   "performers": []
+   "performers": [
+    {
+     "slug": "peter-lisinski",
+     "name": "Peter Lisinski",
+     "role": "Konferencier"
+    },
+    {
+     "slug": "torbjorn-nomell",
+     "name": "Torbjörn Nomell",
+     "role": "Komiker"
+    },
+    {
+     "slug": "erik-adriansson",
+     "name": "Erik Adriansson",
+     "role": "Komiker"
+    },
+    {
+     "slug": "filip-sjostedt",
+     "name": "Filip Sjöstedt",
+     "role": "Komiker"
+    }
+   ]
   },
   "bigben|2026-10-28|20:00|BIG BEN STAND UP ONSDAGS-PARTY!": {
    "club": "bigben",
@@ -664,7 +685,43 @@
    "date": "2026-10-29",
    "time": "19:00",
    "title": "Full English Standup Comedy Thursdays",
-   "performers": []
+   "performers": [
+    {
+     "slug": "dr-zero",
+     "name": "Dr. Zero",
+     "role": "Konferencier"
+    },
+    {
+     "slug": "peter-lisinski",
+     "name": "Peter Lisinski",
+     "role": "Komiker"
+    },
+    {
+     "slug": "cynthia-morissette",
+     "name": "Cynthia Morissette",
+     "role": "Komiker"
+    },
+    {
+     "slug": "torbjorn-nomell",
+     "name": "Torbjörn Nomell",
+     "role": "Komiker"
+    },
+    {
+     "slug": "carolina-ames-zegarra",
+     "name": "Carolina Ames Zegarra",
+     "role": "English Comedian"
+    },
+    {
+     "slug": "cami-vee",
+     "name": "Cami Vee",
+     "role": "English Comedian"
+    },
+    {
+     "slug": "atharva-hingne",
+     "name": "Atharva Hingne",
+     "role": "English Comedian"
+    }
+   ]
   },
   "bigben|2026-10-29|20:00|BIG BEN STAND UP INTERNATIONAL NIGHT!!": {
    "club": "bigben",
@@ -1906,6 +1963,13 @@
    "date": "2027-01-22",
    "time": "20:00",
    "title": "BIG BEN STAND UP FREDAGS-FEELING!",
+   "performers": []
+  },
+  "bigben|2027-01-23|20:00|BIG BEN STAND UP LÖRDAGS-KLUBBEN!": {
+   "club": "bigben",
+   "date": "2027-01-23",
+   "time": "20:00",
+   "title": "BIG BEN STAND UP LÖRDAGS-KLUBBEN!",
    "performers": []
   },
   "bigben|2027-02-07|20:00|BIG BEN STAND UP VARJE DAG 20.00!": {
