@@ -1,6 +1,6 @@
 {
  "since": "2026-10-19",
- "updatedAt": "2026-10-25T13:40:50.419Z",
+ "updatedAt": "2026-10-26T09:35:05.329Z",
  "shows": {
   "bigben|2026-10-19|20:00|BIG BEN STAND UP MÅNDAGS-SKRATTET!": {
    "club": "bigben",
@@ -573,11 +573,6 @@
      "role": "Komiker"
     },
     {
-     "slug": "tobias-ojerfalk",
-     "name": "Tobias Öjerfalk",
-     "role": "Komiker"
-    },
-    {
      "slug": "john-olsson",
      "name": "John Olsson",
      "role": "Komiker"
@@ -659,6 +654,11 @@
      "role": "Komiker"
     },
     {
+     "slug": "fernando-fernando-2",
+     "name": "Fernando Fernando",
+     "role": "Komiker"
+    },
+    {
      "slug": "august-rydell",
      "name": "August Rydell",
      "role": "Komiker"
@@ -667,11 +667,6 @@
      "slug": "katarina-eriksson-2",
      "name": "Katarina Eriksson",
      "role": "Komiker"
-    },
-    {
-     "slug": "jonas-oldinger",
-     "name": "Jonas Oldinger",
-     "role": "Dörren + komiker"
     },
     {
      "slug": "emma-kallgren",
@@ -1970,6 +1965,13 @@
    "date": "2027-01-23",
    "time": "20:00",
    "title": "BIG BEN STAND UP LÖRDAGS-KLUBBEN!",
+   "performers": []
+  },
+  "bigben|2027-01-24|20:00|BIG BEN STAND UP VARJE DAG 20.00!": {
+   "club": "bigben",
+   "date": "2027-01-24",
+   "time": "20:00",
+   "title": "BIG BEN STAND UP VARJE DAG 20.00!",
    "performers": []
   },
   "bigben|2027-02-07|20:00|BIG BEN STAND UP VARJE DAG 20.00!": {
