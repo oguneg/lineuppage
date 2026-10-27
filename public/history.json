@@ -1,6 +1,6 @@
 {
  "since": "2026-10-19",
- "updatedAt": "2026-10-26T16:04:26.002Z",
+ "updatedAt": "2026-10-27T11:09:01.230Z",
  "shows": {
   "bigben|2026-10-19|20:00|BIG BEN STAND UP MÅNDAGS-SKRATTET!": {
    "club": "bigben",
@@ -578,13 +578,18 @@
      "role": "Komiker"
     },
     {
+     "slug": "alma-friberg",
+     "name": "Alma Friberg",
+     "role": "Komiker"
+    },
+    {
      "slug": "andy-callahan",
      "name": "Andy Callahan",
      "role": "Komiker"
     },
     {
-     "slug": "jonas-oldinger",
-     "name": "Jonas Oldinger",
+     "slug": "sven-jolly",
+     "name": "Sven Jolly",
      "role": "Dörren + komiker"
     }
    ]
@@ -601,6 +606,11 @@
      "role": "Konferencier"
     },
     {
+     "slug": "amr-elhossiny",
+     "name": "Amr Elhossiny",
+     "role": "Komiker"
+    },
+    {
      "slug": "torbjorn-nomell",
      "name": "Torbjörn Nomell",
      "role": "Komiker"
@@ -614,6 +624,16 @@
      "slug": "filip-sjostedt",
      "name": "Filip Sjöstedt",
      "role": "Komiker"
+    },
+    {
+     "slug": "flakrim-fejzullahu",
+     "name": "Flakrim Fejzullahu",
+     "role": "Komiker"
+    },
+    {
+     "slug": "scary-jerry",
+     "name": "Scary Jerry",
+     "role": "Rising Star"
     }
    ]
   },
@@ -1972,6 +1992,13 @@
    "date": "2027-01-24",
    "time": "20:00",
    "title": "BIG BEN STAND UP VARJE DAG 20.00!",
+   "performers": []
+  },
+  "bigben|2027-01-25|20:00|BIG BEN STAND UP MÅNDAGS-SKRATTET!": {
+   "club": "bigben",
+   "date": "2027-01-25",
+   "time": "20:00",
+   "title": "BIG BEN STAND UP MÅNDAGS-SKRATTET!",
    "performers": []
   },
   "bigben|2027-02-07|20:00|BIG BEN STAND UP VARJE DAG 20.00!": {
