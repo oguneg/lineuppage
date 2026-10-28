@@ -1,6 +1,6 @@
 {
  "since": "2026-10-19",
- "updatedAt": "2026-10-27T15:18:00.883Z",
+ "updatedAt": "2026-10-28T12:01:12.941Z",
  "shows": {
   "bigben|2026-10-19|20:00|BIG BEN STAND UP MÅNDAGS-SKRATTET!": {
    "club": "bigben",
@@ -659,11 +659,6 @@
      "role": "Komiker"
     },
     {
-     "slug": "tobias-ojerfalk",
-     "name": "Tobias Öjerfalk",
-     "role": "Komiker"
-    },
-    {
      "slug": "amr-elhossiny",
      "name": "Amr Elhossiny",
      "role": "Komiker"
@@ -684,8 +679,13 @@
      "role": "Komiker"
     },
     {
-     "slug": "katarina-eriksson-2",
-     "name": "Katarina Eriksson",
+     "slug": "flakrim-fejzullahu",
+     "name": "Flakrim Fejzullahu",
+     "role": "Komiker"
+    },
+    {
+     "slug": "cappuccino-brown",
+     "name": "Cappuccino Brown",
      "role": "Komiker"
     },
     {
@@ -712,8 +712,8 @@
      "role": "Komiker"
     },
     {
-     "slug": "cynthia-morissette",
-     "name": "Cynthia Morissette",
+     "slug": "abbe-noir",
+     "name": "Abbé Noir",
      "role": "Komiker"
     },
     {
@@ -722,19 +722,29 @@
      "role": "Komiker"
     },
     {
+     "slug": "filip-aulin",
+     "name": "Filip Aulin",
+     "role": "Komiker"
+    },
+    {
+     "slug": "cappuccino-brown",
+     "name": "Cappuccino Brown",
+     "role": "Komiker"
+    },
+    {
+     "slug": "nathaniel-glasser-skog",
+     "name": "Nathaniel Glasser Skog",
+     "role": "Komiker"
+    },
+    {
      "slug": "carolina-ames-zegarra",
      "name": "Carolina Ames Zegarra",
      "role": "English Comedian"
     },
     {
-     "slug": "cami-vee",
-     "name": "Cami Vee",
-     "role": "English Comedian"
-    },
-    {
-     "slug": "atharva-hingne",
-     "name": "Atharva Hingne",
-     "role": "English Comedian"
+     "slug": "scary-jerry",
+     "name": "Scary Jerry",
+     "role": "Rising Star"
     }
    ]
   },
@@ -1999,6 +2009,13 @@
    "date": "2027-01-25",
    "time": "20:00",
    "title": "BIG BEN STAND UP MÅNDAGS-SKRATTET!",
+   "performers": []
+  },
+  "bigben|2027-01-26|20:00|BIG BEN STAND UP RISING STARS!": {
+   "club": "bigben",
+   "date": "2027-01-26",
+   "time": "20:00",
+   "title": "BIG BEN STAND UP RISING STARS!",
    "performers": []
   },
   "bigben|2027-02-07|20:00|BIG BEN STAND UP VARJE DAG 20.00!": {
