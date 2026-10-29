@@ -1,6 +1,6 @@
 {
  "since": "2026-10-19",
- "updatedAt": "2026-10-28T15:56:25.263Z",
+ "updatedAt": "2026-10-29T09:53:06.660Z",
  "shows": {
   "bigben|2026-10-19|20:00|BIG BEN STAND UP MÅNDAGS-SKRATTET!": {
    "club": "bigben",
@@ -785,6 +785,21 @@
      "role": "Komiker"
     },
     {
+     "slug": "cappuccino-brown",
+     "name": "Cappuccino Brown",
+     "role": "Komiker"
+    },
+    {
+     "slug": "nathaniel-glasser-skog",
+     "name": "Nathaniel Glasser Skog",
+     "role": "Komiker"
+    },
+    {
+     "slug": "jonas-oldinger",
+     "name": "Jonas Oldinger",
+     "role": "Dörren + komiker"
+    },
+    {
      "slug": "carolina-ames-zegarra",
      "name": "Carolina Ames Zegarra",
      "role": "English Comedian"
@@ -903,6 +918,11 @@
      "slug": "nicholas-cajiao",
      "name": "Nicholas Cajiao",
      "role": "Komiker"
+    },
+    {
+     "slug": "isaias-tuolde",
+     "name": "Isaias Tuolde",
+     "role": "Komiker"
     }
    ]
   },
@@ -912,6 +932,11 @@
    "time": "20:00",
    "title": "BIG BEN STAND UP SÖNDAGS-BIKTEN!",
    "performers": [
+    {
+     "slug": "damani-damani",
+     "name": "Damani Damani",
+     "role": "Konferencier"
+    },
     {
      "slug": "mahnoush-nayab",
      "name": "Mahnoush Nayab",
@@ -930,6 +955,16 @@
     {
      "slug": "peter-nitschke",
      "name": "Peter Nitschke",
+     "role": "Komiker"
+    },
+    {
+     "slug": "amr-elhossiny",
+     "name": "Amr Elhossiny",
+     "role": "Komiker"
+    },
+    {
+     "slug": "cappuccino-brown",
+     "name": "Cappuccino Brown",
      "role": "Komiker"
     }
    ]
@@ -999,6 +1034,11 @@
    "title": "BIG BEN STAND UP RISING STARS!",
    "performers": [
     {
+     "slug": "svea-sigmond",
+     "name": "Svea Sigmond",
+     "role": "Konferencier"
+    },
+    {
      "slug": "hjalmar-wide",
      "name": "Hjalmar Wide",
      "role": "Komiker"
@@ -1044,6 +1084,11 @@
      "role": "Komiker"
     },
     {
+     "slug": "hjalmar-wide",
+     "name": "Hjalmar Wide",
+     "role": "Komiker"
+    },
+    {
      "slug": "christian-bustos",
      "name": "Christian Bustos",
      "role": "Komiker"
@@ -1061,6 +1106,11 @@
     {
      "slug": "lisa-rut-sandbladh",
      "name": "Lisa-Rut Sandbladh",
+     "role": "Rising Star"
+    },
+    {
+     "slug": "sofia-larsson",
+     "name": "Sofia Larsson",
      "role": "Rising Star"
     }
    ]
@@ -1311,6 +1361,13 @@
    "title": "BIG BEN STAND UP INTERNATIONAL NIGHT!!",
    "performers": []
   },
+  "comedynation|2026-11-13|19:00|Standup and Improv Comedy Night": {
+   "club": "comedynation",
+   "date": "2026-11-13",
+   "time": "19:00",
+   "title": "Standup and Improv Comedy Night",
+   "performers": []
+  },
   "bigben|2026-11-13|20:00|BIG BEN STAND UP FREDAGS-FEELING!": {
    "club": "bigben",
    "date": "2026-11-13",
@@ -1425,7 +1482,18 @@
    "date": "2026-11-20",
    "time": "20:00",
    "title": "BIG BEN STAND UP FREDAGS-FEELING!",
-   "performers": []
+   "performers": [
+    {
+     "slug": "lasse-n",
+     "name": "Lasse Nilsen",
+     "role": "Konferencier"
+    },
+    {
+     "slug": "lasse-nilsen-2",
+     "name": "Lasse Nilsen",
+     "role": "Konferencier"
+    }
+   ]
   },
   "bigben|2026-11-21|20:00|BIG BEN STAND UP LÖRDAGS-KLUBBEN!": {
    "club": "bigben",
@@ -1533,6 +1601,11 @@
    "title": "BIG BEN STAND UP FREDAGS-FEELING!",
    "performers": [
     {
+     "slug": "svea-sigmond",
+     "name": "Svea Sigmond",
+     "role": "Konferencier"
+    },
+    {
      "slug": "erik-rosenstrale",
      "name": "Erik Rosenstrale",
      "role": "Komiker"
@@ -1608,7 +1681,13 @@
    "date": "2026-12-04",
    "time": "20:00",
    "title": "BIG BEN STAND UP FREDAGS-FEELING!",
-   "performers": []
+   "performers": [
+    {
+     "slug": "marcus-palm",
+     "name": "Marcus Palm",
+     "role": "Konferencier"
+    }
+   ]
   },
   "bigben|2026-12-05|20:00|BIG BEN STAND UP LÖRDAGS-KLUBBEN!": {
    "club": "bigben",
@@ -1694,14 +1773,26 @@
    "date": "2026-12-11",
    "time": "20:00",
    "title": "BIG BEN STAND UP FREDAGS-FEELING!",
-   "performers": []
+   "performers": [
+    {
+     "slug": "lasse-n",
+     "name": "Lasse Nilsen",
+     "role": "Konferencier"
+    }
+   ]
   },
   "bigben|2026-12-12|20:00|BIG BEN STAND UP LÖRDAGS-KLUBBEN!": {
    "club": "bigben",
    "date": "2026-12-12",
    "time": "20:00",
    "title": "BIG BEN STAND UP LÖRDAGS-KLUBBEN!",
-   "performers": []
+   "performers": [
+    {
+     "slug": "lasse-n",
+     "name": "Lasse Nilsen",
+     "role": "Konferencier"
+    }
+   ]
   },
   "bigben|2026-12-13|20:00|BIG BEN STAND UP VARJE DAG 20.00!": {
    "club": "bigben",
@@ -1743,14 +1834,26 @@
    "date": "2026-12-18",
    "time": "20:00",
    "title": "BIG BEN STAND UP FREDAGS-FEELING!",
-   "performers": []
+   "performers": [
+    {
+     "slug": "marcus-palm",
+     "name": "Marcus Palm",
+     "role": "Konferencier"
+    }
+   ]
   },
   "bigben|2026-12-19|20:00|BIG BEN STAND UP LÖRDAGS-KLUBBEN!": {
    "club": "bigben",
    "date": "2026-12-19",
    "time": "20:00",
    "title": "BIG BEN STAND UP LÖRDAGS-KLUBBEN!",
-   "performers": []
+   "performers": [
+    {
+     "slug": "lasse-nilsen-2",
+     "name": "Lasse Nilsen",
+     "role": "Konferencier"
+    }
+   ]
   },
   "bigben|2026-12-20|20:00|BIG BEN STAND UP SÖNDAGS-BIKTEN!": {
    "club": "bigben",
@@ -2016,6 +2119,13 @@
    "date": "2027-01-26",
    "time": "20:00",
    "title": "BIG BEN STAND UP RISING STARS!",
+   "performers": []
+  },
+  "bigben|2027-01-27|20:00|BIG BEN STAND UP ONSDAGS-PARTY!": {
+   "club": "bigben",
+   "date": "2027-01-27",
+   "time": "20:00",
+   "title": "BIG BEN STAND UP ONSDAGS-PARTY!",
    "performers": []
   },
   "bigben|2027-02-07|20:00|BIG BEN STAND UP VARJE DAG 20.00!": {
