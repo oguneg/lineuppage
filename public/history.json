@@ -1,6 +1,6 @@
 {
  "since": "2026-10-19",
- "updatedAt": "2026-10-30T14:59:28.817Z",
+ "updatedAt": "2026-10-30T15:50:13.904Z",
  "shows": {
   "bigben|2026-10-19|20:00|BIG BEN STAND UP MÅNDAGS-SKRATTET!": {
    "club": "bigben",
@@ -1001,6 +1001,11 @@
      "role": "Komiker"
     },
     {
+     "slug": "hjalmar-lind",
+     "name": "Hjalmar Lind",
+     "role": "Komiker"
+    },
+    {
      "slug": "malkolm-kallin",
      "name": "Malkolm Kallin",
      "role": "Komiker"
@@ -1054,6 +1059,11 @@
      "role": "Komiker"
     },
     {
+     "slug": "gussy-lowenhielm",
+     "name": "Gussy Löwenhielm",
+     "role": "Komiker"
+    },
+    {
      "slug": "jonas-oldinger",
      "name": "Jonas Oldinger",
      "role": "Dörren + komiker"
@@ -1101,6 +1111,16 @@
     {
      "slug": "john-olsson",
      "name": "John Olsson",
+     "role": "Komiker"
+    },
+    {
+     "slug": "maiju-ristkari",
+     "name": "Maiju Ristkari",
+     "role": "Komiker"
+    },
+    {
+     "slug": "gussy-lowenhielm",
+     "name": "Gussy Löwenhielm",
      "role": "Komiker"
     },
     {
@@ -1156,6 +1176,11 @@
     {
      "slug": "harald-grundtman",
      "name": "Harald Grundtman",
+     "role": "Komiker"
+    },
+    {
+     "slug": "gussy-lowenhielm",
+     "name": "Gussy Löwenhielm",
      "role": "Komiker"
     },
     {
@@ -1232,6 +1257,13 @@
      "role": "Rising Star"
     }
    ]
+  },
+  "comedynation|2026-11-07|19:00|DrZero in Kitchen Full English Interactive Standup": {
+   "club": "comedynation",
+   "date": "2026-11-07",
+   "time": "19:00",
+   "title": "DrZero in Kitchen Full English Interactive Standup",
+   "performers": []
   },
   "bigben|2026-11-07|20:00|BIG BEN STAND UP LÖRDAGS-KLUBBEN!": {
    "club": "bigben",
@@ -2560,6 +2592,13 @@
    "date": "2027-01-28",
    "time": "20:00",
    "title": "BIG BEN STAND UP INTERNATIONAL NIGHT!!",
+   "performers": []
+  },
+  "bigben|2027-01-29|20:00|BIG BEN STAND UP FREDAGS-FEELING!": {
+   "club": "bigben",
+   "date": "2027-01-29",
+   "time": "20:00",
+   "title": "BIG BEN STAND UP FREDAGS-FEELING!",
    "performers": []
   },
   "bigben|2027-02-07|20:00|BIG BEN STAND UP VARJE DAG 20.00!": {
