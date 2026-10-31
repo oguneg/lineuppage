@@ -1,6 +1,6 @@
 {
  "since": "2026-10-19",
- "updatedAt": "2026-10-30T15:50:13.904Z",
+ "updatedAt": "2026-10-31T10:10:12.153Z",
  "shows": {
   "bigben|2026-10-19|20:00|BIG BEN STAND UP MÅNDAGS-SKRATTET!": {
    "club": "bigben",
@@ -935,11 +935,6 @@
     {
      "slug": "andreas-nerstrom",
      "name": "Andreas Nerström",
-     "role": "Komiker"
-    },
-    {
-     "slug": "peter-nitschke",
-     "name": "Peter Nitschke",
      "role": "Komiker"
     },
     {
