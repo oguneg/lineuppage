@@ -1,6 +1,6 @@
 {
  "since": "2026-10-19",
- "updatedAt": "2026-11-01T14:18:23.210Z",
+ "updatedAt": "2026-11-01T14:56:57.089Z",
  "shows": {
   "bigben|2026-10-19|20:00|BIG BEN STAND UP MÅNDAGS-SKRATTET!": {
    "club": "bigben",
@@ -1978,6 +1978,11 @@
      "role": "Komiker"
     },
     {
+     "slug": "ruben-lenninger",
+     "name": "Ruben Lenninger",
+     "role": "Komiker"
+    },
+    {
      "slug": "christian-bustos",
      "name": "Christian Bustos",
      "role": "Komiker"
@@ -2844,13 +2849,6 @@
    "date": "2027-01-30",
    "time": "20:00",
    "title": "BIG BEN STAND UP LÖRDAGS-KLUBBEN!",
-   "performers": []
-  },
-  "bigben|2027-01-31|20:00|BIG BEN STAND UP SÖNDAGS-BIKTEN!": {
-   "club": "bigben",
-   "date": "2027-01-31",
-   "time": "20:00",
-   "title": "BIG BEN STAND UP SÖNDAGS-BIKTEN!",
    "performers": []
   },
   "bigben|2027-02-07|20:00|BIG BEN STAND UP VARJE DAG 20.00!": {
