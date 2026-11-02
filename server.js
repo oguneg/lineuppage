@@ -6,6 +6,7 @@ import http from 'node:http';
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { execFile } from 'node:child_process';
 import { fetchLineup } from './scripts/fetch-lineup.mjs';
 
 const PORT = process.env.PORT || 5173;
@@ -24,6 +25,7 @@ const MIME = {
 };
 
 let lineupCache = { at: 0, json: null };
+let checking = false;
 
 function send(res, status, body, type = 'text/plain; charset=utf-8') {
   res.writeHead(status, { 'Content-Type': type, 'Cache-Control': 'no-store' });
@@ -47,6 +49,22 @@ const server = http.createServer(async (req, res) => {
         lineupCache = { at: Date.now(), json: JSON.stringify(await fetchLineup()) };
       }
       return send(res, 200, lineupCache.json, MIME['.json']);
+    }
+
+    // Re-check every Instagram handle and publish (handles page "Re-check" button).
+    // Only from this computer itself: it pushes to GitHub with this machine's git login.
+    if (url.pathname === '/api/check-profiles' && req.method === 'POST') {
+      if (!['127.0.0.1', '::1', '::ffff:127.0.0.1'].includes(req.socket.remoteAddress)) return send(res, 403, 'only from this computer');
+      if (checking) return send(res, 409, JSON.stringify({ ok: false, error: 'a check is already running' }), MIME['.json']);
+      checking = true;
+      execFile(process.execPath, ['scripts/sync-profiles.mjs', '--all'], { cwd: fileURLToPath(new URL('.', import.meta.url)), timeout: 15 * 60000 }, (err, stdout, stderr) => {
+        checking = false;
+        console.log(stdout);
+        send(res, 200, JSON.stringify(err
+          ? { ok: false, error: (stderr || err.message).trim().split('\n').pop() }
+          : { ok: true, published: /Published/.test(stdout) }), MIME['.json']);
+      });
+      return;
     }
 
     if (url.pathname === '/api/handles' && req.method === 'POST') {

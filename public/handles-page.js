@@ -65,12 +65,15 @@ async function loadProfiles() {
   state.checkedAt = data?.checkedAt || null;
 }
 
-// Everyone in upcoming lineups plus everyone who already has a handle
+// Everyone in upcoming lineups plus everyone in handles.json, one row per person:
+// profiles merged with `sameAs` fold into their main profile's row.
 async function loadPeople() {
-  const r = await fetch(`data/lineup.json?ts=${Date.now()}`, { cache: 'no-store' });
-  const clubs = r.ok ? (await r.json()).clubs : {};
+  if (!state.clubs) {
+    const r = await fetch(`data/lineup.json?ts=${Date.now()}`, { cache: 'no-store' });
+    state.clubs = r.ok ? (await r.json()).clubs : {};
+  }
   const bySlug = new Map();
-  for (const [club, events] of Object.entries(clubs)) {
+  for (const [club, events] of Object.entries(state.clubs)) {
     for (const ev of events) {
       for (const p of ev.performers) {
         if (!p.slug) continue;
@@ -83,7 +86,66 @@ async function loadPeople() {
   for (const [slug, v] of Object.entries(state.handles)) {
     if (!bySlug.has(slug)) bySlug.set(slug, { slug, name: v.name, img: null, photoMissing: true, next: null });
   }
-  state.people = [...bySlug.values()].sort((a, b) => a.name.localeCompare(b.name, 'sv'));
+
+  const people = new Map();
+  for (const raw of bySlug.values()) {
+    const main = resolveSlug(state.handles, raw.slug);
+    if (!people.has(main)) {
+      const base = bySlug.get(main) || raw;
+      people.set(main, { ...base, slug: main, name: state.handles[main]?.name || base.name, aliases: [] });
+    }
+    const p = people.get(main);
+    if (raw.slug === main) continue;
+    p.aliases.push({ slug: raw.slug, name: raw.name });
+    if (raw.next?.date && (!p.next || raw.next.date < p.next.date)) p.next = raw.next;
+    if ((!p.img || p.photoMissing) && raw.img && !raw.photoMissing) { p.img = raw.img; p.photoMissing = false; }
+  }
+
+  // Rows whose names (nearly) match another row get a merge suggestion
+  const groups = new Map();
+  for (const p of people.values()) {
+    const k = duplicateKey(p.name);
+    groups.set(k, (groups.get(k) || []).concat(p));
+  }
+  for (const g of groups.values()) for (const p of g) p.twins = g.filter(o => o !== p);
+
+  state.people = [...people.values()].sort((a, b) => a.name.localeCompare(b.name, 'sv'));
+}
+
+// ---------- Merging ----------
+
+// Keep the profile that already has a handle, else the one without a "-2" style suffix
+function pickMain(group) {
+  const score = p => (savedHandle(p) ? 0 : 4) + (/-\d+$/.test(p.slug) ? 2 : 0) + (p.aliases.length ? 0 : 1);
+  return [...group].sort((a, b) => score(a) - score(b) || a.slug.length - b.slug.length)[0];
+}
+
+async function mergeGroup(p) {
+  const group = [p, ...p.twins];
+  const main = pickMain(group);
+  const edits = {};
+  for (const o of group) if (o !== main) edits[o.slug] = { name: o.name, sameAs: main.slug };
+  // Carry a handle over if only one of the merged profiles had it
+  const handle = !savedHandle(main) && group.map(savedHandle).find(Boolean);
+  if (handle) edits[main.slug] = { name: main.name, instagram: handle };
+  await saveStructural(edits, `Merged ${group.length} profiles of ${main.name}.`);
+}
+
+async function splitAlias(slug, name) {
+  await saveStructural({ [slug]: { name } }, `${name} is listed separately again.`);
+}
+
+// Merges and splits are saved right away (no pending state)
+async function saveStructural(edits, done) {
+  setStatus('Saving…');
+  try {
+    state.handles = await commitHandleEdits(edits);
+    await loadPeople();
+    renderAll();
+    setStatus(done);
+  } catch (e) {
+    setStatus('Not saved: ' + explainGitHubError(e), true);
+  }
 }
 
 // ---------- Row state ----------
@@ -113,6 +175,7 @@ function rowStatus(p) {
 
 const FILTERS = [
   ['all', 'All', () => true],
+  ['dupes', 'Duplicates', (s, p) => p.twins.length > 0],
   ['nohandle', 'No handle', s => s === 'nohandle'],
   ['noig', 'No Instagram', s => s === 'noig'],
   ['problems', 'Not found', s => s === 'missing' || s === 'error'],
@@ -152,11 +215,17 @@ function rowHtml(p) {
   const photo = ig || (p.img ? `https://wsrv.nl/?url=${encodeURIComponent(p.img)}&w=88&h=88&fit=cover&a=attention` : '');
   return `<li class="row ${cls}" data-slug="${p.slug}">
     ${photo ? `<img class="avatar" src="${photo}" alt="" loading="lazy">` : '<div class="avatar"></div>'}
-    <div class="who"><div class="name">${escapeHtml(p.name)}</div><small>${nextShow(p)}</small></div>
+    <div class="who"><div class="name">${escapeHtml(p.name)}</div><small>${nextShow(p)}</small>${mergeInfo(p)}</div>
     <div class="at"><input type="text" value="${escapeHtml(h)}" placeholder="${currentNone(p) ? 'no Instagram' : 'handle'}" autocomplete="off" spellcheck="false"></div>
     <div class="ig">${igCell(p, status)}</div>
     <a class="open" href="https://www.instagram.com/${encodeURIComponent(h)}/" target="_blank" rel="noopener" title="Open on Instagram" aria-disabled="${!h}">↗</a>
   </li>`;
+}
+
+function mergeInfo(p) {
+  const also = p.aliases.map(a => `${escapeHtml(a.name)} <button class="linkbtn" data-act="split" data-alias="${a.slug}" data-alias-name="${escapeHtml(a.name)}" title="List this site profile separately again">split</button>`);
+  return (also.length ? `<small class="aliases">merged: ${also.join(', ')}</small>` : '')
+    + (p.twins.length ? `<button class="merge" data-act="merge" title="Treat these site profiles as one comedian">⇄ Same as ${p.twins.map(t => escapeHtml(t.name)).join(', ')}? Merge</button>` : '');
 }
 
 // ---------- Render ----------
@@ -165,13 +234,13 @@ function visiblePeople() {
   const q = state.query.toLowerCase();
   const test = FILTERS.find(f => f[0] === state.filter)[2];
   return state.people.filter(p =>
-    test(rowStatus(p)) && (!q || p.name.toLowerCase().includes(q) || currentHandle(p).toLowerCase().includes(q)));
+    test(rowStatus(p), p) && (!q || p.name.toLowerCase().includes(q) || currentHandle(p).toLowerCase().includes(q)));
 }
 
 function renderFilters() {
   const statuses = state.people.map(rowStatus);
   $('#filters').innerHTML = FILTERS.map(([key, label, test]) =>
-    `<button data-filter="${key}" aria-pressed="${state.filter === key}">${label}<b>${statuses.filter(test).length}</b></button>`).join('');
+    `<button data-filter="${key}" aria-pressed="${state.filter === key}">${label}<b>${statuses.filter((st, i) => test(st, state.people[i])).length}</b></button>`).join('');
 }
 
 function renderRows() {
@@ -224,6 +293,8 @@ $('#rows').addEventListener('click', e => {
   if (!b) return;
   const li = b.closest('li.row');
   const p = state.people.find(x => x.slug === li.dataset.slug);
+  if (b.dataset.act === 'merge') return mergeGroup(p);
+  if (b.dataset.act === 'split') return splitAlias(b.dataset.alias, b.dataset.aliasName);
   setEdit(p, '', b.dataset.act === 'none');
   refreshRow(li, p);
   renderFilters();
@@ -258,6 +329,28 @@ $('#save').addEventListener('click', async () => {
     setStatus('Not saved (kept on this device): ' + explainGitHubError(e), true);
     renderActions();
   }
+});
+
+// Instagram only answers lookups from a home connection, not from GitHub, so the check runs
+// on the PC: through the local server when this page is opened there, otherwise explain.
+$('#recheck').addEventListener('click', async () => {
+  if (!IS_LOCAL) {
+    setStatus('Instagram blocks checks from GitHub, so this runs on your PC: start the tool there (npm start), open localhost:5173/handles.html and press Re-check — or run "npm run sync-profiles -- --all".');
+    return;
+  }
+  const n = new Set(Object.values(state.handles).filter(v => v.instagram).map(v => v.instagram.toLowerCase())).size;
+  $('#recheck').disabled = true;
+  setStatus(`Checking all ${n} handles on Instagram (about ${Math.ceil(n * 1.7 / 60)} min)…`);
+  try {
+    const r = await fetch('/api/check-profiles', { method: 'POST' });
+    const out = await r.json();
+    await loadProfiles();
+    renderAll();
+    setStatus(out.ok ? `Instagram checked just now${out.published ? ' and published to the live site' : ''}.` : `Check failed: ${out.error}`, !out.ok);
+  } catch (e) {
+    setStatus('Check failed: ' + e.message, true);
+  }
+  $('#recheck').disabled = false;
 });
 
 // ---------- Start ----------

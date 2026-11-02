@@ -11,6 +11,7 @@ const state = {
   query: '',
   history: null,    // { since, shows: { key: { club, date, time, title, performers[] } } }
   photos: {},       // slug -> image url
+  handles: {},      // for merged profiles (sameAs) and names
 };
 
 const fmtDay = iso => { const [, m, d] = iso.split('-').map(Number); return `${d} ${MONTHS_SHORT[m - 1]}`; };
@@ -53,9 +54,11 @@ function tally() {
   const from = state.days ? shiftDays(today, -state.days + 1) : '';
   const people = new Map();
   let played = 0;
+  // Profiles merged on the handles page count as one comedian
   const get = p => {
-    if (!people.has(p.slug)) people.set(p.slug, { slug: p.slug, name: p.name, shows: 0, host: 0, last: null, next: null, booked: 0 });
-    return people.get(p.slug);
+    const slug = resolveSlug(state.handles, p.slug);
+    if (!people.has(slug)) people.set(slug, { slug, name: state.handles[slug]?.name || p.name, shows: 0, host: 0, last: null, next: null, booked: 0 });
+    return people.get(slug);
   };
   for (const show of Object.values(state.history?.shows || {})) {
     if (show.club !== state.club) continue;
@@ -69,7 +72,6 @@ function tally() {
       played++;
       for (const p of show.performers) {
         const s = get(p);
-        s.name = p.name;
         s.shows++;
         if (isHost(p.role)) s.host++;
         if (!s.last || show.date > s.last) s.last = show.date;
@@ -141,11 +143,13 @@ async function start() {
     readPublicJson(PROFILES_PATH, null),
   ]);
   state.history = history;
+  state.handles = handles;
   // Photos: from the lineup (site photo), else the comedian's Instagram picture
   for (const p of Object.values(lineup?.clubs || {}).flat().flatMap(e => e.performers)) {
-    if (!p.slug || state.photos[p.slug]) continue;
+    const slug = p.slug && resolveSlug(handles, p.slug);
+    if (!slug || state.photos[slug]) continue;
     const ig = p.photoMissing && instagramPic(handles, profiles?.profiles || {}, p.slug);
-    if (ig || p.img) state.photos[p.slug] = ig || `https://wsrv.nl/?url=${encodeURIComponent(p.img)}&w=68&h=68&fit=cover&a=attention`;
+    if (ig || (p.img && !p.photoMissing)) state.photos[slug] = ig || `https://wsrv.nl/?url=${encodeURIComponent(p.img)}&w=68&h=68&fit=cover&a=attention`;
   }
   for (const slug of Object.keys(handles)) {
     if (!state.photos[slug]) { const ig = instagramPic(handles, profiles?.profiles || {}, slug); if (ig) state.photos[slug] = ig; }

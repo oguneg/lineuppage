@@ -155,9 +155,13 @@ function handleFor(p) {
 // Flagged on the handles page as "has no Instagram" — not highlighted as missing
 const flaggedNone = slug => !!state.handles[slug]?.none;
 
+// One entry per person, under their main profile when several site profiles are merged
 function uniquePeople(ev) {
   const seen = new Set();
-  return (ev?.performers || []).filter(p => {
+  return (ev?.performers || []).map(p => {
+    const slug = p.slug && resolveSlug(state.handles, p.slug);
+    return slug === p.slug ? p : { ...p, slug, name: state.handles[slug]?.name || p.name };
+  }).filter(p => {
     const key = p.slug || p.name;
     if (seen.has(key)) return false;
     seen.add(key); return true;

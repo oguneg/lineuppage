@@ -92,12 +92,28 @@ function sortHandles(h) {
   return Object.fromEntries(Object.entries(h).sort(([a], [b]) => a.localeCompare(b)));
 }
 
-// edits: slug -> { name, instagram, none }. `none` marks "has no Instagram" so nobody goes
+// ---------- Merged profiles ----------
+// The site sometimes has several profiles for one comedian (jimmy-wamala, jimmy-wamala-2, a
+// typo'd jimmmy-wamala). Merged ones point at the main profile with `sameAs` in handles.json,
+// and every page counts and tags them as that one person.
+
+function resolveSlug(handles, slug) {
+  for (let i = 0; i < 5 && handles[slug]?.sameAs; i++) slug = handles[slug].sameAs;
+  return slug;
+}
+
+// Loose name match for spotting duplicates: no accents/case, doubled letters collapsed
+// ("Jimmmy Wamala" = "Jimmy Wamala", "Lasse Nilsen" = "Lase Nilsen")
+const duplicateKey = name => name.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase()
+  .replace(/[^a-z ]/g, '').replace(/(.)\1+/g, '$1').replace(/\s+/g, ' ').trim();
+
+// edits: slug -> { name, instagram, none } or { name, sameAs }. `none` marks "has no Instagram" so nobody goes
 // looking again; an edit with neither removes the entry.
 function applyEdits(handles, edits) {
   const out = { ...handles };
   for (const [slug, v] of Object.entries(edits)) {
-    if (v.instagram) out[slug] = { name: v.name, instagram: v.instagram };
+    if (v.sameAs) out[slug] = { name: v.name, sameAs: v.sameAs };
+    else if (v.instagram) out[slug] = { name: v.name, instagram: v.instagram };
     else if (v.none) out[slug] = { name: v.name, none: true };
     else delete out[slug];
   }
@@ -107,7 +123,7 @@ function applyEdits(handles, edits) {
 // Last-resort photo for comedians without one on the site: their Instagram profile picture
 // (a small inline image saved by the profile check), if the handle checked out.
 function instagramPic(handles, profiles, slug) {
-  const h = handles[slug]?.instagram;
+  const h = handles[resolveSlug(handles, slug)]?.instagram;
   const prof = h && profiles[h.toLowerCase()];
   return prof?.status === 'ok' && prof.pic ? prof.pic : null;
 }
