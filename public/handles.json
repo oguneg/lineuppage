@@ -11,6 +11,10 @@
     "name": "Alexander Mahajan",
     "instagram": "alexandermahajan"
   },
+  "algot-lindstrom": {
+    "name": "Algot Lindström",
+    "instagram": "algotlindstrom"
+  },
   "alma-friberg": {
     "name": "Alma Friberg",
     "instagram": "alma_friberg"
@@ -107,6 +111,10 @@
     "name": "Emil Arvas",
     "instagram": "arvas4"
   },
+  "emil-cardell": {
+    "name": "Emil Cardell",
+    "instagram": "emilcardell"
+  },
   "emil-melin": {
     "name": "Emil Melin",
     "instagram": "_emilmelin"
@@ -150,6 +158,10 @@
   "gunilla-pook": {
     "name": "Gunilla Pook",
     "instagram": "ingamogens"
+  },
+  "gunnar-holma-2": {
+    "name": "Gunnar Holma",
+    "instagram": "gunnarholma"
   },
   "gussy-lowenhielm": {
     "name": "Gussy Löwenhielm",
@@ -335,6 +347,10 @@
     "name": "Peter Nitschke",
     "instagram": "nitschke.peter"
   },
+  "pontus-larsson": {
+    "name": "Pontus Larsson",
+    "instagram": "lpninetofive"
+  },
   "pontus-sagvold": {
     "name": "Pontus Sagvold",
     "instagram": "pontussagvold"
@@ -386,6 +402,14 @@
   "tomas-bonderud-4": {
     "name": "Tomas Bonderud",
     "instagram": "bigbenstandup_com"
+  },
+  "tomas-engstrom": {
+    "name": "Tomas Engström",
+    "instagram": "toamse"
+  },
+  "topias-pulkkinen": {
+    "name": "Topias Pulkkinen",
+    "instagram": "topias__p"
   },
   "torbjorn-nomell": {
     "name": "Torbjörn Nomell",
