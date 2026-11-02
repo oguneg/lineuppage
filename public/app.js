@@ -398,15 +398,17 @@ async function paint(token) {
   const cols = n > 9 ? 2 : 1;
   const rows = Math.ceil(n / cols);
   const areaH = bottom - top;
-  const rowH = Math.min(cols === 1 ? 210 : 230, areaH / rows);
+  // Small lineups get bigger rows, photos and names instead of a lot of empty space
+  const grow = n <= 2 ? 1.45 : n === 3 ? 1.3 : n === 4 ? 1.15 : 1;
+  const rowH = Math.min(cols === 1 ? 210 * grow : 230, areaH / rows);
   const startY = top + (areaH - rowH * rows) / 2;
 
-  const sideMargin = cols === 1 ? 110 : 45;
+  const sideMargin = cols === 1 ? (grow > 1 ? 80 : 110) : 45;
   const gap = 40;
   const colW = (W - 2 * sideMargin - (cols - 1) * gap) / cols;
   // Two columns: smaller photos leave room for bigger names (long ones wrap to two lines)
-  const r = cols === 1 ? Math.min(rowH * 0.38, 74) : Math.min(rowH * 0.26, 46);
-  const nameSize = Math.round(Math.min(cols === 1 ? 54 : 46, rowH * (showBio ? 0.28 : 0.34)));
+  const r = cols === 1 ? Math.min(rowH * 0.38, 74 * grow) : Math.min(rowH * 0.26, 46);
+  const nameSize = Math.round(Math.min(cols === 1 ? 54 * grow : 46, rowH * (showBio ? 0.28 : 0.34)));
   const roleSize = Math.round(Math.max(17, nameSize * 0.46));
   const bioSize = Math.round(Math.max(16, nameSize * 0.42));
 

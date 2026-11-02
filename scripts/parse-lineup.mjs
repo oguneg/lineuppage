@@ -17,6 +17,22 @@ function isoFor(day, monthIdx, today) {
   return `${year}-${String(monthIdx + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
 }
 
+// Biggest title first; anything else (Komiker, Rising Star, English Comedian, Dörren + komiker…) ranks last
+const ROLE_RANK = [/headline/i, /konferencier|host|mc/i, /support/i];
+const roleRank = role => { const i = ROLE_RANK.findIndex(re => re.test(role)); return i < 0 ? ROLE_RANK.length : i; };
+
+// The site sometimes lists one comedian under several roles in the same show. Keep them once,
+// with their biggest title, at the spot where that title appears in the list.
+function onePerComedian(performers) {
+  const best = new Map();
+  for (const p of performers) {
+    if (!p.slug) continue; // secret guests have no profile; several can be on one bill
+    const cur = best.get(p.slug);
+    if (!cur || roleRank(p.role) < roleRank(cur.role)) best.set(p.slug, p);
+  }
+  return performers.filter(p => !p.slug || best.get(p.slug) === p);
+}
+
 export function parseLineup(doc, today = todayStockholm()) {
   const out = {};
   for (const [club, id] of Object.entries(SECTIONS)) {
@@ -38,7 +54,7 @@ export function parseLineup(doc, today = todayStockholm()) {
         date: monthIdx >= 0 && day ? isoFor(day, monthIdx, today) : null,
         title: clean(item.querySelector('.club-name-date-time')?.textContent),
         time: clean(item.querySelector('.event-day-date-time')?.textContent),
-        performers,
+        performers: onePerComedian(performers),
       };
     });
   }
