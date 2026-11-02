@@ -1,6 +1,6 @@
 {
  "since": "2026-10-19",
- "updatedAt": "2026-11-02T18:59:10.305Z",
+ "updatedAt": "2026-11-02T19:03:23.409Z",
  "shows": {
   "bigben|2026-10-19|20:00|BIG BEN STAND UP MÅNDAGS-SKRATTET!": {
    "club": "bigben",
@@ -1538,11 +1538,6 @@
    "title": "BIG BEN STAND UP ONSDAGS-PARTY!",
    "performers": [
     {
-     "slug": "tomas-bonderud-4",
-     "name": "Tomas Bonderud",
-     "role": "Konferencier"
-    },
-    {
      "slug": "goran-sjoberg",
      "name": "Göran Sjöberg",
      "role": "Konferencier"
@@ -1566,6 +1561,11 @@
      "slug": "isaias-tuolde",
      "name": "Isaias Tuolde",
      "role": "Komiker"
+    },
+    {
+     "slug": "tomas-bonderud-4",
+     "name": "Tomas Bonderud",
+     "role": "Headline"
     }
    ]
   },
@@ -1912,14 +1912,14 @@
    "title": "BIG BEN STAND UP ONSDAGS-PARTY!",
    "performers": [
     {
-     "slug": "tomas-bonderud-4",
-     "name": "Tomas Bonderud",
-     "role": "Konferencier"
-    },
-    {
      "slug": "goran-sjoberg",
      "name": "Göran Sjöberg",
      "role": "Konferencier"
+    },
+    {
+     "slug": "tomas-bonderud-4",
+     "name": "Tomas Bonderud",
+     "role": "Headline"
     }
    ]
   },
@@ -2190,7 +2190,7 @@
     {
      "slug": "linda-gerstenmayer",
      "name": "Linda Gerstenmayer",
-     "role": "Komiker"
+     "role": "Headline"
     }
    ]
   },
@@ -2887,6 +2887,13 @@
    "date": "2027-01-31",
    "time": "20:00",
    "title": "BIG BEN STAND UP SÖNDAGS-BIKTEN!",
+   "performers": []
+  },
+  "bigben|2027-02-01|20:00|BIG BEN STAND UP MÅNDAGS-SKRATTET!": {
+   "club": "bigben",
+   "date": "2027-02-01",
+   "time": "20:00",
+   "title": "BIG BEN STAND UP MÅNDAGS-SKRATTET!",
    "performers": []
   },
   "bigben|2027-02-07|20:00|BIG BEN STAND UP VARJE DAG 20.00!": {
