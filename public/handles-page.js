@@ -10,7 +10,7 @@ const state = {
   profiles: {},     // lowercase handle -> { status, name, pic, checkedAt, stale }
   checkedAt: null,
   people: [],       // [{ slug, name, img, next }]
-  dirty: JSON.parse(lsGet('pendingHandles') || '{}'), // shared with the story maker
+  dirty: pendingEdits(), // unsaved edits, shared with the story maker
   filter: 'all',
   query: '',
 };
@@ -98,7 +98,7 @@ function setEdit(p, instagram, none) {
   none = !instagram && none;
   if (instagram === savedHandle(p) && none === savedNone(p)) delete state.dirty[p.slug];
   else state.dirty[p.slug] = { name: p.name, instagram, none };
-  lsSet('pendingHandles', Object.keys(state.dirty).length ? JSON.stringify(state.dirty) : null);
+  setPendingEdit(p.slug, state.dirty[p.slug]);
 }
 
 function rowStatus(p) {
@@ -246,10 +246,11 @@ $('#search').addEventListener('input', e => {
 $('#save').addEventListener('click', async () => {
   $('#save').disabled = true;
   $('#save').textContent = 'Saving…';
+  const edits = { ...state.dirty }; // typing during the save stays pending
   try {
-    state.handles = await commitHandleEdits(state.dirty);
-    state.dirty = {};
-    lsSet('pendingHandles', null);
+    state.handles = await commitHandleEdits(edits);
+    clearSavedEdits(edits);
+    state.dirty = pruneSavedEdits(state.handles);
     renderAll();
     // Instagram only answers lookups from a home connection, so checks run on the PC (npm run sync-profiles)
     setStatus(`Saved. New handles get looked up on Instagram the next time the check runs on your PC (last: ${ago(state.checkedAt)}).`);
@@ -268,6 +269,7 @@ async function start() {
   try {
     if (IS_LOCAL) state.handles = await readPublicJson(HANDLES_PATH, {});
     await Promise.all([loadProfiles(), loadPeople()]);
+    state.dirty = pruneSavedEdits(state.handles);
     renderAll();
     setStatus(`${state.people.length} comedians · Instagram checked ${ago(state.checkedAt)}.`);
   } catch (e) {

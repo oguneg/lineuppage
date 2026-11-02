@@ -43,7 +43,7 @@ const state = {
   handles: {},
   profiles: {},     // Instagram check results, for photo fallbacks
   sync: 'none',     // GitHub token: none | checking | ok | bad
-  dirty: JSON.parse(lsGet('pendingHandles') || '{}'), // slug -> { name, instagram }, survives reloads until saved
+  dirty: pendingEdits(), // slug -> { name, instagram, none }, survives reloads until saved
 };
 
 function setStatus(msg, isError = false) {
@@ -64,6 +64,7 @@ async function connectGitHub() {
   renderSync();
   try {
     state.handles = (await github.readHandles()).handles;
+    state.dirty = pruneSavedEdits(state.handles);
     state.sync = 'ok';
   } catch (e) {
     state.sync = 'bad';
@@ -85,9 +86,9 @@ async function loadProfiles() {
   state.profiles = (await readPublicJson(PROFILES_PATH, null))?.profiles || {};
 }
 
-async function saveHandles() {
+async function saveHandles(edits) {
   if (!canEdit()) throw new Error('Enter a working token to save handles.');
-  return commitHandleEdits(state.dirty);
+  return commitHandleEdits(edits);
 }
 
 // ---------- Lineup data ----------
@@ -496,11 +497,12 @@ $('#igList').addEventListener('input', e => {
   const input = e.target.closest('input[data-slug]');
   if (!input) return;
   const ig = normalizeHandle(input.value);
-  const saved = state.handles[input.dataset.slug]?.instagram || '';
-  if (ig === saved) delete state.dirty[input.dataset.slug];
+  const slug = input.dataset.slug;
+  const saved = state.handles[slug]?.instagram || '';
+  if (ig === saved) delete state.dirty[slug];
   // clearing the box keeps a "no Instagram" flag; typing a handle replaces it
-  else state.dirty[input.dataset.slug] = { name: input.dataset.name, instagram: ig, none: !ig && flaggedNone(input.dataset.slug) };
-  lsSet('pendingHandles', JSON.stringify(state.dirty));
+  else state.dirty[slug] = { name: input.dataset.name, instagram: ig, none: !ig && flaggedNone(slug) };
+  setPendingEdit(slug, state.dirty[slug]);
   input.closest('li').classList.toggle('missing', !ig && !flaggedNone(input.dataset.slug));
   renderSaveButton();
   updateIgString();
@@ -515,10 +517,11 @@ $('#save').addEventListener('click', async () => {
   }
   $('#save').disabled = true;
   $('#save').textContent = 'Saving…';
+  const edits = { ...state.dirty }; // typing during the save stays pending
   try {
-    state.handles = await saveHandles();
-    state.dirty = {};
-    lsSet('pendingHandles', null);
+    state.handles = await saveHandles(edits);
+    clearSavedEdits(edits);
+    state.dirty = pruneSavedEdits(state.handles);
     setStatus(IS_LOCAL ? 'Handles saved to handles.json.' : 'Handles committed to GitHub.');
   } catch (e) {
     setStatus('Not saved (kept on this device): ' + explainGitHubError(e), true);
@@ -611,6 +614,7 @@ async function init() {
   try {
     const [, connected] = await Promise.all([loadLineup(), connectGitHub(), loadProfiles()]);
     if (!connected) state.handles = await loadHandles();
+    state.dirty = pruneSavedEdits(state.handles);
     if (state.sync !== 'bad') setStatus(fetchedLabel());
   } catch (e) {
     setStatus('Could not load lineup: ' + e.message, true);

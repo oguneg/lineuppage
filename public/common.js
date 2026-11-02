@@ -36,6 +36,9 @@ const github = {
 
   async api(path, opts = {}) {
     const r = await fetch(`https://api.github.com/repos/${this.repo}${path}`, {
+      // GitHub lets browsers reuse API answers for 60 s; a stale copy of handles.json means
+      // saving against an outdated version (rejected) or showing old handles after a save
+      cache: 'no-store',
       ...opts,
       headers: {
         Accept: 'application/vnd.github+json',
@@ -49,7 +52,7 @@ const github = {
   },
 
   async readJson(path) {
-    const f = await this.api(`/contents/${path}?ref=main`);
+    const f = await this.api(`/contents/${path}?ref=main&t=${Date.now()}`); // t: skip GitHub's CDN copy too
     // files over 1 MB come back without inline content
     const text = f.content
       ? new TextDecoder().decode(Uint8Array.from(atob(f.content.replace(/\n/g, '')), c => c.charCodeAt(0)))
@@ -116,6 +119,43 @@ async function readPublicJson(path, fallback) {
   return r.ok ? r.json() : fallback;
 }
 
+// ---------- Unsaved edits ----------
+// Kept in the browser until saved, shared by the story maker and the handles page. Always
+// read-modify-write per comedian, so one page never wipes the other's pending edits.
+
+function pendingEdits() {
+  try { return JSON.parse(lsGet('pendingHandles') || '{}'); } catch { return {}; }
+}
+
+function setPendingEdit(slug, edit) {
+  const all = pendingEdits();
+  if (edit) all[slug] = edit; else delete all[slug];
+  lsSet('pendingHandles', Object.keys(all).length ? JSON.stringify(all) : null);
+}
+
+// After a save, drop only the edits that were saved (unchanged since), keep anything newer
+function clearSavedEdits(saved) {
+  const all = pendingEdits();
+  for (const [slug, edit] of Object.entries(saved)) {
+    if (JSON.stringify(all[slug]) === JSON.stringify(edit)) delete all[slug];
+  }
+  lsSet('pendingHandles', Object.keys(all).length ? JSON.stringify(all) : null);
+}
+
+// Drop pending edits the saved file already contains (e.g. saved from another device)
+function pruneSavedEdits(handles) {
+  const all = pendingEdits();
+  for (const [slug, edit] of Object.entries(all)) {
+    const saved = handles[slug];
+    const done = edit.instagram ? saved?.instagram === edit.instagram
+      : edit.none ? !!saved?.none && !saved.instagram
+      : !saved;
+    if (done) delete all[slug];
+  }
+  lsSet('pendingHandles', Object.keys(all).length ? JSON.stringify(all) : null);
+  return all;
+}
+
 // Saves edits: straight to disk through the local server, or as one commit on GitHub.
 async function commitHandleEdits(edits) {
   const names = Object.values(edits).map(v => v.name).join(', ');
@@ -125,15 +165,17 @@ async function commitHandleEdits(edits) {
     if (!r.ok) throw new Error(await r.text());
     return merged;
   }
-  // Re-read right before writing so edits from another device aren't overwritten; retry once on a race.
-  for (let attempt = 0; ; attempt++) {
+  // Re-read right before writing so edits from another device aren't overwritten. If the file
+  // changed in between (409/422: version mismatch), read again and retry with a short pause.
+  for (let attempt = 1; ; attempt++) {
     const { sha, handles } = await github.readHandles();
     const merged = applyEdits(handles, edits);
     try {
       await github.writeHandles(merged, sha, `Instagram handles: ${names}`);
       return merged;
     } catch (e) {
-      if (attempt || !/409|422/.test(e.message)) throw e;
+      if (attempt >= 5 || !/409|422/.test(e.message)) throw e;
+      await new Promise(r => setTimeout(r, 700 * attempt));
     }
   }
 }
