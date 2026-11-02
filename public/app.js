@@ -26,7 +26,12 @@ const isSecretGuest = p => /hemlig g[äa]st|secret guest/i.test(p.name);
 
 // Performers drawn on the story: secret guests are dropped when the lineup is already full
 function storyPerformers(ev) {
-  const all = ev?.performers || [];
+  // Merged site profiles (e.g. a typo'd "Jimmmy Wamala") show under their main profile's name
+  const seen = new Set();
+  const all = (ev?.performers || []).map(p => {
+    const slug = p.slug && resolveSlug(state.handles, p.slug);
+    return slug === p.slug ? p : { ...p, slug, name: state.handles[slug]?.name || p.name };
+  }).filter(p => !p.slug || (!seen.has(p.slug) && seen.add(p.slug)));
   const named = all.filter(p => !isSecretGuest(p));
   return named.length > 6 ? named : all;
 }
