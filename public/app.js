@@ -250,6 +250,13 @@ function fitFont(text, maxW, size, weight, min = 20) {
   return s;
 }
 
+// Show title for the header line. The template's logo already names the club, so
+// "BIG BEN STAND UP MÅNDAGS-SKRATTET!" becomes "MÅNDAGS-SKRATTET!".
+function headerTitle(ev) {
+  const t = ev.title.replace(/^big\s*ben\s*stand\s*-?\s*up\s*/i, '').replace(/\s+/g, ' ').trim();
+  return (t || ev.title).toUpperCase();
+}
+
 // One line if the name fits after shrinking a little; otherwise two lines split at a space.
 function layoutName(name, maxW, size) {
   const oneLine = fitFont(name, maxW, size, 800, Math.round(size * 0.75));
@@ -321,6 +328,7 @@ async function draw() {
 async function paint(token) {
   const ev = currentEvent();
   const cfg = CLUBS[state.club];
+  const showTitle = $('#optTitle').checked;
   const showDate = $('#optDate').checked;
   const showBio = $('#optBio').checked;
 
@@ -342,6 +350,21 @@ async function paint(token) {
 
   let top = H * 0.245;
   const bottom = H * 0.905;
+
+  // Optional header with the show's name, e.g. "BONDERUD VS AI"; long names wrap to two lines
+  if (showTitle && ev.title) {
+    const text = headerTitle(ev);
+    const maxW = W - 160;
+    ctx.letterSpacing = '2px';
+    const { size, lines } = layoutName(text, maxW, 78);
+    ctx.font = `800 ${size}px ${FONT}`;
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'top';
+    ctx.fillStyle = COLORS.text;
+    lines.forEach((line, i) => ctx.fillText(ellipsize(line, maxW), W / 2, top + 14 + i * size * 1.05));
+    ctx.letterSpacing = '0px';
+    top += 14 + lines.length * size * 1.05 + 10;
+  }
 
   if (showDate && ev.date) {
     const label = `${fmtDate(ev.date, true)}  ·  ${ev.time.split(' ')[0]}`.toUpperCase();
@@ -546,7 +569,7 @@ $('#event').addEventListener('change', e => {
   draw();
 });
 
-['#optDate', '#optBio'].forEach(id => $(id).addEventListener('change', draw));
+['#optTitle', '#optDate', '#optBio'].forEach(id => $(id).addEventListener('change', draw));
 
 $('#syncSave').addEventListener('click', async () => {
   // pasting on phones can pick up spaces or line breaks inside the token
