@@ -1,6 +1,6 @@
 {
  "since": "2026-10-19",
- "updatedAt": "2026-11-01T15:57:23.033Z",
+ "updatedAt": "2026-11-02T18:10:25.980Z",
  "shows": {
   "bigben|2026-10-19|20:00|BIG BEN STAND UP MÅNDAGS-SKRATTET!": {
    "club": "bigben",
@@ -1075,7 +1075,38 @@
    "date": "2026-11-04",
    "time": "19:00",
    "title": "Södermalms Svenska Standup Komedi- Onsdag",
-   "performers": []
+   "performers": [
+    {
+     "slug": "peter-lisinski",
+     "name": "Peter Lisinski",
+     "role": "Konferencier"
+    },
+    {
+     "slug": "filip-sjostedt",
+     "name": "Filip Sjöstedt",
+     "role": "Komiker"
+    },
+    {
+     "slug": "saga-nord",
+     "name": "Saga Nord",
+     "role": "Komiker"
+    },
+    {
+     "slug": "beata-fejer-2",
+     "name": "Beata Fejer",
+     "role": "Komiker"
+    },
+    {
+     "slug": "jonni-salimi",
+     "name": "Jonni Salimi",
+     "role": "Komiker"
+    },
+    {
+     "slug": "scary-jerry",
+     "name": "Scary Jerry",
+     "role": "Rising Star"
+    }
+   ]
   },
   "bigben|2026-11-04|20:00|BIG BEN STAND UP ONSDAGS-PARTY!": {
    "club": "bigben",
@@ -1164,6 +1195,11 @@
     {
      "slug": "pontus-larsson",
      "name": "Pontus Larsson",
+     "role": "Komiker"
+    },
+    {
+     "slug": "jonni-salimi",
+     "name": "Jonni Salimi",
      "role": "Komiker"
     }
    ]
@@ -1975,11 +2011,6 @@
     {
      "slug": "nalle-ahlgren",
      "name": "Nalle Ahlgren",
-     "role": "Komiker"
-    },
-    {
-     "slug": "ruben-lenninger",
-     "name": "Ruben Lenninger",
      "role": "Komiker"
     },
     {
@@ -2849,6 +2880,20 @@
    "date": "2027-01-30",
    "time": "20:00",
    "title": "BIG BEN STAND UP LÖRDAGS-KLUBBEN!",
+   "performers": []
+  },
+  "bigben|2027-01-31|20:00|BIG BEN STAND UP SÖNDAGS-BIKTEN!": {
+   "club": "bigben",
+   "date": "2027-01-31",
+   "time": "20:00",
+   "title": "BIG BEN STAND UP SÖNDAGS-BIKTEN!",
+   "performers": []
+  },
+  "bigben|2027-02-01|20:00|BIG BEN STAND UP MÅNDAGS-SKRATTET!": {
+   "club": "bigben",
+   "date": "2027-02-01",
+   "time": "20:00",
+   "title": "BIG BEN STAND UP MÅNDAGS-SKRATTET!",
    "performers": []
   },
   "bigben|2027-02-07|20:00|BIG BEN STAND UP VARJE DAG 20.00!": {
