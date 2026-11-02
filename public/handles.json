@@ -271,6 +271,10 @@
     "name": "Leon Jämtin",
     "instagram": "leonjamtin"
   },
+  "linda-gerstenmayer": {
+    "name": "Linda Gerstenmayer",
+    "instagram": "lindatherez"
+  },
   "lisa-rut-sandbladh": {
     "name": "Lisa-Rut Sandbladh",
     "instagram": "sandbladh"
@@ -339,6 +343,10 @@
     "name": "Paloma Halén Román",
     "instagram": "msmiharo"
   },
+  "pernilla-hammargren": {
+    "name": "Pernilla Hammargren",
+    "instagram": "pernillyhammargren"
+  },
   "peter-lisinski": {
     "name": "Peter Lisinski",
     "instagram": "peterlisinski"
@@ -394,6 +402,10 @@
   "tammy-holm": {
     "name": "Tammy Holm",
     "instagram": "tammyraeholm"
+  },
+  "theo-azcarate-odhag": {
+    "name": "Theo Azcárate Odhag",
+    "none": true
   },
   "tobias-ojerfalk": {
     "name": "Tobias Öjerfalk",
