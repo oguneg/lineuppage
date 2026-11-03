@@ -1,6 +1,6 @@
 {
  "since": "2026-10-19",
- "updatedAt": "2026-11-02T19:25:55.660Z",
+ "updatedAt": "2026-11-03T12:51:01.195Z",
  "shows": {
   "bigben|2026-10-19|20:00|BIG BEN STAND UP MÅNDAGS-SKRATTET!": {
    "club": "bigben",
@@ -1457,11 +1457,6 @@
     {
      "slug": "emma-kallgren",
      "name": "Emma Källgren",
-     "role": "Rising Star"
-    },
-    {
-     "slug": "razvan-ionescu",
-     "name": "Razvan Ionescu",
      "role": "Rising Star"
     }
    ]
