@@ -1,6 +1,6 @@
 {
  "since": "2026-10-19",
- "updatedAt": "2026-11-03T16:58:30.166Z",
+ "updatedAt": "2026-11-04T16:28:53.000Z",
  "shows": {
   "bigben|2026-10-19|20:00|BIG BEN STAND UP MÅNDAGS-SKRATTET!": {
    "club": "bigben",
@@ -1107,6 +1107,16 @@
      "role": "Komiker"
     },
     {
+     "slug": "goran-sjoberg-2",
+     "name": "Göran Sjöberg",
+     "role": "Komiker"
+    },
+    {
+     "slug": "jimmy-wamala",
+     "name": "Jimmy Wamala",
+     "role": "Komiker"
+    },
+    {
      "slug": "scary-jerry",
      "name": "Scary Jerry",
      "role": "Rising Star"
@@ -1160,6 +1170,11 @@
      "role": "Komiker"
     },
     {
+     "slug": "danielsanchez",
+     "name": "Daniel Sanchez",
+     "role": "Komiker"
+    },
+    {
      "slug": "viktoria-alexeeva-viktorsdottir",
      "name": "Viktoria Alexeeva Viktorsdottir",
      "role": "English Comedian"
@@ -1206,6 +1221,11 @@
      "slug": "jonni-salimi",
      "name": "Jonni Salimi",
      "role": "Komiker"
+    },
+    {
+     "slug": "goran-sjoberg",
+     "name": "Göran Sjöberg",
+     "role": "English Comedian"
     }
    ]
   },
@@ -1367,6 +1387,21 @@
      "slug": "cecilia-saberi",
      "name": "Cecilia Saberi",
      "role": "Komiker"
+    },
+    {
+     "slug": "peter-nitschke",
+     "name": "Peter Nitschke",
+     "role": "Komiker"
+    },
+    {
+     "slug": "jonni-salimi",
+     "name": "Jonni Salimi",
+     "role": "Komiker"
+    },
+    {
+     "slug": "nathaniel-glasser-skog",
+     "name": "Nathaniel Glasser Skog",
+     "role": "Komiker"
     }
    ]
   },
@@ -1404,6 +1439,16 @@
     {
      "slug": "filip-aulin",
      "name": "Filip Aulin",
+     "role": "Komiker"
+    },
+    {
+     "slug": "hampus-malmgren",
+     "name": "Hampus Malmgren",
+     "role": "Komiker"
+    },
+    {
+     "slug": "astrid-chavez",
+     "name": "Astrid Chavez",
      "role": "Komiker"
     },
     {
@@ -1781,6 +1826,11 @@
    "title": "BIG BEN STAND UP VARJE DAG 20.00!",
    "performers": [
     {
+     "slug": "emil-melin",
+     "name": "Emil Melin",
+     "role": "Komiker"
+    },
+    {
      "slug": "tomas-engstrom",
      "name": "Tomas Engström",
      "role": "Komiker"
@@ -1793,6 +1843,11 @@
     {
      "slug": "amr-elhossiny",
      "name": "Amr Elhossiny",
+     "role": "Komiker"
+    },
+    {
+     "slug": "jonni-salimi",
+     "name": "Jonni Salimi",
      "role": "Komiker"
     },
     {
@@ -1872,6 +1927,11 @@
      "role": "Konferencier"
     },
     {
+     "slug": "ruben-lenninger",
+     "name": "Ruben Lenninger",
+     "role": "Komiker"
+    },
+    {
      "slug": "christian-bustos",
      "name": "Christian Bustos",
      "role": "Komiker"
@@ -1917,6 +1977,11 @@
      "role": "Konferencier"
     },
     {
+     "slug": "tomas-bonderud-2",
+     "name": "Tomas Bonderud",
+     "role": "Support"
+    },
+    {
      "slug": "tomas-bonderud-4",
      "name": "Tomas Bonderud",
      "role": "Headline"
@@ -1930,7 +1995,17 @@
    "title": "BONDERUD Vs AI",
    "performers": [
     {
+     "slug": "goran-sjoberg",
+     "name": "Göran Sjöberg",
+     "role": "Konferencier"
+    },
+    {
      "slug": "tomas-bonderud-4",
+     "name": "Tomas Bonderud",
+     "role": "Headline"
+    },
+    {
+     "slug": "tomas-bonderud-2",
      "name": "Tomas Bonderud",
      "role": "Headline"
     }
@@ -1943,8 +2018,18 @@
    "title": "BIG BEN STAND UP INTERNATIONAL NIGHT!!",
    "performers": [
     {
+     "slug": "brennan-dilts-2",
+     "name": "Brennan Dilts",
+     "role": "Konferencier"
+    },
+    {
      "slug": "yunchen-sun",
      "name": "Yunchen Sun",
+     "role": "Komiker"
+    },
+    {
+     "slug": "kelly-obrien",
+     "name": "Kelly Obrien",
      "role": "Komiker"
     },
     {
@@ -1955,6 +2040,16 @@
     {
      "slug": "scary-jerry",
      "name": "Scary Jerry",
+     "role": "English Comedian"
+    },
+    {
+     "slug": "abbe-noir",
+     "name": "Abbé Noir",
+     "role": "English Comedian"
+    },
+    {
+     "slug": "carolina-ames-zegarra",
+     "name": "Carolina Ames Zegarra",
      "role": "English Comedian"
     }
    ]
@@ -1978,6 +2073,11 @@
     {
      "slug": "christian-bustos",
      "name": "Christian Bustos",
+     "role": "Komiker"
+    },
+    {
+     "slug": "hjalmar-lind",
+     "name": "Hjalmar Lind",
      "role": "Komiker"
     },
     {
@@ -2029,6 +2129,16 @@
      "role": "Komiker"
     },
     {
+     "slug": "cecilia-saberi",
+     "name": "Cecilia Saberi",
+     "role": "Komiker"
+    },
+    {
+     "slug": "hampus-malmgren",
+     "name": "Hampus Malmgren",
+     "role": "Komiker"
+    },
+    {
      "slug": "jonas-oldinger",
      "name": "Jonas Oldinger",
      "role": "Dörren + komiker"
@@ -2064,6 +2174,16 @@
     {
      "slug": "tomas-engstrom",
      "name": "Tomas Engström",
+     "role": "Komiker"
+    },
+    {
+     "slug": "amr-elhossiny",
+     "name": "Amr Elhossiny",
+     "role": "Komiker"
+    },
+    {
+     "slug": "hampus-malmgren",
+     "name": "Hampus Malmgren",
      "role": "Komiker"
     },
     {
@@ -2146,7 +2266,28 @@
    "date": "2026-11-24",
    "time": "20:00",
    "title": "BIG BEN STAND UP RISING STARS!",
-   "performers": []
+   "performers": [
+    {
+     "slug": "torbjorn-nomell",
+     "name": "Torbjörn Nomell",
+     "role": "Rising Star"
+    },
+    {
+     "slug": "sofia-larsson",
+     "name": "Sofia Larsson",
+     "role": "Rising Star"
+    },
+    {
+     "slug": "emil-cardell",
+     "name": "Emil Cardell",
+     "role": "Rising Star"
+    },
+    {
+     "slug": "abbe-noir",
+     "name": "Abbé Noir",
+     "role": "Rising Star"
+    }
+   ]
   },
   "bigben|2026-11-25|20:00|BIG BEN STAND UP ONSDAGS-PARTY!": {
    "club": "bigben",
@@ -2173,6 +2314,11 @@
      "slug": "jonas-oldinger",
      "name": "Jonas Oldinger",
      "role": "Dörren + komiker"
+    },
+    {
+     "slug": "sofia-larsson",
+     "name": "Sofia Larsson",
+     "role": "Rising Star"
     }
    ]
   },
@@ -2204,6 +2350,11 @@
      "slug": "svea-sigmond",
      "name": "Svea Sigmond",
      "role": "Konferencier"
+    },
+    {
+     "slug": "maria-heilinger-shalan",
+     "name": "Maria Heilinger-Shalan",
+     "role": "Komiker"
     },
     {
      "slug": "brandon-aguirre",
@@ -2239,6 +2390,11 @@
      "role": "Konferencier"
     },
     {
+     "slug": "ruben-lenninger",
+     "name": "Ruben Lenninger",
+     "role": "Komiker"
+    },
+    {
      "slug": "hjalmar-lind",
      "name": "Hjalmar Lind",
      "role": "Komiker"
@@ -2247,6 +2403,11 @@
      "slug": "erik-rosenstrale",
      "name": "Erik Rosenstrale",
      "role": "Komiker"
+    },
+    {
+     "slug": "jonas-oldinger",
+     "name": "Jonas Oldinger",
+     "role": "Dörren + komiker"
     }
    ]
   },
@@ -2257,9 +2418,24 @@
    "title": "BIG BEN STAND UP VARJE DAG 20.00!",
    "performers": [
     {
+     "slug": "razvan-ionescu",
+     "name": "Razvan Ionescu",
+     "role": "Konferencier"
+    },
+    {
      "slug": "erik-rosenstrale",
      "name": "Erik Rosenstrale",
      "role": "Komiker"
+    },
+    {
+     "slug": "amr-elhossiny",
+     "name": "Amr Elhossiny",
+     "role": "Komiker"
+    },
+    {
+     "slug": "torbjorn-nomell",
+     "name": "Torbjörn Nomell",
+     "role": "Rising Star"
     }
    ]
   },
@@ -2295,6 +2471,16 @@
      "role": "Komiker"
     },
     {
+     "slug": "joakim-thorn",
+     "name": "Joakim Thörn",
+     "role": "Komiker"
+    },
+    {
+     "slug": "rasmusen96",
+     "name": "Rasmus Crystal",
+     "role": "Komiker"
+    },
+    {
      "slug": "sven-jolly",
      "name": "Sven Jolly",
      "role": "Dörren + komiker"
@@ -2308,6 +2494,31 @@
    "title": "BIG BEN STAND UP RISING STARS!",
    "performers": [
     {
+     "slug": "goran-sjoberg",
+     "name": "Göran Sjöberg",
+     "role": "Konferencier"
+    },
+    {
+     "slug": "henrik-janzon",
+     "name": "Henrik Janzon",
+     "role": "Komiker"
+    },
+    {
+     "slug": "florian-tirnovan",
+     "name": "Florian Tirnovan",
+     "role": "Komiker"
+    },
+    {
+     "slug": "christian-bustos",
+     "name": "Christian Bustos",
+     "role": "Komiker"
+    },
+    {
+     "slug": "joakim-thorn",
+     "name": "Joakim Thörn",
+     "role": "Komiker"
+    },
+    {
      "slug": "razvan-ionescu",
      "name": "Razvan Ionescu",
      "role": "Rising Star"
@@ -2319,14 +2530,46 @@
    "date": "2026-12-02",
    "time": "20:00",
    "title": "BIG BEN STAND UP ONSDAGS-PARTY!",
-   "performers": []
+   "performers": [
+    {
+     "slug": "ebba-rosencrantz-2",
+     "name": "Ebba Rosencrantz",
+     "role": "Konferencier"
+    },
+    {
+     "slug": "lotta-rajahalme",
+     "name": "Lotta Rajahalme",
+     "role": "Komiker"
+    },
+    {
+     "slug": "philipbergstrom55",
+     "name": "Philip Bergström",
+     "role": "Komiker"
+    }
+   ]
   },
   "bigben|2026-12-03|20:00|BIG BEN STAND UP INTERNATIONAL NIGHT!!": {
    "club": "bigben",
    "date": "2026-12-03",
    "time": "20:00",
    "title": "BIG BEN STAND UP INTERNATIONAL NIGHT!!",
-   "performers": []
+   "performers": [
+    {
+     "slug": "florian-tirnovan",
+     "name": "Florian Tirnovan",
+     "role": "Komiker"
+    },
+    {
+     "slug": "scary-jerry",
+     "name": "Scary Jerry",
+     "role": "English Comedian"
+    },
+    {
+     "slug": "darius-carcea",
+     "name": "Darius Carcea",
+     "role": "English Comedian"
+    }
+   ]
   },
   "bigben|2026-12-04|20:00|BIG BEN STAND UP FREDAGS-FEELING!": {
    "club": "bigben",
@@ -2338,6 +2581,21 @@
      "slug": "marcus-palm",
      "name": "Marcus Palm",
      "role": "Konferencier"
+    },
+    {
+     "slug": "christian-bustos",
+     "name": "Christian Bustos",
+     "role": "Komiker"
+    },
+    {
+     "slug": "yunchen-sun",
+     "name": "Yunchen Sun",
+     "role": "Komiker"
+    },
+    {
+     "slug": "jonni-salimi",
+     "name": "Jonni Salimi",
+     "role": "Komiker"
     }
    ]
   },
@@ -2384,7 +2642,18 @@
    "date": "2026-12-06",
    "time": "20:00",
    "title": "BIG BEN STAND UP VARJE DAG 20.00!",
-   "performers": []
+   "performers": [
+    {
+     "slug": "hjalmar-wide",
+     "name": "Hjalmar Wide",
+     "role": "Komiker"
+    },
+    {
+     "slug": "torbjorn-nomell",
+     "name": "Torbjörn Nomell",
+     "role": "Rising Star"
+    }
+   ]
   },
   "bigben|2026-12-07|20:00|BIG BEN STAND UP MÅNDAGS-SKRATTET!": {
    "club": "bigben",
@@ -2398,6 +2667,16 @@
      "role": "Konferencier"
     },
     {
+     "slug": "henrik-janzon",
+     "name": "Henrik Janzon",
+     "role": "Komiker"
+    },
+    {
+     "slug": "mahnoush-nayab",
+     "name": "Mahnoush Nayab",
+     "role": "Komiker"
+    },
+    {
      "slug": "erik-adriansson",
      "name": "Erik Adriansson",
      "role": "Komiker"
@@ -2405,6 +2684,11 @@
     {
      "slug": "torbjorn-nomell",
      "name": "Torbjörn Nomell",
+     "role": "Komiker"
+    },
+    {
+     "slug": "foey-foey",
+     "name": "foey foey",
      "role": "Komiker"
     }
    ]
@@ -2414,7 +2698,13 @@
    "date": "2026-12-08",
    "time": "20:00",
    "title": "BIG BEN STAND UP RISING STARS!",
-   "performers": []
+   "performers": [
+    {
+     "slug": "svea-sigmond",
+     "name": "Svea Sigmond",
+     "role": "Konferencier"
+    }
+   ]
   },
   "bigben|2026-12-09|20:00|BIG BEN STAND UP ONSDAGS-PARTY!": {
    "club": "bigben",
@@ -2423,9 +2713,29 @@
    "title": "BIG BEN STAND UP ONSDAGS-PARTY!",
    "performers": [
     {
+     "slug": "ebba-rosencrantz-2",
+     "name": "Ebba Rosencrantz",
+     "role": "Konferencier"
+    },
+    {
      "slug": "nalle-ahlgren",
      "name": "Nalle Ahlgren",
      "role": "Komiker"
+    },
+    {
+     "slug": "hjalmar-wide",
+     "name": "Hjalmar Wide",
+     "role": "Komiker"
+    },
+    {
+     "slug": "florian-tirnovan",
+     "name": "Florian Tirnovan",
+     "role": "Komiker"
+    },
+    {
+     "slug": "emma-kallgren",
+     "name": "Emma Källgren",
+     "role": "Rising Star"
     }
    ]
   },
@@ -2434,7 +2744,23 @@
    "date": "2026-12-10",
    "time": "20:00",
    "title": "BIG BEN STAND UP INTERNATIONAL NIGHT!!",
-   "performers": []
+   "performers": [
+    {
+     "slug": "svea-sigmond",
+     "name": "Svea Sigmond",
+     "role": "Konferencier"
+    },
+    {
+     "slug": "foey-foey",
+     "name": "foey foey",
+     "role": "Komiker"
+    },
+    {
+     "slug": "scary-jerry",
+     "name": "Scary Jerry",
+     "role": "Rising Star"
+    }
+   ]
   },
   "bigben|2026-12-11|20:00|BIG BEN STAND UP FREDAGS-FEELING!": {
    "club": "bigben",
@@ -2446,6 +2772,16 @@
      "slug": "lasse-n",
      "name": "Lasse Nilsen",
      "role": "Konferencier"
+    },
+    {
+     "slug": "lukas-fransson",
+     "name": "Lukas Fransson",
+     "role": "Komiker"
+    },
+    {
+     "slug": "joakim-thorn",
+     "name": "Joakim Thörn",
+     "role": "Komiker"
     }
    ]
   },
@@ -2459,6 +2795,11 @@
      "slug": "lasse-n",
      "name": "Lasse Nilsen",
      "role": "Konferencier"
+    },
+    {
+     "slug": "hjalmar-wide",
+     "name": "Hjalmar Wide",
+     "role": "Komiker"
     }
    ]
   },
@@ -2479,6 +2820,21 @@
      "slug": "jimmmy-wamala",
      "name": "Jimmmy Wamala",
      "role": "Konferencier"
+    },
+    {
+     "slug": "henrik-janzon",
+     "name": "Henrik Janzon",
+     "role": "Komiker"
+    },
+    {
+     "slug": "florian-tirnovan",
+     "name": "Florian Tirnovan",
+     "role": "Komiker"
+    },
+    {
+     "slug": "erik-adriansson",
+     "name": "Erik Adriansson",
+     "role": "Komiker"
     }
    ]
   },
@@ -2487,14 +2843,46 @@
    "date": "2026-12-15",
    "time": "20:00",
    "title": "BIG BEN STAND UP RISING STARS!",
-   "performers": []
+   "performers": [
+    {
+     "slug": "svea-sigmond",
+     "name": "Svea Sigmond",
+     "role": "Konferencier"
+    },
+    {
+     "slug": "christian-bustos",
+     "name": "Christian Bustos",
+     "role": "Komiker"
+    }
+   ]
   },
   "bigben|2026-12-16|20:00|BIG BEN STAND UP ONSDAGS-PARTY!": {
    "club": "bigben",
    "date": "2026-12-16",
    "time": "20:00",
    "title": "BIG BEN STAND UP ONSDAGS-PARTY!",
-   "performers": []
+   "performers": [
+    {
+     "slug": "ebba-rosencrantz-2",
+     "name": "Ebba Rosencrantz",
+     "role": "Konferencier"
+    },
+    {
+     "slug": "lotta-rajahalme",
+     "name": "Lotta Rajahalme",
+     "role": "Komiker"
+    },
+    {
+     "slug": "hjalmar-wide",
+     "name": "Hjalmar Wide",
+     "role": "Komiker"
+    },
+    {
+     "slug": "hanna-danmo",
+     "name": "Hanna Danmo",
+     "role": "Rising Star"
+    }
+   ]
   },
   "bigben|2026-12-17|20:00|BIG BEN STAND UP INTERNATIONAL NIGHT!!": {
    "club": "bigben",
@@ -2554,7 +2942,13 @@
    "date": "2026-12-22",
    "time": "20:00",
    "title": "BIG BEN STAND UP RISING STARS!",
-   "performers": []
+   "performers": [
+    {
+     "slug": "goran-sjoberg",
+     "name": "Göran Sjöberg",
+     "role": "Konferencier"
+    }
+   ]
   },
   "bigben|2026-12-23|20:00|BIG BEN STAND UP ONSDAGS-PARTY!": {
    "club": "bigben",
@@ -2568,21 +2962,59 @@
    "date": "2026-12-24",
    "time": "20:00",
    "title": "BIG BEN STAND UP INTERNATIONAL NIGHT!!",
-   "performers": []
+   "performers": [
+    {
+     "slug": "torbjorn-nomell",
+     "name": "Torbjörn Nomell",
+     "role": "Komiker"
+    },
+    {
+     "slug": "foey-foey",
+     "name": "foey foey",
+     "role": "Komiker"
+    }
+   ]
   },
   "bigben|2026-12-25|20:00|BIG BEN STAND UP FREDAGS-FEELING!": {
    "club": "bigben",
    "date": "2026-12-25",
    "time": "20:00",
    "title": "BIG BEN STAND UP FREDAGS-FEELING!",
-   "performers": []
+   "performers": [
+    {
+     "slug": "marcus-palm",
+     "name": "Marcus Palm",
+     "role": "Konferencier"
+    },
+    {
+     "slug": "nicholas-cajiao",
+     "name": "Nicholas Cajiao",
+     "role": "Komiker"
+    }
+   ]
   },
   "bigben|2026-12-26|20:00|BIG BEN STAND UP LÖRDAGS-KLUBBEN!": {
    "club": "bigben",
    "date": "2026-12-26",
    "time": "20:00",
    "title": "BIG BEN STAND UP LÖRDAGS-KLUBBEN!",
-   "performers": []
+   "performers": [
+    {
+     "slug": "marcus-palm",
+     "name": "Marcus Palm",
+     "role": "Konferencier"
+    },
+    {
+     "slug": "florian-tirnovan",
+     "name": "Florian Tirnovan",
+     "role": "Komiker"
+    },
+    {
+     "slug": "nalle-ahlgren",
+     "name": "Nalle Ahlgren",
+     "role": "Komiker"
+    }
+   ]
   },
   "bigben|2026-12-27|20:00|BIG BEN STAND UP VARJE DAG 20.00!": {
    "club": "bigben",
@@ -2601,6 +3033,11 @@
      "slug": "jimmmy-wamala",
      "name": "Jimmmy Wamala",
      "role": "Konferencier"
+    },
+    {
+     "slug": "joakim-thorn",
+     "name": "Joakim Thörn",
+     "role": "Komiker"
     }
    ]
   },
@@ -2609,7 +3046,23 @@
    "date": "2026-12-29",
    "time": "20:00",
    "title": "BIG BEN STAND UP RISING STARS!",
-   "performers": []
+   "performers": [
+    {
+     "slug": "goran-sjoberg",
+     "name": "Göran Sjöberg",
+     "role": "Konferencier"
+    },
+    {
+     "slug": "hjalmar-wide",
+     "name": "Hjalmar Wide",
+     "role": "Komiker"
+    },
+    {
+     "slug": "nicholas-cajiao",
+     "name": "Nicholas Cajiao",
+     "role": "Rising Star"
+    }
+   ]
   },
   "bigben|2026-12-30|20:00|BIG BEN STAND UP ONSDAGS-PARTY!": {
    "club": "bigben",
@@ -2623,7 +3076,23 @@
    "date": "2026-12-31",
    "time": "20:00",
    "title": "BIG BEN STAND UP INTERNATIONAL NIGHT!!",
-   "performers": []
+   "performers": [
+    {
+     "slug": "joakim-thorn",
+     "name": "Joakim Thörn",
+     "role": "Komiker"
+    },
+    {
+     "slug": "foey-foey",
+     "name": "foey foey",
+     "role": "Komiker"
+    },
+    {
+     "slug": "scary-jerry",
+     "name": "Scary Jerry",
+     "role": "Rising Star"
+    }
+   ]
   },
   "bigben|2027-01-01|20:00|BIG BEN STAND UP FREDAGS-FEELING!": {
    "club": "bigben",
@@ -2637,7 +3106,13 @@
    "date": "2027-01-02",
    "time": "20:00",
    "title": "BIG BEN STAND UP LÖRDAGS-KLUBBEN!",
-   "performers": []
+   "performers": [
+    {
+     "slug": "marcus-palm",
+     "name": "Marcus Palm",
+     "role": "Konferencier"
+    }
+   ]
   },
   "bigben|2027-01-03|20:00|BIG BEN STAND UP VARJE DAG 20.00!": {
    "club": "bigben",
@@ -2894,6 +3369,13 @@
    "date": "2027-02-01",
    "time": "20:00",
    "title": "BIG BEN STAND UP MÅNDAGS-SKRATTET!",
+   "performers": []
+  },
+  "bigben|2027-02-02|20:00|BIG BEN STAND UP RISING STARS!": {
+   "club": "bigben",
+   "date": "2027-02-02",
+   "time": "20:00",
+   "title": "BIG BEN STAND UP RISING STARS!",
    "performers": []
   },
   "bigben|2027-02-07|20:00|BIG BEN STAND UP VARJE DAG 20.00!": {
