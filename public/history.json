@@ -1,6 +1,6 @@
 {
  "since": "2026-10-19",
- "updatedAt": "2026-11-05T17:19:04.855Z",
+ "updatedAt": "2026-11-06T15:51:48.993Z",
  "shows": {
   "bigben|2026-10-19|20:00|BIG BEN STAND UP MÅNDAGS-SKRATTET!": {
    "club": "bigben",
@@ -2016,6 +2016,13 @@
     }
    ]
   },
+  "comedynation|2026-11-19|19:00|Full English Standup Comedy Thursdays": {
+   "club": "comedynation",
+   "date": "2026-11-19",
+   "time": "19:00",
+   "title": "Full English Standup Comedy Thursdays",
+   "performers": []
+  },
   "bigben|2026-11-19|20:00|BIG BEN STAND UP INTERNATIONAL NIGHT!!": {
    "club": "bigben",
    "date": "2026-11-19",
@@ -3388,6 +3395,13 @@
    "date": "2027-02-03",
    "time": "20:00",
    "title": "BIG BEN STAND UP ONSDAGS-PARTY!",
+   "performers": []
+  },
+  "bigben|2027-02-04|20:00|BIG BEN STAND UP INTERNATIONAL NIGHT!!": {
+   "club": "bigben",
+   "date": "2027-02-04",
+   "time": "20:00",
+   "title": "BIG BEN STAND UP INTERNATIONAL NIGHT!!",
    "performers": []
   },
   "bigben|2027-02-07|20:00|BIG BEN STAND UP VARJE DAG 20.00!": {
