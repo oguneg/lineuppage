@@ -1,6 +1,6 @@
 {
  "since": "2026-10-19",
- "updatedAt": "2026-11-07T14:51:22.538Z",
+ "updatedAt": "2026-11-07T15:37:02.900Z",
  "shows": {
   "bigben|2026-10-19|20:00|BIG BEN STAND UP MÅNDAGS-SKRATTET!": {
    "club": "bigben",
@@ -1510,16 +1510,6 @@
      "role": "Komiker"
     },
     {
-     "slug": "jonni-salimi",
-     "name": "Jonni Salimi",
-     "role": "Komiker"
-    },
-    {
-     "slug": "axel-tidelius-2",
-     "name": "Axel Tidelius",
-     "role": "Komiker"
-    },
-    {
      "slug": "emma-kallgren",
      "name": "Emma Källgren",
      "role": "Rising Star"
@@ -2498,16 +2488,6 @@
      "role": "Komiker"
     },
     {
-     "slug": "jonni-salimi",
-     "name": "Jonni Salimi",
-     "role": "Komiker"
-    },
-    {
-     "slug": "andreas-nerstrom",
-     "name": "Andreas Nerström",
-     "role": "Komiker"
-    },
-    {
      "slug": "rasmusen96",
      "name": "Rasmus Crystal",
      "role": "Komiker"
@@ -3429,13 +3409,6 @@
    "date": "2027-02-05",
    "time": "20:00",
    "title": "BIG BEN STAND UP FREDAGS-FEELING!",
-   "performers": []
-  },
-  "bigben|2027-02-06|20:00|BIG BEN STAND UP LÖRDAGS-KLUBBEN!": {
-   "club": "bigben",
-   "date": "2027-02-06",
-   "time": "20:00",
-   "title": "BIG BEN STAND UP LÖRDAGS-KLUBBEN!",
    "performers": []
   },
   "bigben|2027-02-07|20:00|BIG BEN STAND UP VARJE DAG 20.00!": {
