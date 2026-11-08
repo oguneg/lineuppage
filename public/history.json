@@ -1,6 +1,6 @@
 {
  "since": "2026-10-19",
- "updatedAt": "2026-11-07T15:37:02.900Z",
+ "updatedAt": "2026-11-08T14:59:00.904Z",
  "shows": {
   "bigben|2026-10-19|20:00|BIG BEN STAND UP MÅNDAGS-SKRATTET!": {
    "club": "bigben",
@@ -1510,6 +1510,16 @@
      "role": "Komiker"
     },
     {
+     "slug": "jonni-salimi",
+     "name": "Jonni Salimi",
+     "role": "Komiker"
+    },
+    {
+     "slug": "axel-tidelius-2",
+     "name": "Axel Tidelius",
+     "role": "Komiker"
+    },
+    {
      "slug": "emma-kallgren",
      "name": "Emma Källgren",
      "role": "Rising Star"
@@ -1579,7 +1589,13 @@
    "date": "2026-11-11",
    "time": "19:00",
    "title": "Södermalms Svenska Standup Komedi- Onsdag",
-   "performers": []
+   "performers": [
+    {
+     "slug": "peter-lisinski",
+     "name": "Peter Lisinski",
+     "role": "Konferencier"
+    }
+   ]
   },
   "bigben|2026-11-11|20:00|BIG BEN STAND UP ONSDAGS-PARTY!": {
    "club": "bigben",
@@ -1642,7 +1658,28 @@
    "date": "2026-11-12",
    "time": "19:00",
    "title": "Full English Standup Comedy Thursdays",
-   "performers": []
+   "performers": [
+    {
+     "slug": "atharva-hingne",
+     "name": "Atharva Hingne",
+     "role": "Konferencier"
+    },
+    {
+     "slug": "peter-lisinski",
+     "name": "Peter Lisinski",
+     "role": "Komiker"
+    },
+    {
+     "slug": "andy-vash",
+     "name": "Andy Vash",
+     "role": "Komiker"
+    },
+    {
+     "slug": "viktoria-alexeeva-viktorsdottir",
+     "name": "Viktoria Alexeeva Viktorsdottir",
+     "role": "English Comedian"
+    }
+   ]
   },
   "bigben|2026-11-12|20:00|BIG BEN STAND UP INTERNATIONAL NIGHT!!": {
    "club": "bigben",
@@ -2488,6 +2525,16 @@
      "role": "Komiker"
     },
     {
+     "slug": "jonni-salimi",
+     "name": "Jonni Salimi",
+     "role": "Komiker"
+    },
+    {
+     "slug": "andreas-nerstrom",
+     "name": "Andreas Nerström",
+     "role": "Komiker"
+    },
+    {
      "slug": "rasmusen96",
      "name": "Rasmus Crystal",
      "role": "Komiker"
@@ -2910,8 +2957,8 @@
    "title": "BIG BEN STAND UP FREDAGS-FEELING!",
    "performers": [
     {
-     "slug": "marcus-palm",
-     "name": "Marcus Palm",
+     "slug": "lasse-nilsen-2",
+     "name": "Lasse Nilsen",
      "role": "Konferencier"
     }
    ]
@@ -2923,8 +2970,8 @@
    "title": "BIG BEN STAND UP LÖRDAGS-KLUBBEN!",
    "performers": [
     {
-     "slug": "lasse-nilsen-2",
-     "name": "Lasse Nilsen",
+     "slug": "marcus-palm",
+     "name": "Marcus Palm",
      "role": "Konferencier"
     }
    ]
@@ -3409,6 +3456,13 @@
    "date": "2027-02-05",
    "time": "20:00",
    "title": "BIG BEN STAND UP FREDAGS-FEELING!",
+   "performers": []
+  },
+  "bigben|2027-02-06|20:00|BIG BEN STAND UP LÖRDAGS-KLUBBEN!": {
+   "club": "bigben",
+   "date": "2027-02-06",
+   "time": "20:00",
+   "title": "BIG BEN STAND UP LÖRDAGS-KLUBBEN!",
    "performers": []
   },
   "bigben|2027-02-07|20:00|BIG BEN STAND UP VARJE DAG 20.00!": {
