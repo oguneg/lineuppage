@@ -1,6 +1,6 @@
 {
  "since": "2026-10-19",
- "updatedAt": "2026-11-08T15:55:14.323Z",
+ "updatedAt": "2026-11-09T18:39:51.382Z",
  "shows": {
   "bigben|2026-10-19|20:00|BIG BEN STAND UP MÅNDAGS-SKRATTET!": {
    "club": "bigben",
@@ -1594,6 +1594,31 @@
      "slug": "peter-lisinski",
      "name": "Peter Lisinski",
      "role": "Konferencier"
+    },
+    {
+     "slug": "isaias-tuolde",
+     "name": "Isaias Tuolde",
+     "role": "Komiker"
+    },
+    {
+     "slug": "amr-elhossiny",
+     "name": "Amr Elhossiny",
+     "role": "Komiker"
+    },
+    {
+     "slug": "saga-nord",
+     "name": "Saga Nord",
+     "role": "Komiker"
+    },
+    {
+     "slug": "mikael-tholen",
+     "name": "Mikael Tholén",
+     "role": "Komiker"
+    },
+    {
+     "slug": "hampus-malmgren",
+     "name": "Hampus Malmgren",
+     "role": "Komiker"
     }
    ]
   },
@@ -1665,6 +1690,11 @@
      "role": "Konferencier"
     },
     {
+     "slug": "abbe-noir",
+     "name": "Abbé Noir",
+     "role": "Komiker"
+    },
+    {
      "slug": "peter-lisinski",
      "name": "Peter Lisinski",
      "role": "Komiker"
@@ -1675,8 +1705,18 @@
      "role": "Komiker"
     },
     {
+     "slug": "goran-sjoberg",
+     "name": "Göran Sjöberg",
+     "role": "Komiker"
+    },
+    {
      "slug": "viktoria-alexeeva-viktorsdottir",
      "name": "Viktoria Alexeeva Viktorsdottir",
+     "role": "English Comedian"
+    },
+    {
+     "slug": "dr-zero",
+     "name": "Dr. Zero",
      "role": "English Comedian"
     }
    ]
@@ -2141,6 +2181,13 @@
     }
    ]
   },
+  "comedynation|2026-11-21|19:00|DrZero in Kitchen Full English Interactive Standup": {
+   "club": "comedynation",
+   "date": "2026-11-21",
+   "time": "19:00",
+   "title": "DrZero in Kitchen Full English Interactive Standup",
+   "performers": []
+  },
   "bigben|2026-11-21|20:00|BIG BEN STAND UP LÖRDAGS-KLUBBEN!": {
    "club": "bigben",
    "date": "2026-11-21",
@@ -2337,6 +2384,13 @@
      "role": "Rising Star"
     }
    ]
+  },
+  "comedynation|2026-11-25|19:00|Södermalms Svenska Standup Komedi- Onsdag": {
+   "club": "comedynation",
+   "date": "2026-11-25",
+   "time": "19:00",
+   "title": "Södermalms Svenska Standup Komedi- Onsdag",
+   "performers": []
   },
   "bigben|2026-11-25|20:00|BIG BEN STAND UP ONSDAGS-PARTY!": {
    "club": "bigben",
@@ -3465,11 +3519,18 @@
    "title": "BIG BEN STAND UP LÖRDAGS-KLUBBEN!",
    "performers": []
   },
-  "bigben|2027-02-07|20:00|BIG BEN STAND UP VARJE DAG 20.00!": {
+  "bigben|2027-02-07|20:00|BIG BEN STAND UP SÖNDAGS-BIKTEN!": {
    "club": "bigben",
    "date": "2027-02-07",
    "time": "20:00",
-   "title": "BIG BEN STAND UP VARJE DAG 20.00!",
+   "title": "BIG BEN STAND UP SÖNDAGS-BIKTEN!",
+   "performers": []
+  },
+  "bigben|2027-02-08|20:00|BIG BEN STAND UP MÅNDAGS-SKRATTET!": {
+   "club": "bigben",
+   "date": "2027-02-08",
+   "time": "20:00",
+   "title": "BIG BEN STAND UP MÅNDAGS-SKRATTET!",
    "performers": []
   },
   "bigben|2027-02-09|20:00|BIG BEN STAND UP VARJE DAG 20.00!": {
