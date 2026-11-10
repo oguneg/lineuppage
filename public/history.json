@@ -1,6 +1,6 @@
 {
  "since": "2026-10-19",
- "updatedAt": "2026-11-09T19:43:53.522Z",
+ "updatedAt": "2026-11-10T16:21:34.293Z",
  "shows": {
   "bigben|2026-10-19|20:00|BIG BEN STAND UP MÅNDAGS-SKRATTET!": {
    "club": "bigben",
@@ -1573,14 +1573,14 @@
      "role": "Komiker"
     },
     {
+     "slug": "gussy-lowenhielm",
+     "name": "Gussy Löwenhielm",
+     "role": "Komiker"
+    },
+    {
      "slug": "sven-jolly",
      "name": "Sven Jolly",
      "role": "Dörren + komiker"
-    },
-    {
-     "slug": "lisa-rut-sandbladh",
-     "name": "Lisa-Rut Sandbladh",
-     "role": "Rising Star"
     }
    ]
   },
@@ -1634,11 +1634,6 @@
      "role": "Konferencier"
     },
     {
-     "slug": "hjalmar-wide",
-     "name": "Hjalmar Wide",
-     "role": "Komiker"
-    },
-    {
      "slug": "fernando-fernando-2",
      "name": "Fernando Fernando",
      "role": "Komiker"
@@ -1651,6 +1646,16 @@
     {
      "slug": "isaias-tuolde",
      "name": "Isaias Tuolde",
+     "role": "Komiker"
+    },
+    {
+     "slug": "divgian-sidhu",
+     "name": "Divgian Sidhu",
+     "role": "Komiker"
+    },
+    {
+     "slug": "gussy-lowenhielm",
+     "name": "Gussy Löwenhielm",
      "role": "Komiker"
     },
     {
@@ -1763,6 +1768,11 @@
      "role": "English Comedian"
     },
     {
+     "slug": "viktoria-alexeeva-viktorsdottir",
+     "name": "Viktoria Alexeeva Viktorsdottir",
+     "role": "English Comedian"
+    },
+    {
      "slug": "razvan-ionescu",
      "name": "Razvan Ionescu",
      "role": "Rising Star"
@@ -1860,6 +1870,11 @@
      "role": "Konferencier"
     },
     {
+     "slug": "nalle-ahlgren",
+     "name": "Nalle Ahlgren",
+     "role": "Komiker"
+    },
+    {
      "slug": "henrik-janzon",
      "name": "Henrik Janzon",
      "role": "Komiker"
@@ -1883,11 +1898,6 @@
      "slug": "isaias-tuolde",
      "name": "Isaias Tuolde",
      "role": "Komiker"
-    },
-    {
-     "slug": "jonas-oldinger",
-     "name": "Jonas Oldinger",
-     "role": "Dörren + komiker"
     },
     {
      "slug": "darius-carcea",
@@ -1952,7 +1962,7 @@
    "performers": [
     {
      "slug": "jimmmy-wamala",
-     "name": "Jimmmy Wamala",
+     "name": "Jimmy. Wamala",
      "role": "Konferencier"
     },
     {
@@ -2297,7 +2307,7 @@
    "performers": [
     {
      "slug": "jimmmy-wamala",
-     "name": "Jimmmy Wamala",
+     "name": "Jimmy. Wamala",
      "role": "Konferencier"
     },
     {
@@ -2550,7 +2560,7 @@
    "performers": [
     {
      "slug": "jimmmy-wamala",
-     "name": "Jimmmy Wamala",
+     "name": "Jimmy. Wamala",
      "role": "Konferencier"
     },
     {
@@ -2776,7 +2786,7 @@
    "performers": [
     {
      "slug": "jimmmy-wamala",
-     "name": "Jimmmy Wamala",
+     "name": "Jimmy. Wamala",
      "role": "Konferencier"
     },
     {
@@ -2931,7 +2941,7 @@
    "performers": [
     {
      "slug": "jimmmy-wamala",
-     "name": "Jimmmy Wamala",
+     "name": "Jimmy. Wamala",
      "role": "Konferencier"
     },
     {
@@ -3144,7 +3154,7 @@
    "performers": [
     {
      "slug": "jimmmy-wamala",
-     "name": "Jimmmy Wamala",
+     "name": "Jimmy. Wamala",
      "role": "Konferencier"
     },
     {
@@ -3242,7 +3252,7 @@
    "performers": [
     {
      "slug": "jimmmy-wamala",
-     "name": "Jimmmy Wamala",
+     "name": "Jimmy. Wamala",
      "role": "Konferencier"
     }
    ]
@@ -3326,7 +3336,7 @@
    "performers": [
     {
      "slug": "jimmmy-wamala",
-     "name": "Jimmmy Wamala",
+     "name": "Jimmy. Wamala",
      "role": "Konferencier"
     }
    ]
@@ -3533,11 +3543,11 @@
    "title": "BIG BEN STAND UP MÅNDAGS-SKRATTET!",
    "performers": []
   },
-  "bigben|2027-02-09|20:00|BIG BEN STAND UP VARJE DAG 20.00!": {
+  "bigben|2027-02-09|20:00|BIG BEN STAND UP RISING STARS!": {
    "club": "bigben",
    "date": "2027-02-09",
    "time": "20:00",
-   "title": "BIG BEN STAND UP VARJE DAG 20.00!",
+   "title": "BIG BEN STAND UP RISING STARS!",
    "performers": []
   },
   "bigben|2027-02-11|20:00|BIG BEN STAND UP VARJE DAG 20.00!": {
