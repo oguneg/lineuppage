@@ -1,6 +1,6 @@
 {
  "since": "2026-10-19",
- "updatedAt": "2026-11-10T16:58:54.347Z",
+ "updatedAt": "2026-11-11T16:02:49.792Z",
  "shows": {
   "bigben|2026-10-19|20:00|BIG BEN STAND UP MÅNDAGS-SKRATTET!": {
    "club": "bigben",
@@ -1695,6 +1695,11 @@
      "role": "Konferencier"
     },
     {
+     "slug": "saga-nord",
+     "name": "Saga Nord",
+     "role": "Komiker"
+    },
+    {
      "slug": "abbe-noir",
      "name": "Abbé Noir",
      "role": "Komiker"
@@ -1723,6 +1728,11 @@
      "slug": "dr-zero",
      "name": "Dr. Zero",
      "role": "English Comedian"
+    },
+    {
+     "slug": "scary-jerry",
+     "name": "Scary Jerry",
+     "role": "Rising Star"
     }
    ]
   },
@@ -1758,6 +1768,11 @@
      "role": "Komiker"
     },
     {
+     "slug": "damani-damani",
+     "name": "Damani Damani",
+     "role": "Dörren + komiker"
+    },
+    {
      "slug": "abbe-noir",
      "name": "Abbé Noir",
      "role": "English Comedian"
@@ -1765,6 +1780,11 @@
     {
      "slug": "alexander-mahajan",
      "name": "Alexander Mahajan",
+     "role": "English Comedian"
+    },
+    {
+     "slug": "viktoria-alexeeva-viktorsdottir",
+     "name": "Viktoria Alexeeva Viktorsdottir",
      "role": "English Comedian"
     },
     {
@@ -1809,11 +1829,6 @@
      "role": "Komiker"
     },
     {
-     "slug": "tobias-ojerfalk",
-     "name": "Tobias Öjerfalk",
-     "role": "Komiker"
-    },
-    {
      "slug": "joakim-thorn",
      "name": "Joakim Thörn",
      "role": "Komiker"
@@ -1826,6 +1841,21 @@
     {
      "slug": "algot-lindstrom",
      "name": "Algot Lindström",
+     "role": "Komiker"
+    },
+    {
+     "slug": "axel-tidelius-2",
+     "name": "Axel Tidelius",
+     "role": "Komiker"
+    },
+    {
+     "slug": "stella-aman",
+     "name": "Stella Aman",
+     "role": "Komiker"
+    },
+    {
+     "slug": "ebba-rosencrantz-2",
+     "name": "Ebba Rosencrantz",
      "role": "Komiker"
     },
     {
@@ -1865,6 +1895,11 @@
      "role": "Konferencier"
     },
     {
+     "slug": "nalle-ahlgren",
+     "name": "Nalle Ahlgren",
+     "role": "Komiker"
+    },
+    {
      "slug": "henrik-janzon",
      "name": "Henrik Janzon",
      "role": "Komiker"
@@ -1888,11 +1923,6 @@
      "slug": "isaias-tuolde",
      "name": "Isaias Tuolde",
      "role": "Komiker"
-    },
-    {
-     "slug": "jonas-oldinger",
-     "name": "Jonas Oldinger",
-     "role": "Dörren + komiker"
     },
     {
      "slug": "darius-carcea",
@@ -1935,6 +1965,21 @@
     {
      "slug": "jonni-salimi",
      "name": "Jonni Salimi",
+     "role": "Komiker"
+    },
+    {
+     "slug": "damani-damani",
+     "name": "Damani Damani",
+     "role": "Komiker"
+    },
+    {
+     "slug": "stella-aman",
+     "name": "Stella Aman",
+     "role": "Komiker"
+    },
+    {
+     "slug": "nebil0",
+     "name": "Nebil Idris",
      "role": "Komiker"
     },
     {
@@ -2029,14 +2074,24 @@
      "role": "Komiker"
     },
     {
-     "slug": "joakim-thorn",
-     "name": "Joakim Thörn",
-     "role": "Komiker"
-    },
-    {
      "slug": "isaias-tuolde",
      "name": "Isaias Tuolde",
      "role": "Komiker"
+    },
+    {
+     "slug": "john-olsson",
+     "name": "John Olsson",
+     "role": "Komiker"
+    },
+    {
+     "slug": "stella-aman",
+     "name": "Stella Aman",
+     "role": "Komiker"
+    },
+    {
+     "slug": "damani-damani",
+     "name": "Damani Damani",
+     "role": "Dörren + komiker"
     },
     {
      "slug": "razvan-ionescu",
@@ -3538,11 +3593,11 @@
    "title": "BIG BEN STAND UP MÅNDAGS-SKRATTET!",
    "performers": []
   },
-  "bigben|2027-02-09|20:00|BIG BEN STAND UP VARJE DAG 20.00!": {
+  "bigben|2027-02-09|20:00|BIG BEN STAND UP RISING STARS!": {
    "club": "bigben",
    "date": "2027-02-09",
    "time": "20:00",
-   "title": "BIG BEN STAND UP VARJE DAG 20.00!",
+   "title": "BIG BEN STAND UP RISING STARS!",
    "performers": []
   },
   "bigben|2027-02-11|20:00|BIG BEN STAND UP VARJE DAG 20.00!": {
