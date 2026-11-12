@@ -1,6 +1,6 @@
 {
  "since": "2026-10-19",
- "updatedAt": "2026-11-11T17:03:19.800Z",
+ "updatedAt": "2026-11-12T16:44:34.229Z",
  "shows": {
   "bigben|2026-10-19|20:00|BIG BEN STAND UP MÅNDAGS-SKRATTET!": {
    "club": "bigben",
@@ -1839,11 +1839,6 @@
      "role": "Komiker"
     },
     {
-     "slug": "algot-lindstrom",
-     "name": "Algot Lindström",
-     "role": "Komiker"
-    },
-    {
      "slug": "axel-tidelius-2",
      "name": "Axel Tidelius",
      "role": "Komiker"
@@ -2038,6 +2033,21 @@
     {
      "slug": "kelly-obrien",
      "name": "Kelly Obrien",
+     "role": "Komiker"
+    },
+    {
+     "slug": "andreas-nerstrom",
+     "name": "Andreas Nerström",
+     "role": "Komiker"
+    },
+    {
+     "slug": "leon-jamtin",
+     "name": "Leon Jämtin",
+     "role": "Komiker"
+    },
+    {
+     "slug": "beata-fejer-2",
+     "name": "Beata Fejer",
      "role": "Komiker"
     },
     {
@@ -2485,6 +2495,13 @@
     }
    ]
   },
+  "comedynation|2026-11-26|19:00|Full English Standup Comedy Thursdays": {
+   "club": "comedynation",
+   "date": "2026-11-26",
+   "time": "19:00",
+   "title": "Full English Standup Comedy Thursdays",
+   "performers": []
+  },
   "bigben|2026-11-26|20:00|BIG BEN STAND UP INTERNATIONAL NIGHT!!": {
    "club": "bigben",
    "date": "2026-11-26",
@@ -2580,11 +2597,6 @@
    "time": "20:00",
    "title": "BIG BEN STAND UP VARJE DAG 20.00!",
    "performers": [
-    {
-     "slug": "razvan-ionescu",
-     "name": "Razvan Ionescu",
-     "role": "Konferencier"
-    },
     {
      "slug": "erik-rosenstrale",
      "name": "Erik Rosenstrale",
@@ -3600,11 +3612,18 @@
    "title": "BIG BEN STAND UP RISING STARS!",
    "performers": []
   },
-  "bigben|2027-02-11|20:00|BIG BEN STAND UP VARJE DAG 20.00!": {
+  "bigben|2027-02-10|20:00|BIG BEN STAND UP ONSDAGS-PARTY!": {
+   "club": "bigben",
+   "date": "2027-02-10",
+   "time": "20:00",
+   "title": "BIG BEN STAND UP ONSDAGS-PARTY!",
+   "performers": []
+  },
+  "bigben|2027-02-11|20:00|BIG BEN STAND UP INTERNATIONAL NIGHT!!": {
    "club": "bigben",
    "date": "2027-02-11",
    "time": "20:00",
-   "title": "BIG BEN STAND UP VARJE DAG 20.00!",
+   "title": "BIG BEN STAND UP INTERNATIONAL NIGHT!!",
    "performers": []
   },
   "bigben|2027-02-12|20:00|BIG BEN STAND UP VARJE DAG 20.00!": {
