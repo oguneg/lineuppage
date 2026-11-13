@@ -1,6 +1,6 @@
 {
  "since": "2026-10-19",
- "updatedAt": "2026-11-13T16:06:55.088Z",
+ "updatedAt": "2026-11-13T17:08:04.446Z",
  "shows": {
   "bigben|2026-10-19|20:00|BIG BEN STAND UP MÅNDAGS-SKRATTET!": {
    "club": "bigben",
@@ -2520,6 +2520,13 @@
     }
    ]
   },
+  "comedynation|2026-11-27|19:00|Made in Romania – English Standup Comedy": {
+   "club": "comedynation",
+   "date": "2026-11-27",
+   "time": "19:00",
+   "title": "Made in Romania – English Standup Comedy",
+   "performers": []
+  },
   "bigben|2026-11-27|20:00|BIG BEN STAND UP FREDAGS-FEELING!": {
    "club": "bigben",
    "date": "2026-11-27",
@@ -3626,11 +3633,11 @@
    "title": "BIG BEN STAND UP INTERNATIONAL NIGHT!!",
    "performers": []
   },
-  "bigben|2027-02-12|20:00|BIG BEN STAND UP VARJE DAG 20.00!": {
+  "bigben|2027-02-12|20:00|BIG BEN STAND UP FREDAGS-FEELING!": {
    "club": "bigben",
    "date": "2027-02-12",
    "time": "20:00",
-   "title": "BIG BEN STAND UP VARJE DAG 20.00!",
+   "title": "BIG BEN STAND UP FREDAGS-FEELING!",
    "performers": []
   },
   "bigben|2027-02-16|20:00|BIG BEN STAND UP VARJE DAG 20.00!": {
