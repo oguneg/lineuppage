@@ -1,6 +1,6 @@
 {
  "since": "2026-10-19",
- "updatedAt": "2026-11-13T17:08:04.446Z",
+ "updatedAt": "2026-11-14T14:56:49.171Z",
  "shows": {
   "bigben|2026-10-19|20:00|BIG BEN STAND UP MÅNDAGS-SKRATTET!": {
    "club": "bigben",
@@ -1938,6 +1938,11 @@
    "title": "BIG BEN STAND UP VARJE DAG 20.00!",
    "performers": [
     {
+     "slug": "goran-sjoberg",
+     "name": "Göran Sjöberg",
+     "role": "Konferencier"
+    },
+    {
      "slug": "emil-melin",
      "name": "Emil Melin",
      "role": "Komiker"
@@ -2129,6 +2134,21 @@
      "role": "Konferencier"
     },
     {
+     "slug": "john-olsson",
+     "name": "John Olsson",
+     "role": "Komiker"
+    },
+    {
+     "slug": "harald-grundtman",
+     "name": "Harald Grundtman",
+     "role": "Komiker"
+    },
+    {
+     "slug": "gussy-lowenhielm",
+     "name": "Gussy Löwenhielm",
+     "role": "Komiker"
+    },
+    {
      "slug": "tomas-bonderud-2",
      "name": "Tomas Bonderud",
      "role": "Support"
@@ -2272,11 +2292,6 @@
     {
      "slug": "erik-adriansson",
      "name": "Erik Adriansson",
-     "role": "Komiker"
-    },
-    {
-     "slug": "nalle-ahlgren",
-     "name": "Nalle Ahlgren",
      "role": "Komiker"
     },
     {
@@ -2670,6 +2685,11 @@
     {
      "slug": "rasmusen96",
      "name": "Rasmus Crystal",
+     "role": "Komiker"
+    },
+    {
+     "slug": "leon-jamtin",
+     "name": "Leon Jämtin",
      "role": "Komiker"
     },
     {
