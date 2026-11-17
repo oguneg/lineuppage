@@ -1,6 +1,6 @@
 {
  "since": "2026-10-19",
- "updatedAt": "2026-11-16T19:30:49.734Z",
+ "updatedAt": "2026-11-17T17:32:53.589Z",
  "shows": {
   "bigben|2026-10-19|20:00|BIG BEN STAND UP MÅNDAGS-SKRATTET!": {
    "club": "bigben",
@@ -2104,6 +2104,11 @@
      "role": "Komiker"
     },
     {
+     "slug": "flakrim-fejzullahu",
+     "name": "Flakrim Fejzullahu",
+     "role": "Komiker"
+    },
+    {
      "slug": "damani-damani",
      "name": "Damani Damani",
      "role": "Dörren + komiker"
@@ -2253,6 +2258,11 @@
      "role": "Komiker"
     },
     {
+     "slug": "harald-grundtman",
+     "name": "Harald Grundtman",
+     "role": "Komiker"
+    },
+    {
      "slug": "sven-jolly",
      "name": "Sven Jolly",
      "role": "Dörren + komiker"
@@ -2270,6 +2280,16 @@
     {
      "slug": "carolina-ames-zegarra",
      "name": "Carolina Ames Zegarra",
+     "role": "English Comedian"
+    },
+    {
+     "slug": "viktoria-alexeeva-viktorsdottir",
+     "name": "Viktoria Alexeeva Viktorsdottir",
+     "role": "English Comedian"
+    },
+    {
+     "slug": "abhishek-diwakar",
+     "name": "Abhishek Diwakar",
      "role": "English Comedian"
     }
    ]
@@ -2303,6 +2323,21 @@
     {
      "slug": "tobias-ojerfalk",
      "name": "Tobias Öjerfalk",
+     "role": "Komiker"
+    },
+    {
+     "slug": "svea-sigmond",
+     "name": "Svea Sigmond",
+     "role": "Komiker"
+    },
+    {
+     "slug": "leon-jamtin",
+     "name": "Leon Jämtin",
+     "role": "Komiker"
+    },
+    {
+     "slug": "pontus-sagvold",
+     "name": "Pontus Sagvold",
      "role": "Komiker"
     },
     {
@@ -2409,6 +2444,16 @@
      "role": "Komiker"
     },
     {
+     "slug": "leon-jamtin",
+     "name": "Leon Jämtin",
+     "role": "Komiker"
+    },
+    {
+     "slug": "goran-sjoberg",
+     "name": "Göran Sjöberg",
+     "role": "Komiker"
+    },
+    {
      "slug": "lisa-rut-sandbladh",
      "name": "Lisa-Rut Sandbladh",
      "role": "Rising Star"
@@ -2490,6 +2535,16 @@
    "title": "BIG BEN STAND UP RISING STARS!",
    "performers": [
     {
+     "slug": "john-olsson",
+     "name": "John Olsson",
+     "role": "Komiker"
+    },
+    {
+     "slug": "aiman-josefsson",
+     "name": "Aiman Josefsson",
+     "role": "Komiker"
+    },
+    {
      "slug": "torbjorn-nomell",
      "name": "Torbjörn Nomell",
      "role": "Rising Star"
@@ -2556,7 +2611,13 @@
    "date": "2026-11-26",
    "time": "19:00",
    "title": "Full English Standup Comedy Thursdays",
-   "performers": []
+   "performers": [
+    {
+     "slug": "saman-muradi",
+     "name": "Saman Muradi",
+     "role": "Komiker"
+    }
+   ]
   },
   "bigben|2026-11-26|20:00|BIG BEN STAND UP INTERNATIONAL NIGHT!!": {
    "club": "bigben",
@@ -3743,11 +3804,11 @@
    "title": "BIG BEN STAND UP MÅNDAGS-SKRATTET!",
    "performers": []
   },
-  "bigben|2027-02-16|20:00|BIG BEN STAND UP VARJE DAG 20.00!": {
+  "bigben|2027-02-16|20:00|BIG BEN STAND UP RISING STARS!": {
    "club": "bigben",
    "date": "2027-02-16",
    "time": "20:00",
-   "title": "BIG BEN STAND UP VARJE DAG 20.00!",
+   "title": "BIG BEN STAND UP RISING STARS!",
    "performers": []
   },
   "bigben|2027-02-28|20:00|BIG BEN STAND UP VARJE DAG 20.00!": {
