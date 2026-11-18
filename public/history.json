@@ -1,6 +1,6 @@
 {
  "since": "2026-10-19",
- "updatedAt": "2026-11-17T18:28:06.670Z",
+ "updatedAt": "2026-11-18T14:40:32.254Z",
  "shows": {
   "bigben|2026-10-19|20:00|BIG BEN STAND UP MÅNDAGS-SKRATTET!": {
    "club": "bigben",
@@ -2534,6 +2534,11 @@
    "time": "20:00",
    "title": "BIG BEN STAND UP RISING STARS!",
    "performers": [
+    {
+     "slug": "lisa-wermelin",
+     "name": "Lisa Wermelin",
+     "role": "Komiker"
+    },
     {
      "slug": "john-olsson",
      "name": "John Olsson",
