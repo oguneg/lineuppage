@@ -1,6 +1,6 @@
 {
  "since": "2026-10-19",
- "updatedAt": "2026-11-19T18:10:35.389Z",
+ "updatedAt": "2026-11-20T16:54:15.410Z",
  "shows": {
   "bigben|2026-10-19|20:00|BIG BEN STAND UP MÅNDAGS-SKRATTET!": {
    "club": "bigben",
@@ -2949,6 +2949,13 @@
     }
    ]
   },
+  "comedynation|2026-12-05|19:00|DrZero in Kitchen Full English Interactive Standup": {
+   "club": "comedynation",
+   "date": "2026-12-05",
+   "time": "19:00",
+   "title": "DrZero in Kitchen Full English Interactive Standup",
+   "performers": []
+  },
   "bigben|2026-12-05|20:00|BIG BEN STAND UP LÖRDAGS-KLUBBEN!": {
    "club": "bigben",
    "date": "2026-12-05",
@@ -3022,6 +3029,16 @@
      "role": "Komiker"
     },
     {
+     "slug": "hjalmar-wide",
+     "name": "Hjalmar Wide",
+     "role": "Komiker"
+    },
+    {
+     "slug": "florian-tirnovan",
+     "name": "Florian Tirnovan",
+     "role": "Komiker"
+    },
+    {
      "slug": "mahnoush-nayab",
      "name": "Mahnoush Nayab",
      "role": "Komiker"
@@ -3040,6 +3057,21 @@
      "slug": "foey-foey",
      "name": "foey foey",
      "role": "Komiker"
+    },
+    {
+     "slug": "leon-jamtin",
+     "name": "Leon Jämtin",
+     "role": "Komiker"
+    },
+    {
+     "slug": "malkolm-kallin",
+     "name": "Malkolm Kallin",
+     "role": "Komiker"
+    },
+    {
+     "slug": "tomas-engstrom",
+     "name": "Tomas Engström",
+     "role": "Komiker"
     }
    ]
   },
@@ -3055,6 +3087,13 @@
      "role": "Konferencier"
     }
    ]
+  },
+  "comedynation|2026-12-09|19:00|Södermalms Svenska Standup Komedi- Onsdag": {
+   "club": "comedynation",
+   "date": "2026-12-09",
+   "time": "19:00",
+   "title": "Södermalms Svenska Standup Komedi- Onsdag",
+   "performers": []
   },
   "bigben|2026-12-09|20:00|BIG BEN STAND UP ONSDAGS-PARTY!": {
    "club": "bigben",
@@ -3088,6 +3127,13 @@
      "role": "Rising Star"
     }
    ]
+  },
+  "comedynation|2026-12-10|19:00|Full English Standup Comedy Thursdays": {
+   "club": "comedynation",
+   "date": "2026-12-10",
+   "time": "19:00",
+   "title": "Full English Standup Comedy Thursdays",
+   "performers": []
   },
   "bigben|2026-12-10|20:00|BIG BEN STAND UP INTERNATIONAL NIGHT!!": {
    "club": "bigben",
@@ -3184,6 +3230,26 @@
     {
      "slug": "erik-adriansson",
      "name": "Erik Adriansson",
+     "role": "Komiker"
+    },
+    {
+     "slug": "filip-sjostedt",
+     "name": "Filip Sjöstedt",
+     "role": "Komiker"
+    },
+    {
+     "slug": "johannes-hakala",
+     "name": "Johannes Hakala",
+     "role": "Komiker"
+    },
+    {
+     "slug": "theo-azcarate-odhag",
+     "name": "Theo Azcárate Odhag",
+     "role": "Komiker"
+    },
+    {
+     "slug": "tomas-engstrom",
+     "name": "Tomas Engström",
      "role": "Komiker"
     }
    ]
@@ -3284,6 +3350,36 @@
      "slug": "jimmy-wamala",
      "name": "Jimmy Wamala",
      "role": "Konferencier"
+    },
+    {
+     "slug": "florian-tirnovan",
+     "name": "Florian Tirnovan",
+     "role": "Komiker"
+    },
+    {
+     "slug": "foey-foey",
+     "name": "foey foey",
+     "role": "Komiker"
+    },
+    {
+     "slug": "hjalmar-wide",
+     "name": "Hjalmar Wide",
+     "role": "Komiker"
+    },
+    {
+     "slug": "johannes-hakala",
+     "name": "Johannes Hakala",
+     "role": "Komiker"
+    },
+    {
+     "slug": "theo-azcarate-odhag",
+     "name": "Theo Azcárate Odhag",
+     "role": "Komiker"
+    },
+    {
+     "slug": "tomas-engstrom",
+     "name": "Tomas Engström",
+     "role": "Komiker"
     }
    ]
   },
@@ -3297,6 +3393,21 @@
      "slug": "goran-sjoberg",
      "name": "Göran Sjöberg",
      "role": "Konferencier"
+    },
+    {
+     "slug": "florian-tirnovan",
+     "name": "Florian Tirnovan",
+     "role": "Komiker"
+    },
+    {
+     "slug": "hjalmar-wide",
+     "name": "Hjalmar Wide",
+     "role": "Komiker"
+    },
+    {
+     "slug": "lena-wieweg",
+     "name": "Lena Wieweg",
+     "role": "Komiker"
     }
    ]
   },
@@ -3831,6 +3942,20 @@
    "date": "2027-02-17",
    "time": "20:00",
    "title": "BIG BEN STAND UP ONSDAGS-PARTY!",
+   "performers": []
+  },
+  "bigben|2027-02-18|20:00|BIG BEN STAND UP INTERNATIONAL NIGHT!!": {
+   "club": "bigben",
+   "date": "2027-02-18",
+   "time": "20:00",
+   "title": "BIG BEN STAND UP INTERNATIONAL NIGHT!!",
+   "performers": []
+  },
+  "bigben|2027-02-19|20:00|BIG BEN STAND UP FREDAGS-FEELING!": {
+   "club": "bigben",
+   "date": "2027-02-19",
+   "time": "20:00",
+   "title": "BIG BEN STAND UP FREDAGS-FEELING!",
    "performers": []
   },
   "bigben|2027-02-28|20:00|BIG BEN STAND UP VARJE DAG 20.00!": {
