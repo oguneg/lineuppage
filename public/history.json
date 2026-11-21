@@ -1,6 +1,6 @@
 {
  "since": "2026-10-19",
- "updatedAt": "2026-11-20T17:44:09.224Z",
+ "updatedAt": "2026-11-21T16:03:54.167Z",
  "shows": {
   "bigben|2026-10-19|20:00|BIG BEN STAND UP MÅNDAGS-SKRATTET!": {
    "club": "bigben",
@@ -3380,6 +3380,11 @@
      "slug": "tomas-engstrom",
      "name": "Tomas Engström",
      "role": "Komiker"
+    },
+    {
+     "slug": "amr-elhossiny",
+     "name": "Amr Elhossiny",
+     "role": "Komiker"
     }
    ]
   },
@@ -3498,6 +3503,11 @@
     {
      "slug": "joakim-thorn",
      "name": "Joakim Thörn",
+     "role": "Komiker"
+    },
+    {
+     "slug": "amr-elhossiny",
+     "name": "Amr Elhossiny",
      "role": "Komiker"
     }
    ]
