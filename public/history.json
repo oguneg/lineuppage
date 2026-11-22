@@ -1,6 +1,6 @@
 {
  "since": "2026-10-19",
- "updatedAt": "2026-11-21T16:44:12.061Z",
+ "updatedAt": "2026-11-22T16:10:11.575Z",
  "shows": {
   "bigben|2026-10-19|20:00|BIG BEN STAND UP MÅNDAGS-SKRATTET!": {
    "club": "bigben",
@@ -3272,6 +3272,13 @@
     }
    ]
   },
+  "comedynation|2026-12-16|19:00|Södermalms Svenska Standup Komedi- Onsdag": {
+   "club": "comedynation",
+   "date": "2026-12-16",
+   "time": "19:00",
+   "title": "Södermalms Svenska Standup Komedi- Onsdag",
+   "performers": []
+  },
   "bigben|2026-12-16|20:00|BIG BEN STAND UP ONSDAGS-PARTY!": {
    "club": "bigben",
    "date": "2026-12-16",
@@ -3299,6 +3306,13 @@
      "role": "Rising Star"
     }
    ]
+  },
+  "comedynation|2026-12-17|19:00|Full English Standup Comedy Thursdays": {
+   "club": "comedynation",
+   "date": "2026-12-17",
+   "time": "19:00",
+   "title": "Full English Standup Comedy Thursdays",
+   "performers": []
   },
   "bigben|2026-12-17|20:00|BIG BEN STAND UP INTERNATIONAL NIGHT!!": {
    "club": "bigben",
@@ -3966,6 +3980,20 @@
    "date": "2027-02-19",
    "time": "20:00",
    "title": "BIG BEN STAND UP FREDAGS-FEELING!",
+   "performers": []
+  },
+  "bigben|2027-02-20|20:00|BIG BEN STAND UP LÖRDAGS-KLUBBEN!": {
+   "club": "bigben",
+   "date": "2027-02-20",
+   "time": "20:00",
+   "title": "BIG BEN STAND UP LÖRDAGS-KLUBBEN!",
+   "performers": []
+  },
+  "bigben|2027-02-21|20:00|BIG BEN STAND UP SÖNDAGS-BIKTEN!": {
+   "club": "bigben",
+   "date": "2027-02-21",
+   "time": "20:00",
+   "title": "BIG BEN STAND UP SÖNDAGS-BIKTEN!",
    "performers": []
   },
   "bigben|2027-02-28|20:00|BIG BEN STAND UP VARJE DAG 20.00!": {
