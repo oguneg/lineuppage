@@ -1,6 +1,6 @@
 {
  "since": "2026-10-19",
- "updatedAt": "2026-11-22T17:03:29.406Z",
+ "updatedAt": "2026-11-23T16:11:47.099Z",
  "shows": {
   "bigben|2026-10-19|20:00|BIG BEN STAND UP MÅNDAGS-SKRATTET!": {
    "club": "bigben",
@@ -2560,6 +2560,11 @@
      "role": "Komiker"
     },
     {
+     "slug": "flakrim-fejzullahu",
+     "name": "Flakrim Fejzullahu",
+     "role": "Komiker"
+    },
+    {
      "slug": "torbjorn-nomell",
      "name": "Torbjörn Nomell",
      "role": "Rising Star"
@@ -2605,8 +2610,28 @@
      "role": "Komiker"
     },
     {
+     "slug": "mahnoush-nayab",
+     "name": "Mahnoush Nayab",
+     "role": "Komiker"
+    },
+    {
      "slug": "fernando-fernando-2",
      "name": "Fernando Fernando",
+     "role": "Komiker"
+    },
+    {
+     "slug": "saga-nord",
+     "name": "Saga Nord",
+     "role": "Komiker"
+    },
+    {
+     "slug": "goran-sjoberg",
+     "name": "Göran Sjöberg",
+     "role": "Komiker"
+    },
+    {
+     "slug": "tobias-ojerfalk",
+     "name": "Tobias Öjerfalk",
      "role": "Komiker"
     },
     {
@@ -2646,9 +2671,24 @@
      "role": "Konferencier"
     },
     {
+     "slug": "jonathan-rollins",
+     "name": "Jonathan Rollins",
+     "role": "Komiker"
+    },
+    {
+     "slug": "agnes-hirdwall",
+     "name": "Agnes Hirdwall",
+     "role": "Komiker"
+    },
+    {
+     "slug": "viktoria-alexeeva-viktorsdottir",
+     "name": "Viktoria Alexeeva Viktorsdottir",
+     "role": "Komiker"
+    },
+    {
      "slug": "linda-gerstenmayer",
      "name": "Linda Gerstenmayer",
-     "role": "Headline"
+     "role": "English Comedian"
     }
    ]
   },
@@ -2683,6 +2723,21 @@
     {
      "slug": "erik-rosenstrale",
      "name": "Erik Rosenstrale",
+     "role": "Komiker"
+    },
+    {
+     "slug": "rodrigo-oliveira",
+     "name": "Rodrigo Oliveira",
+     "role": "Komiker"
+    },
+    {
+     "slug": "leon-jamtin",
+     "name": "Leon Jämtin",
+     "role": "Komiker"
+    },
+    {
+     "slug": "elin-almen",
+     "name": "Elin Almén",
      "role": "Komiker"
     },
     {
@@ -2744,6 +2799,21 @@
    "title": "BIG BEN STAND UP VARJE DAG 20.00!",
    "performers": [
     {
+     "slug": "ebba-rosencrantz-2",
+     "name": "Ebba Rosencrantz",
+     "role": "Konferencier"
+    },
+    {
+     "slug": "florian-tirnovan",
+     "name": "Florian Tirnovan",
+     "role": "Komiker"
+    },
+    {
+     "slug": "torbjorn-nomell",
+     "name": "Torbjörn Nomell",
+     "role": "Komiker"
+    },
+    {
      "slug": "erik-rosenstrale",
      "name": "Erik Rosenstrale",
      "role": "Komiker"
@@ -2754,9 +2824,9 @@
      "role": "Komiker"
     },
     {
-     "slug": "torbjorn-nomell",
-     "name": "Torbjörn Nomell",
-     "role": "Rising Star"
+     "slug": "tore-kullgren",
+     "name": "Tore Kullgren",
+     "role": "Support"
     }
    ]
   },
@@ -2855,8 +2925,23 @@
      "role": "Komiker"
     },
     {
+     "slug": "jonni-salimi",
+     "name": "Jonni Salimi",
+     "role": "Komiker"
+    },
+    {
+     "slug": "isaias-tuolde",
+     "name": "Isaias Tuolde",
+     "role": "Komiker"
+    },
+    {
      "slug": "razvan-ionescu",
      "name": "Razvan Ionescu",
+     "role": "Rising Star"
+    },
+    {
+     "slug": "nicholas-cajiao",
+     "name": "Nicholas Cajiao",
      "role": "Rising Star"
     }
    ]
@@ -2887,6 +2972,21 @@
     {
      "slug": "philipbergstrom55",
      "name": "Philip Bergström",
+     "role": "Komiker"
+    },
+    {
+     "slug": "mikael-tholen",
+     "name": "Mikael Tholén",
+     "role": "Komiker"
+    },
+    {
+     "slug": "amr-elhossiny",
+     "name": "Amr Elhossiny",
+     "role": "Komiker"
+    },
+    {
+     "slug": "isaias-tuolde",
+     "name": "Isaias Tuolde",
      "role": "Komiker"
     }
    ]
