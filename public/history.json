@@ -1,6 +1,6 @@
 {
  "since": "2026-10-19",
- "updatedAt": "2026-11-24T15:19:52.948Z",
+ "updatedAt": "2026-11-24T15:23:15.804Z",
  "shows": {
   "bigben|2026-10-19|20:00|BIG BEN STAND UP MÅNDAGS-SKRATTET!": {
    "club": "bigben",
@@ -3124,6 +3124,16 @@
      "role": "Komiker"
     },
     {
+     "slug": "leon-jamtin",
+     "name": "Leon Jämtin",
+     "role": "Komiker"
+    },
+    {
+     "slug": "harald-grundtman",
+     "name": "Harald Grundtman",
+     "role": "Komiker"
+    },
+    {
      "slug": "tobias-ojerfalk",
      "name": "Tobias Öjerfalk",
      "role": "Komiker"
@@ -3131,6 +3141,11 @@
     {
      "slug": "ebba-rosencrantz-2",
      "name": "Ebba Rosencrantz",
+     "role": "Komiker"
+    },
+    {
+     "slug": "ola-aurell",
+     "name": "Ola Aurell",
      "role": "Komiker"
     },
     {
@@ -4267,6 +4282,13 @@
    "date": "2027-02-22",
    "time": "20:00",
    "title": "BIG BEN STAND UP MÅNDAGS-SKRATTET!",
+   "performers": []
+  },
+  "bigben|2027-02-23|20:00|BIG BEN STAND UP RISING STARS!": {
+   "club": "bigben",
+   "date": "2027-02-23",
+   "time": "20:00",
+   "title": "BIG BEN STAND UP RISING STARS!",
    "performers": []
   },
   "bigben|2027-02-28|20:00|BIG BEN STAND UP VARJE DAG 20.00!": {
