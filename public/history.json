@@ -1,6 +1,6 @@
 {
  "since": "2026-10-19",
- "updatedAt": "2026-11-23T21:14:06.561Z",
+ "updatedAt": "2026-11-24T15:11:19.762Z",
  "shows": {
   "bigben|2026-10-19|20:00|BIG BEN STAND UP MÅNDAGS-SKRATTET!": {
    "club": "bigben",
@@ -2545,8 +2545,8 @@
    "title": "BIG BEN STAND UP RISING STARS!",
    "performers": [
     {
-     "slug": "razvan-ionescu",
-     "name": "Razvan Ionescu",
+     "slug": "damani-damani",
+     "name": "Damani Damani",
      "role": "Konferencier"
     },
     {
@@ -2570,18 +2570,13 @@
      "role": "Komiker"
     },
     {
+     "slug": "johannes-hakala",
+     "name": "Johannes Hakala",
+     "role": "Komiker"
+    },
+    {
      "slug": "torbjorn-nomell",
      "name": "Torbjörn Nomell",
-     "role": "Rising Star"
-    },
-    {
-     "slug": "sofia-larsson",
-     "name": "Sofia Larsson",
-     "role": "Rising Star"
-    },
-    {
-     "slug": "emil-cardell",
-     "name": "Emil Cardell",
      "role": "Rising Star"
     },
     {
@@ -2596,7 +2591,53 @@
    "date": "2026-11-25",
    "time": "19:00",
    "title": "Södermalms Svenska Standup Komedi- Onsdag",
-   "performers": []
+   "performers": [
+    {
+     "slug": "hjalmar-wide",
+     "name": "Hjalmar Wide",
+     "role": "Konferencier"
+    },
+    {
+     "slug": "erik-adriansson",
+     "name": "Erik Adriansson",
+     "role": "Komiker"
+    },
+    {
+     "slug": "stella-aman",
+     "name": "Stella Aman",
+     "role": "Komiker"
+    },
+    {
+     "slug": "goran-sjoberg",
+     "name": "Göran Sjöberg",
+     "role": "Komiker"
+    },
+    {
+     "slug": "mikael-tholen",
+     "name": "Mikael Tholén",
+     "role": "Komiker"
+    },
+    {
+     "slug": "amr-elhossiny",
+     "name": "Amr Elhossiny",
+     "role": "Komiker"
+    },
+    {
+     "slug": "anton-persson-2",
+     "name": "Anton Persson",
+     "role": "Komiker"
+    },
+    {
+     "slug": "peter-lisinski",
+     "name": "Peter Lisinski",
+     "role": "Komiker"
+    },
+    {
+     "slug": "filip-sjostedt",
+     "name": "Filip Sjöstedt",
+     "role": "Komiker"
+    }
+   ]
   },
   "bigben|2026-11-25|20:00|BIG BEN STAND UP ONSDAGS-PARTY!": {
    "club": "bigben",
@@ -2660,6 +2701,11 @@
     {
      "slug": "saman-muradi",
      "name": "Saman Muradi",
+     "role": "Komiker"
+    },
+    {
+     "slug": "viktoria-alexeeva-viktorsdottir",
+     "name": "Viktoria Alexeeva Viktorsdottir",
      "role": "Komiker"
     }
    ]
