@@ -72,7 +72,10 @@ async function resolvePhotos(clubs) {
 }
 
 export async function fetchLineup() {
-  const r = await fetch(LINEUP_URL, { headers: { 'User-Agent': UA } });
+  // The site's page caches (Cloudflare + Kinsta) keep copies for up to 8 h, and each Cloudflare
+  // location has its own — so the plain URL can return a lineup from hours ago, different per
+  // location. A unique query string makes the site build the page from its current data.
+  const r = await fetch(`${LINEUP_URL}?fresh=${Date.now()}`, { headers: { 'User-Agent': UA } });
   if (!r.ok) throw new Error(`standupsverige.se answered ${r.status}`);
   const { document } = parseHTML(await r.text());
   const clubs = parseLineup(document);
