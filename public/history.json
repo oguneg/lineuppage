@@ -1,6 +1,6 @@
 {
  "since": "2026-10-19",
- "updatedAt": "2026-11-24T16:50:56.806Z",
+ "updatedAt": "2026-11-24T19:27:57.303Z",
  "shows": {
   "bigben|2026-10-19|20:00|BIG BEN STAND UP MÅNDAGS-SKRATTET!": {
    "club": "bigben",
@@ -2651,11 +2651,6 @@
      "role": "Konferencier"
     },
     {
-     "slug": "ruben-lenninger",
-     "name": "Ruben Lenninger",
-     "role": "Komiker"
-    },
-    {
      "slug": "mahnoush-nayab",
      "name": "Mahnoush Nayab",
      "role": "Komiker"
@@ -2668,6 +2663,11 @@
     {
      "slug": "saga-nord",
      "name": "Saga Nord",
+     "role": "Komiker"
+    },
+    {
+     "slug": "emil-melin",
+     "name": "Emil Melin",
      "role": "Komiker"
     },
     {
