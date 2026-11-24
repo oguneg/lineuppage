@@ -18,6 +18,7 @@ permissions:
   contents: write   # commits history.json
   pages: write
   id-token: write
+  actions: read     # deploy-pages looks up this run's uploaded site bundle
 
 concurrency:
   group: pages
