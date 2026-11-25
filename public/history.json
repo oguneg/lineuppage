@@ -1,6 +1,6 @@
 {
  "since": "2026-10-19",
- "updatedAt": "2026-11-25T18:36:23.057Z",
+ "updatedAt": "2026-11-25T19:08:51.449Z",
  "shows": {
   "bigben|2026-10-19|20:00|BIG BEN STAND UP MÅNDAGS-SKRATTET!": {
    "club": "bigben",
@@ -3104,6 +3104,16 @@
      "slug": "isaias-tuolde",
      "name": "Isaias Tuolde",
      "role": "Komiker"
+    },
+    {
+     "slug": "ola-aurell",
+     "name": "Ola Aurell",
+     "role": "Komiker"
+    },
+    {
+     "slug": "pontus-sagvold",
+     "name": "Pontus Sagvold",
+     "role": "Komiker"
     }
    ]
   },
@@ -3266,6 +3276,11 @@
     {
      "slug": "harald-grundtman",
      "name": "Harald Grundtman",
+     "role": "Komiker"
+    },
+    {
+     "slug": "peter-nitschke",
+     "name": "Peter Nitschke",
      "role": "Komiker"
     }
    ]
@@ -3493,6 +3508,11 @@
      "role": "Komiker"
     },
     {
+     "slug": "john-moshi-2",
+     "name": "John Moshi",
+     "role": "Komiker"
+    },
+    {
      "slug": "carolina-ames-zegarra",
      "name": "Carolina Ames Zegarra",
      "role": "English Comedian"
@@ -3554,8 +3574,8 @@
      "role": "Komiker"
     },
     {
-     "slug": "leon-jamtin",
-     "name": "Leon Jämtin",
+     "slug": "emil-melin",
+     "name": "Emil Melin",
      "role": "Komiker"
     },
     {
@@ -3577,6 +3597,11 @@
      "slug": "ruben-lenninger",
      "name": "Ruben Lenninger",
      "role": "Komiker"
+    },
+    {
+     "slug": "leon-jamtin",
+     "name": "Leon Jämtin",
+     "role": "Headline"
     }
    ]
   },
@@ -3665,6 +3690,11 @@
     {
      "slug": "helena-jarlsdotter",
      "name": "Helena Jarlsdotter",
+     "role": "Komiker"
+    },
+    {
+     "slug": "hakan-svensson",
+     "name": "Håkan Svensson",
      "role": "Komiker"
     },
     {
@@ -3794,6 +3824,11 @@
      "slug": "tobias-ojerfalk",
      "name": "Tobias Öjerfalk",
      "role": "Komiker"
+    },
+    {
+     "slug": "brennan-dilts-2",
+     "name": "Brennan Dilts",
+     "role": "English Comedian"
     }
    ]
   },
@@ -4038,6 +4073,11 @@
      "slug": "nalle-ahlgren",
      "name": "Nalle Ahlgren",
      "role": "Komiker"
+    },
+    {
+     "slug": "theo-azcarate-odhag",
+     "name": "Theo Azcárate Odhag",
+     "role": "Komiker"
     }
    ]
   },
@@ -4046,7 +4086,23 @@
    "date": "2026-12-27",
    "time": "20:00",
    "title": "BIG BEN STAND UP VARJE DAG 20.00!",
-   "performers": []
+   "performers": [
+    {
+     "slug": "florian-tirnovan",
+     "name": "Florian Tirnovan",
+     "role": "Komiker"
+    },
+    {
+     "slug": "joakim-thorn",
+     "name": "Joakim Thörn",
+     "role": "Komiker"
+    },
+    {
+     "slug": "amr-elhossiny",
+     "name": "Amr Elhossiny",
+     "role": "Komiker"
+    }
+   ]
   },
   "bigben|2026-12-28|20:00|BIG BEN STAND UP MÅNDAGS-SKRATTET!": {
    "club": "bigben",
@@ -4062,6 +4118,11 @@
     {
      "slug": "joakim-thorn",
      "name": "Joakim Thörn",
+     "role": "Komiker"
+    },
+    {
+     "slug": "hjalmar-wide",
+     "name": "Hjalmar Wide",
      "role": "Komiker"
     },
     {
@@ -4085,6 +4146,11 @@
     {
      "slug": "hjalmar-wide",
      "name": "Hjalmar Wide",
+     "role": "Komiker"
+    },
+    {
+     "slug": "lisa-wermelin",
+     "name": "Lisa Wermelin",
      "role": "Komiker"
     },
     {
@@ -4134,7 +4200,13 @@
    "date": "2027-01-01",
    "time": "20:00",
    "title": "BIG BEN STAND UP FREDAGS-FEELING!",
-   "performers": []
+   "performers": [
+    {
+     "slug": "nalle-ahlgren",
+     "name": "Nalle Ahlgren",
+     "role": "Komiker"
+    }
+   ]
   },
   "bigben|2027-01-02|20:00|BIG BEN STAND UP LÖRDAGS-KLUBBEN!": {
    "club": "bigben",
@@ -4174,14 +4246,26 @@
    "date": "2027-01-05",
    "time": "20:00",
    "title": "BIG BEN STAND UP RISING STARS!",
-   "performers": []
+   "performers": [
+    {
+     "slug": "mikael-lundh",
+     "name": "Mikael Lundh",
+     "role": "Komiker"
+    }
+   ]
   },
   "bigben|2027-01-06|20:00|BIG BEN STAND UP ONSDAGS-PARTY!": {
    "club": "bigben",
    "date": "2027-01-06",
    "time": "20:00",
    "title": "BIG BEN STAND UP ONSDAGS-PARTY!",
-   "performers": []
+   "performers": [
+    {
+     "slug": "nalle-ahlgren",
+     "name": "Nalle Ahlgren",
+     "role": "Komiker"
+    }
+   ]
   },
   "bigben|2027-01-07|20:00|BIG BEN STAND UP INTERNATIONAL NIGHT!!": {
    "club": "bigben",
@@ -4189,6 +4273,16 @@
    "time": "20:00",
    "title": "BIG BEN STAND UP INTERNATIONAL NIGHT!!",
    "performers": [
+    {
+     "slug": "brennan-dilts-2",
+     "name": "Brennan Dilts",
+     "role": "Konferencier"
+    },
+    {
+     "slug": "joakim-thorn",
+     "name": "Joakim Thörn",
+     "role": "Komiker"
+    },
     {
      "slug": "scary-jerry",
      "name": "Scary Jerry",
