@@ -1,6 +1,6 @@
 {
  "since": "2026-10-19",
- "updatedAt": "2026-11-25T19:08:51.449Z",
+ "updatedAt": "2026-11-26T10:21:41.138Z",
  "shows": {
   "bigben|2026-10-19|20:00|BIG BEN STAND UP MÅNDAGS-SKRATTET!": {
    "club": "bigben",
@@ -3046,6 +3046,16 @@
      "role": "Komiker"
     },
     {
+     "slug": "stella-aman",
+     "name": "Stella Aman",
+     "role": "Komiker"
+    },
+    {
+     "slug": "lisa-wermelin",
+     "name": "Lisa Wermelin",
+     "role": "Komiker"
+    },
+    {
      "slug": "isaias-tuolde",
      "name": "Isaias Tuolde",
      "role": "Komiker"
@@ -3146,8 +3156,18 @@
      "role": "Komiker"
     },
     {
+     "slug": "mikael-tholen",
+     "name": "Mikael Tholén",
+     "role": "Komiker"
+    },
+    {
      "slug": "matilda-wildmark",
      "name": "Matilda Wildmark",
+     "role": "Komiker"
+    },
+    {
+     "slug": "andreas-atia",
+     "name": "Andreas Atia",
      "role": "Komiker"
     },
     {
@@ -3158,6 +3178,11 @@
     {
      "slug": "darius-carcea",
      "name": "Darius Carcea",
+     "role": "English Comedian"
+    },
+    {
+     "slug": "abhishek-diwakar",
+     "name": "Abhishek Diwakar",
      "role": "English Comedian"
     },
     {
@@ -3309,6 +3334,16 @@
     {
      "slug": "daniel-salmi-nenamaa",
      "name": "Daniel Salmi Nenämaa",
+     "role": "Komiker"
+    },
+    {
+     "slug": "emil-melin",
+     "name": "Emil Melin",
+     "role": "Komiker"
+    },
+    {
+     "slug": "theo-azcarate-odhag",
+     "name": "Theo Azcárate Odhag",
      "role": "Komiker"
     },
     {
