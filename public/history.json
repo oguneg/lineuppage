@@ -1,6 +1,6 @@
 {
  "since": "2026-10-19",
- "updatedAt": "2026-11-26T10:21:41.138Z",
+ "updatedAt": "2026-11-26T18:19:58.907Z",
  "shows": {
   "bigben|2026-10-19|20:00|BIG BEN STAND UP MÅNDAGS-SKRATTET!": {
    "club": "bigben",
@@ -2752,6 +2752,11 @@
      "role": "Konferencier"
     },
     {
+     "slug": "hjalmar-wide",
+     "name": "Hjalmar Wide",
+     "role": "Komiker"
+    },
+    {
      "slug": "jonni-salimi",
      "name": "Jonni Salimi",
      "role": "Komiker"
@@ -2799,6 +2804,11 @@
     {
      "slug": "linda-gerstenmayer",
      "name": "Linda Gerstenmayer",
+     "role": "English Comedian"
+    },
+    {
+     "slug": "carolina-ames-zegarra",
+     "name": "Carolina Ames Zegarra",
      "role": "English Comedian"
     }
    ]
@@ -3299,11 +3309,6 @@
      "role": "Komiker"
     },
     {
-     "slug": "harald-grundtman",
-     "name": "Harald Grundtman",
-     "role": "Komiker"
-    },
-    {
      "slug": "peter-nitschke",
      "name": "Peter Nitschke",
      "role": "Komiker"
@@ -3614,11 +3619,6 @@
      "role": "Komiker"
     },
     {
-     "slug": "harald-grundtman",
-     "name": "Harald Grundtman",
-     "role": "Komiker"
-    },
-    {
      "slug": "marcus-olsson",
      "name": "Marcus Olsson",
      "role": "Komiker"
@@ -3866,6 +3866,13 @@
      "role": "English Comedian"
     }
    ]
+  },
+  "comedynation|2026-12-19|19:00|DrZero in Kitchen Full English Interactive Standup": {
+   "club": "comedynation",
+   "date": "2026-12-19",
+   "time": "19:00",
+   "title": "DrZero in Kitchen Full English Interactive Standup",
+   "performers": []
   },
   "bigben|2026-12-19|20:00|BIG BEN STAND UP LÖRDAGS-KLUBBEN!": {
    "club": "bigben",
@@ -4694,6 +4701,13 @@
    "date": "2027-02-24",
    "time": "20:00",
    "title": "BIG BEN STAND UP ONSDAGS-PARTY!",
+   "performers": []
+  },
+  "bigben|2027-02-25|20:00|BIG BEN STAND UP INTERNATIONAL NIGHT!!": {
+   "club": "bigben",
+   "date": "2027-02-25",
+   "time": "20:00",
+   "title": "BIG BEN STAND UP INTERNATIONAL NIGHT!!",
    "performers": []
   },
   "bigben|2027-02-28|20:00|BIG BEN STAND UP VARJE DAG 20.00!": {
