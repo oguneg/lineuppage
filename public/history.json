@@ -1,6 +1,6 @@
 {
  "since": "2026-10-19",
- "updatedAt": "2026-11-27T18:03:48.665Z",
+ "updatedAt": "2026-11-27T18:52:09.654Z",
  "shows": {
   "bigben|2026-10-19|20:00|BIG BEN STAND UP MÅNDAGS-SKRATTET!": {
    "club": "bigben",
@@ -3766,11 +3766,6 @@
      "slug": "saga-nord",
      "name": "Saga Nord",
      "role": "Komiker"
-    },
-    {
-     "slug": "hanna-danmo",
-     "name": "Hanna Danmo",
-     "role": "Rising Star"
     },
     {
      "slug": "lisa-rut-sandbladh",
