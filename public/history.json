@@ -1,6 +1,6 @@
 {
  "since": "2026-10-19",
- "updatedAt": "2026-11-26T18:57:25.781Z",
+ "updatedAt": "2026-11-27T18:03:48.665Z",
  "shows": {
   "bigben|2026-10-19|20:00|BIG BEN STAND UP MÅNDAGS-SKRATTET!": {
    "club": "bigben",
@@ -2865,11 +2865,6 @@
      "slug": "darius-carcea",
      "name": "Darius Carcea",
      "role": "English Comedian"
-    },
-    {
-     "slug": "emma-kallgren",
-     "name": "Emma Källgren",
-     "role": "Rising Star"
     }
    ]
   },
@@ -3038,11 +3033,6 @@
     {
      "slug": "florian-tirnovan",
      "name": "Florian Tirnovan",
-     "role": "Komiker"
-    },
-    {
-     "slug": "christian-bustos",
-     "name": "Christian Bustos",
      "role": "Komiker"
     },
     {
@@ -4708,6 +4698,13 @@
    "date": "2027-02-25",
    "time": "20:00",
    "title": "BIG BEN STAND UP INTERNATIONAL NIGHT!!",
+   "performers": []
+  },
+  "bigben|2027-02-26|20:00|BIG BEN STAND UP FREDAGS-FEELING!": {
+   "club": "bigben",
+   "date": "2027-02-26",
+   "time": "20:00",
+   "title": "BIG BEN STAND UP FREDAGS-FEELING!",
    "performers": []
   },
   "bigben|2027-02-28|20:00|BIG BEN STAND UP VARJE DAG 20.00!": {
