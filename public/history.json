@@ -1,6 +1,6 @@
 {
  "since": "2026-10-19",
- "updatedAt": "2026-11-27T18:52:09.654Z",
+ "updatedAt": "2026-11-28T16:47:22.676Z",
  "shows": {
   "bigben|2026-10-19|20:00|BIG BEN STAND UP MÅNDAGS-SKRATTET!": {
    "club": "bigben",
@@ -2873,7 +2873,18 @@
    "date": "2026-11-28",
    "time": "19:00",
    "title": "Made in Romania – English Standup Comedy",
-   "performers": []
+   "performers": [
+    {
+     "slug": "razvan-ionescu",
+     "name": "Razvan Ionescu",
+     "role": "Headline"
+    },
+    {
+     "slug": "florian-tirnovan",
+     "name": "Florian Tirnovan",
+     "role": "Headline"
+    }
+   ]
   },
   "bigben|2026-11-28|20:00|BIG BEN STAND UP LÖRDAGS-KLUBBEN!": {
    "club": "bigben",
@@ -2899,6 +2910,11 @@
     {
      "slug": "erik-rosenstrale",
      "name": "Erik Rosenstrale",
+     "role": "Komiker"
+    },
+    {
+     "slug": "harald-grundtman",
+     "name": "Harald Grundtman",
      "role": "Komiker"
     },
     {
@@ -3077,7 +3093,38 @@
    "date": "2026-12-02",
    "time": "19:00",
    "title": "Södermalms Svenska Standup Komedi- Onsdag",
-   "performers": []
+   "performers": [
+    {
+     "slug": "goran-sjoberg",
+     "name": "Göran Sjöberg",
+     "role": "Konferencier"
+    },
+    {
+     "slug": "erik-adriansson",
+     "name": "Erik Adriansson",
+     "role": "Komiker"
+    },
+    {
+     "slug": "anton-persson-2",
+     "name": "Anton Persson",
+     "role": "Komiker"
+    },
+    {
+     "slug": "pontus-larsson",
+     "name": "Pontus Larsson",
+     "role": "Komiker"
+    },
+    {
+     "slug": "saga-nord",
+     "name": "Saga Nord",
+     "role": "Komiker"
+    },
+    {
+     "slug": "peter-lisinski",
+     "name": "Peter Lisinski",
+     "role": "Komiker"
+    }
+   ]
   },
   "bigben|2026-12-02|20:00|BIG BEN STAND UP ONSDAGS-PARTY!": {
    "club": "bigben",
@@ -3132,7 +3179,33 @@
    "date": "2026-12-03",
    "time": "19:00",
    "title": "Full English Standup Comedy Thursdays",
-   "performers": []
+   "performers": [
+    {
+     "slug": "razvan-ionescu",
+     "name": "Razvan Ionescu",
+     "role": "Konferencier"
+    },
+    {
+     "slug": "peter-lisinski",
+     "name": "Peter Lisinski",
+     "role": "Komiker"
+    },
+    {
+     "slug": "saman-muradi",
+     "name": "Saman Muradi",
+     "role": "Komiker"
+    },
+    {
+     "slug": "cappuccino-brown",
+     "name": "Cappuccino Brown",
+     "role": "Komiker"
+    },
+    {
+     "slug": "dr-zero",
+     "name": "Dr. Zero",
+     "role": "English Comedian"
+    }
+   ]
   },
   "bigben|2026-12-03|20:00|BIG BEN STAND UP INTERNATIONAL NIGHT!!": {
    "club": "bigben",
@@ -4700,6 +4773,13 @@
    "date": "2027-02-26",
    "time": "20:00",
    "title": "BIG BEN STAND UP FREDAGS-FEELING!",
+   "performers": []
+  },
+  "bigben|2027-02-27|20:00|BIG BEN STAND UP LÖRDAGS-KLUBBEN!": {
+   "club": "bigben",
+   "date": "2027-02-27",
+   "time": "20:00",
+   "title": "BIG BEN STAND UP LÖRDAGS-KLUBBEN!",
    "performers": []
   },
   "bigben|2027-02-28|20:00|BIG BEN STAND UP VARJE DAG 20.00!": {
